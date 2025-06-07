@@ -32,3 +32,12 @@ let studentProfile = {
 }
 
 //These are the most important data types in javascript and most used.
+
+console.log(typeof isPaid); //boolean
+console.log(typeof skills)  //object - another name for array
+console.log(typeof studentProfile) //object - it is object 
+console.log(typeof favoriteClass) //object - null is also an object in js
+console.log(typeof hometown) //undefined - it is not defined yet so it is not non-primitive or primitive datatype
+
+//primitive data types - string, number, boolean, null, undefined
+//non-primitive data types - array, object
