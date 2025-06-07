@@ -19,3 +19,9 @@ console.log(addTwoNumbers(5,6)) //function ka naam printChai hai
 //function ka naam printChai hai
 //function ko call karne ke liye printChai() likhna padta hai
 //if we want to call bringBrush function first we will write bringBrush() above printChai()
+
+//in javascript we have to learn Data type and processing 
+//three things we wiill learn in javascript 
+//datatype
+//conditional
+//loop
