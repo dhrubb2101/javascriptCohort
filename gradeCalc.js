@@ -24,3 +24,5 @@ function gradCalc(score){
 
 let grade = gradCalc(44); // "A"
 console.log(grade)
+
+console.log(gradCalc(85))
