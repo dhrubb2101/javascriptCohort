@@ -14,4 +14,5 @@ let h = 5 //value of h will remain h<=5 | h<6
 for(let h = 0; h < teas.length; h++){
     console.log(`Tea at index ${h}: ${teas[h]}`)
 
-}
+} 
+
