@@ -45,9 +45,15 @@ console.log(p1); // Piyush
 //if you put anything in stack the tradeoff is it can't grow but the variables will be instantly available the read operation is very fast
 //but if we keep it in a pointer in stack the read operation becomes slow but the tradeoff is you get a dynamic memory
 
+//now if we remove both p1 and p2 from stack memory, the object in heap memory will still be there
+//so to remove the object from heap memory, we need to remove all the references to it that is we have to also the memory allocated for it in heap memory
+//
 
 //now consider a object , it can grow dynamically so can we keep it in heap memory
 //as object grow dynamically or can be changed dynamically, so we store it in heap memory
 
 //here's what we first did we assigned p1 to p2, so both p1 and p2 are pointing to the same memory location then
 //we changed the value of p2, so now both p1 and p2 are pointing to the same memory location with the new value
+
+//Garbage Collector 
+//when we remove p1 and p2 from stack memory, the garbage collector automatically removes the object from heap memory if there are no references to it
