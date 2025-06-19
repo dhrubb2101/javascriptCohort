@@ -57,3 +57,9 @@ console.log(p1); // Piyush
 
 //Garbage Collector 
 //when we remove p1 and p2 from stack memory, the garbage collector automatically removes the object from heap memory if there are no references to it
+//if there is no garbage collector then you have to clear the memory of p2 by yourself
+//you have functions for it
+
+//memory leak
+//say two developers are working on the same project and they create variable p1 and p2 and when they remove the memory location of one variable say p2
+//they forget that another variable p1 is still pointing to the same memory location and hence when p2 tries to clear the memory location , it creates a memory leak
