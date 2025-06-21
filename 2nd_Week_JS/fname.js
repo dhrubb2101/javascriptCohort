@@ -1,12 +1,23 @@
 let p1 ={
     fname:'Hitesh',
     lname:'Choudhary',
+    address:{
+        h:1,
+        s:2
+    }
 }
+
+const p1KaString = JSON.stringify(p1) //converting the object to a string
+console.log(p1KaString); // {"fname":"Hitesh","lname":"Choudhary","address":{"h":1,"s":2}}
+let p2 = JSON.parse(p1KaString) //parsing the string back to an object
+console.log(p2); // { fname: 'Hitesh', lname: 'Choudhary', address: { h: 1, s: 2 } }
+
+
 
 // let p2 = p1
 //here basically we captured the address of the object in p1 and assigned it to p2
 
-let p2 = {...p1} //using spread operator to create a new object with the same values as p1
+///using spread operator to create a new object with the same values as p1
 //all the key value pairs of p1 will be copied to p2
 
 
@@ -14,6 +25,7 @@ let p2 = {...p1} //using spread operator to create a new object with the same va
 // let p2 = {
 //     fname: p1.fname,
 //     lname: p1.lname,
+//     address: p1.address //this will still be a reference to the same object in heap memory
 // } //creating a new object
 //now p2 is a new object with the same values as p1 but it is not a reference to the same object
 //so now if we change p2, it will not change p1
@@ -94,3 +106,9 @@ console.log(p1); // Piyush
 //yes it does solve the problem of reference but it creates a new object in heap memory
 
 
+//Shallow Copy happens in case of spread operator and Object.assign() method
+//Shallow copy means that the top level properties are copied but the nested objects are still references to the same object in heap memory
+//shallow copy is passed by reference
+//Deep Copy means that all the properties are copied and the nested objects are also copied to a new memory location in heap memory
+//if we convert the object to a string using JSON.stringify() and then parse it back to an object using JSON.parse(), it will create a deep copy of the object
+//Deep copy is passed by value
