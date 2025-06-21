@@ -1,13 +1,28 @@
 let p1 ={
-    fname:'Hitesh'
+    fname:'Hitesh',
+    lname:'Choudhary',
 }
 
-let p2 = p1
-
+// let p2 = p1
 //here basically we captured the address of the object in p1 and assigned it to p2
 
+let p2 = {...p1} //using spread operator to create a new object with the same values as p1
+//all the key value pairs of p1 will be copied to p2
+
+
+
+// let p2 = {
+//     fname: p1.fname,
+//     lname: p1.lname,
+// } //creating a new object
+//now p2 is a new object with the same values as p1 but it is not a reference to the same object
+//so now if we change p2, it will not change p1
+//but the problem is p1 has over 1000 key value pairs and we want to copy all of them to p2
+//we can't do so like above so we can use the spread operator or Object.assign() method
 
 p2.fname = 'Piyush'
+p2.lname = 'Garg'
+
 
 console.log(p2); // Piyush
 console.log(p1); // Piyush
@@ -68,7 +83,7 @@ console.log(p1); // Piyush
 //they forget that another variable p1 is still pointing to the same memory location and hence when p2 tries to clear the memory location , it creates a memory leak
 
 
-
+//creating a new object in heap memory
 
 //now if we want to capture the original objbect and not the reference to it, we can use the spread operator or Object.assign() method
 //we want to copy an actual object and not the reference to it
@@ -77,3 +92,5 @@ console.log(p1); // Piyush
 //that means take a new memorry location in the heap memory 
 //now p2 doesn't have the same values as p1, so copy the values of p1 to p2 by iterating over the keys of p1
 //yes it does solve the problem of reference but it creates a new object in heap memory
+
+
