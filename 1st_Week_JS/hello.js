@@ -1,4 +1,4 @@
-//factory ka syntac seekh lo saari problem khtam ho jayengi js mei
+//factory ka syntax seekh lo saari problem khtam ho jayengi js mei
 //function matlab factory
 function printChai(){
     console.log("Hello Chai")

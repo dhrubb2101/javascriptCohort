@@ -1,4 +1,4 @@
-let numberofGuest = 4;
+let numberofGuest = 8;
 
 let pizzaSize;
 //small <= 2
@@ -7,12 +7,12 @@ let pizzaSize;
 
 if(numberofGuest <= 2){
     pizzaSize = "small";
-    console.log('Pizza size is ${pizzaSize');
+    console.log(`Pizza size is ${pizzaSize}`);
 }else if(numberofGuest <= 5){
     pizzaSize = "medium"
-    console.log(`Pizza size is ${pizzaSize  }`)
+    console.log(`Pizza size is ${pizzaSize}`)
 }else{
-    pizzaSize = "large"
+    pizzaSize ="large"
     console.log(`Pizza size is ${pizzaSize}`)
 }
 

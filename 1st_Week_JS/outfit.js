@@ -9,7 +9,7 @@ if(weather === "rainy"){
 }else if(weather === "cloudy") {
     console.log("jacket le he lena")
     //
-} else{
+}else{
     console.log("It is sunny")
 }
 
