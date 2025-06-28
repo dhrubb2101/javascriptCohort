@@ -18,3 +18,4 @@ obj.chai()
 //we are now able to access it on tea and myTeas the variables 
 //because their obj/__proto__ points to the prototype of object
 //and that prototype of object has the chai property defined in it
+
