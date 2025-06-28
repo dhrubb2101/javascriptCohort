@@ -37,3 +37,14 @@ obj.x
 //str.proto = {.includes} //here also js creates a prototype object for that string
 //and that prototype object has all the functions defined for that string in it. it stores a
 //str.includes() function that's why we cann do it
+
+//Array.prototype = {properties} //Here Array is the class and prototype is the object that is created when you create an array
+//const arr = [1,2,3]
+//arr.__proto__ = Array.prototype //this is how the prototype object looks like
+//arr.__proto__ is the prototype object of the array
+//__proto__ is a property of the array that points to the prototype object of the array
+//so when you do arr.__proto__ it will give you the prototype object basically a copy of the prototype properties of the array
+
+//An example 
+//Father {skin, height, eyeColor}
+//biologically ingeri
