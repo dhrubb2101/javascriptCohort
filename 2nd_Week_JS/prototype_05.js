@@ -5,7 +5,7 @@ arr
 
 const str = 'Piyush'
 
-str
+str.length //6
 
 const obj = {x: 1}
 
@@ -47,4 +47,33 @@ obj.x
 
 //An example 
 //Father {skin, height, eyeColor}
-//biologically ingeri
+//biologically inherited from father for child
+//Child {skin, height, eyeColor} //child inherits the properties of the father
+//here father is the base class or parent classs
+//uske andar ek prototype object hai jiske andar skin, height, eyeColor properties hain
+//Children.__proto__ = Father.prototype //yehi toh ek link banara h ki yeh child iss fatther ko belong krta h
+//Similarly consider we have a class called String
+//and it will have some built in classes like prototype
+
+
+//String.prototype = {}
+//const str = "PIY"
+//str.__proto__ = String.prototype //issi se pata chal rha hai ki str is a child of String class
+//and jitni properties String class ke andar hain
+//wo sab str ke andar bhi hain becuase voh uska child hai
+
+//Basically arr.__proto__ is the prototype object of the array which contains all the properties and methods of the array
+//similarly str.__proto__ is the prototype object of the string which contains all the properties
+//Array.prototype here prototype is object
+//toh usmei hum ek new property define krte hai
+//Array.prototype.piyush = function(){ console.log('This is hacked by Piyush)}
+//now we can use this property on any array
+//like arr.piyush() //This is hacked by Piyush
+
+//so we have an example were we use piyush as a property in an array we define
+//const arr2 = [1,2,3,4,5]
+//arr2.piyush() //yeh kyu hua because arr2.__proto__ is Array.prototype
+//and Array.prototype has a property called piyush
+//and this is an example of inheritance in js
+//so when you create an array or an object, js automatically creates a prototype object for that
+//now go to -> fun.js for an example hitesh sir gave before all this now that wouuld make sense after learning this
