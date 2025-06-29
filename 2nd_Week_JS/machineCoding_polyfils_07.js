@@ -57,13 +57,6 @@ console.log(`Ret is`,ret);
 // Returns a new array , Each element ke upar iterate krta hai aur 
 //new array is basically jo bhi user ka function new return krta hai usse new array bana kr de deta hai
 
-const n = arr.map((e) => e * 2) // n here would be a completely new array where all elements would be double
-const n2 = arr.myMap((e) => e * 3) // n2 here would be a completely new array where all elements would be triple
-console.log(n);
-console.log(arr)
-console.log(n2);
-
-
 if(!Array.prototype.myMap){
     Array.prototype.myMap = function(userFn){
         const result = []
@@ -79,3 +72,34 @@ if(!Array.prototype.myMap){
 
     }
 }
+
+const n = arr.map((e) => e * 2) // n here would be a completely new array where all elements would be double
+const n2 = arr.myMap((e) => e * 3) // n2 here would be a completely new array where all elements would be triple
+console.log(n);
+console.log(arr)
+console.log(n2);
+
+
+
+
+//Filter - another example of polyfil
+//Signature - Return - new array | input : userFn,
+//agar user ka function true return krta hai toh current value ko new array mei include kr leta hai
+
+if(!Array.prototype.myFilter){
+    Array.prototype.myFilter = function(userFn){
+        const result = []
+        for(let i=0;i<this.length;i++){
+            if(userFn(this[i])){
+                result.push(this[i])
+            }
+        }
+        return result
+    }
+}
+
+const n3 = arr.filter((e) => e%2==0) // n3 here would be a completely new array where all elements would be even
+const n4 = arr.myFilter((e) => e%2==0) // n4 here would be a completely new array where all elements would be even
+console.log(n3)
+console.log(n4)
+
