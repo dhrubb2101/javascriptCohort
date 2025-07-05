@@ -39,9 +39,9 @@
 // }
 //we're basically creating a blueprint for the objects
 //and then we can create objects from that class
-const p1 = new Person() //creating an object from the Person class
-//p1 is an instance of the Person class
-const p2 = new Person()
+// const p1 = new Person() //creating an object from the Person class
+// //p1 is an instance of the Person class
+// const p2 = new Person()
 //Both p1 and p2 will have the same schema as the Person class
 //Basically that class is a blueprint for the objects
 //becomes the parent of the objects
@@ -54,3 +54,31 @@ const p2 = new Person()
 
 //p1 variable is stored inside the stack memory and it's value is a reference to the memory location in the heap memory
 //and it points to the memory location in the heap memory
+
+//Similarly p2 will point to a different address 
+//and p1 and p2 will not have any relation they both will have different memory locations
+
+const obj1 = {
+    fname : 'Piyush',
+    lname : 'Garg',
+    getFullname : function(){
+        
+        return `${this.fname} ${this.lname}`
+    }
+}
+
+
+const obj2 = {
+     fname : 'Anirudh',
+     lname : 'Jwala',
+     getFullname : function(){
+        return `${this.fname} ${this.lname}`
+    }
+}
+
+//DRY - Do not repeat yourself 
+//coding principle
+
+console.log(obj1.getFullname())
+console.log(obj2.getFullname())
+
