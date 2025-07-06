@@ -10,6 +10,9 @@ class Person {
     }
 }
 
+
+
+//DRY - Don't Repeat Yourself
 const p1 = new Person("Piyush", "Garg");
 const p2 = new Person("Akash", "Kadlag");
 

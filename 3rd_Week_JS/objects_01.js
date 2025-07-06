@@ -71,10 +71,17 @@ const obj1 = {
 const obj2 = {
      fname : 'Anirudh',
      lname : 'Jwala',
-     getFullname : function(){
-        return `${this.fname} ${this.lname}`
-    }
+    //  getFullname : function(){
+    //     return `${this.fname} ${this.lname}`
+    // }
 }
+
+obj2.__proto__ = obj1; //obj2 is inheriting properties from obj1
+//obj2 is a child object and obj1 is a parent object
+//obj2 can access the properties of obj1
+
+obj1.__proto__.__proto__ = Object.prototype; //obj1 is inheriting properties from Object.prototype
+
 
 //DRY - Do not repeat yourself 
 //coding principle
@@ -82,3 +89,23 @@ const obj2 = {
 console.log(obj1.getFullname())
 console.log(obj2.getFullname())
 
+//both have __proto__ property will be prpototype of the object the built in class
+//obj2.__proto__ = obj1; //obj2 is inheriting properties from obj1
+// and it is also changing the reference and updating the __proto__ property of obj2 and changing the reference to obj1
+
+console.log(obj2.toString())
+
+//This is called prototypal inheritance
+//and it is a way to create objects in javascript
+//and it is a way to create objects that can inherit properties from other objects
+
+//Why is everything is an object in JavaScript?
+//In JavaScript, almost everything is an object
+//This is because JavaScript is a prototype-based language
+//and it uses prototypes to create objects
+//Even primitive data types like strings, numbers, and booleans are objects in JavaScript
+//This means that they have properties and methods just like regular objects
+
+//object naam ki ek class hai
+//and it is the parent class of all the objects in JavaScript
+//that's why every object in JavaScript is an instance of the Object class
