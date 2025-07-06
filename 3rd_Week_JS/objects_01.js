@@ -109,3 +109,8 @@ console.log(obj2.toString())
 //object naam ki ek class hai
 //and it is the parent class of all the objects in JavaScript
 //that's why every object in JavaScript is an instance of the Object class
+
+//Jo aapke blueprint matlab class hai uske saath .prototype use hota hai 
+//and jo aapke objects hote hai unke saath .__proto__ use hota hai
+//and the prototype is a property of the class
+//and the __proto__ is a property of the object
