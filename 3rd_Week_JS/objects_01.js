@@ -114,3 +114,14 @@ console.log(obj2.toString())
 //and jo aapke objects hote hai unke saath .__proto__ use hota hai
 //and the prototype is a property of the class
 //and the __proto__ is a property of the object
+
+// Blueprint -> prototype
+// Object -> __proto__Blueprint ke prototype ka
+
+// for ex
+
+// const p1 = new Person()
+// p1.__proto__ = Person.prototype; //p1 is inheriting properties from Person class
+// //p1 is an instance of the Person class
+
+//what we are doing here is known as syntactic sugar 
