@@ -124,4 +124,18 @@ console.log(obj2.toString())
 // p1.__proto__ = Person.prototype; //p1 is inheriting properties from Person class
 // //p1 is an instance of the Person class
 
-//what we are doing here is known as syntactic sugar 
+//what we are doing here is known as syntactic sugar
+
+
+//Extends keyword is used to create a subclass of a class
+//and it is used to inherit properties from a class
+
+// class A {
+//     funInsideA(){}
+// }
+
+// class B extends A {
+//     funInsideB(){}
+// }
+
+//so using extend keyword we are inheriting properties of class A in class B
