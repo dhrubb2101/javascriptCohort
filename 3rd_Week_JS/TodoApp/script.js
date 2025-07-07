@@ -29,3 +29,5 @@ addBtn.addEventListener('click', () => {
     todoInput.value = '' //clears the input field after adding the todo items
 
 })  
+
+//Created a whole todo app where an input by user is entered and accepted by clicking on add button and then that input appears in a list in the container along with a delete button to delete the specific entry.
