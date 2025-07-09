@@ -1,17 +1,17 @@
-function add(x,y){
-    console.log(x+y) // 5,6
+// function add(x,y){
+//     console.log(x+y) // 5,6
 
-}
+// }
 
-function createUser(user){
-    console.log(user.firstName, user.lastName, user.emailAddress)
-}
-add(3,2)
-add(3,3)
+// function createUser(user){
+//     console.log(user.firstName, user.lastName, user.emailAddress)
+// }
+// add(3,2)
+// add(3,3)
 
-createUser({
-    firstName:'Piyush'
-})
+// createUser({
+//     firstName:'Piyush'
+// })
 
 //JavaScript - Looslely typed language
 //Losely matlab iske andar koi type nahi hai , yeh dynamically typed hai
@@ -35,8 +35,8 @@ createUser({
 
 //=====================================
 
-let x: number = 10 // Type 'number' is assignable to type 'number'.
-let fname: string | null = null
+// let x: number = 10 // Type 'number' is assignable to type 'number'.
+// let fname: string | null = 'piyush' // Type 'string | null' is assignable to type 'string | null'
 
 //so 'x' wont change its type to string or boolean
 // x = 'Piyush' // Error: Type 'string' is not assignable to type 'number'.
@@ -46,3 +46,16 @@ let fname: string | null = null
 //fname can be string or null
 //fname = 'Piyush' // This is fine, as 'fname' can be a
 
+// fname = null // This is also fine, as 'fname' can be null
+//fname = true // Error: Type 'boolean' is not assignable to type 'string | null'.
+
+//Typescript basically enforces the type of variable to be same as declared
+//this is all that is typescript rest is same as javascript
+
+//=====================================
+
+function add(x:number,y:number){
+    return x+y
+}
+//add('piyush',3)// Error: Argument of type 'string' is not assignable to parameter of type 'number'.
+let x:number = add(4,3)
