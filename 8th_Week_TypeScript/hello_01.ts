@@ -58,4 +58,9 @@ function add(x:number,y:number){
     return x+y
 }
 //add('piyush',3)// Error: Argument of type 'string' is not assignable to parameter of type 'number'.
+
+function createUser(){
+
+}
+
 let x:number = add(4,3)
