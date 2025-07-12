@@ -55,7 +55,7 @@
 //=====================================
 
 function add(x:number,y:number){
-    return x+y
+    return `x+y`
 }
 //add('piyush',3)// Error: Argument of type 'string' is not assignable to parameter of type 'number'.
 
@@ -63,4 +63,6 @@ function createUser(){
 
 }
 
-let x:number = add(4,3)
+let x = add(4,3)
+//x*300// Error: Type 'string' is not assignable to type 'number'.
+//x.toFixed(2) //not possible since x is a string
