@@ -1,0 +1,12 @@
+//express is application level coding so we do it in app folder 
+//in app folder we do application level coding
+
+//in index when you do http.createServer, you are creating a server
+//and when you listen to it on a port, you are starting the server
+//index is the entry point of the application
+//so we do all the server level coding in index
+//and this line interacts with the machine 
+
+//=========================================
+
+//To handle env variables, we create a env.ts file
