@@ -1,0 +1,22 @@
+//React is a front-end JavaScript library for building user interfaces or UI components.
+//It is maintained by Facebook and a community of individual developers and companies.
+
+//difference between framework and library
+//A framework is a collection of libraries that provides a structure for building applications, while a library is a collection of pre-written code that developers can use to optimize tasks.      
+//React is a library, not a framework. It is used for building user interfaces, but it does not provide a complete solution for building applications. It is often used in conjunction with other libraries and frameworks to build full-fledged applications.
+//React is often used with other libraries and frameworks to build full-fledged applications, such as Redux
+//A library does not have anay rules, it is just a collection of code that you can use to optimize tasks.
+//A framework has rules, it provides a structure for building applications, and it often comes with its own set of libraries and tools.
+//A library is unopinated, you can use it in any way you want, while a framework is opinionated, it has its own way of doing things.
+
+//react is more of a though process than a library
+//Two options that one there is js block of code in server and sent it to browser and then browser will get only a div with root id in it and then browser will run the js code and then it will render the UI
+//and then js will take care of the UI updates and add accordions, buttons etc
+//and another option is that we execute the js code in the server and then we send the html,css,js to the browser basically what is mentioned below
+//and the page that is rendered consisting of html, css and js will be shipped to the browser directly
+
+//so now we have two options to execute the js code 
+//one in client side 
+//one in server side
+//we have two teams here
+//
