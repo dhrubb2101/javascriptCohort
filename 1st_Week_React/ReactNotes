@@ -39,3 +39,27 @@
 
 //command to run index.html
 //npx serve
+
+//===================================================================
+//index.html
+////onclick event would work on client side not on server side because there's no
+//browser to capture the event
+
+//Okay so chapter two is done
+//we learn here what is actually react, we learnt how react works in classic way
+//React just gives an element namely createElement
+//it is basically a method through which we created elements
+//we are basically loading js and handling it in app.js
+
+// const container = document.getElementById('root')
+// const root = ReactDOM.createRoot(container)
+// root.render(React.createElement(App))
+
+//description of the above code
+//then we target the root in html
+//and then reactDOM takes over and create a virtual DOM ( it is just DOm which is controlled by our code)
+//and then we ask the root to render the everything in the virtual DOM
+
+//so now whenever react gets a new element it will compare the new element with the old element and update the virtual DOM
+//this is what as known react's diffing algorithm
+//and then it will update the real DOM with the new element
