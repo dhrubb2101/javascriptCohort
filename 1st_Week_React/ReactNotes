@@ -19,4 +19,23 @@
 //one in client side 
 //one in server side
 //we have two teams here
-//
+
+//so now we will use react in client side
+//because react was originally designed for client side rendering
+//our base desire to understand the thought process behind react
+//right now we will follow the option of shipping everything on browser and then rendering it.
+
+//mujhe browser local storage se baatt krne ke liye api deta hai 
+//like mei jb bhi kahi click krta hu toh voh click event ko notify krne ke liye api deta hai
+//voh api kya hai?
+//it is known as OnCLick event
+//api basically ek interface hai bas baat krne ke liye voh server se aaye hamesha jaruri nivoh
+
+//API can be anything function api, event api, browser api, etc
+
+//Chapter one - Done 
+
+//==================================================================
+
+//command to run index.html
+//npx serve
