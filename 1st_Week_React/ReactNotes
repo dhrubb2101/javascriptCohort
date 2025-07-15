@@ -73,6 +73,9 @@
 //We basically built a component called Chai which takes props and returns a div with h1 and p elements
 //it is a reusuable component now
 //Chapter three is done
+// we learnt about props in react_02
+//in src/App2.js we learnt how to use props in react
+//we created a component called Chai which takes props and returns a div with h1 and
 
 //===================================================================
 
