@@ -78,5 +78,22 @@
 //we created a component called Chai which takes props and returns a div with h1 and
 
 //===================================================================
+//we are using npx serve command to run the react app
+//we are using ReactDOM to render the app
 
-//In Chapter four we will learn about state
+//====================================================================
+//We used npm init -y command to create a package.json file in react_03
+//In Chapter four we will learn about 
+//Chapter four and five will be team focused
+//how to work in a team
+//for that we will use a tool called git
+//for that we use prettier 
+
+
+//command is npm install --save-dev prettier
+//prettier is a code formatter
+//it will format the code according to the rules we set in .prettierrc file
+
+//then use command touch .prettierrc
+//and then we will add the rules in .prettierrc file
+//I have added the rules in .prettierrc file
