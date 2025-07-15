@@ -97,3 +97,36 @@
 //then use command touch .prettierrc
 //and then we will add the rules in .prettierrc file
 //I have added the rules in .prettierrc file
+
+//we will also add a .prettierignore file to ignore some files and folders
+//we will ignore node_modules, dist, coverage folders
+//we will also add a script in package.json to format the code
+//we will use the command "prettier --write \"src/**/*.{js,jsx,json,ts,tsx,css,html}\"" to format the code
+
+//chapter four is done  
+//we learnt how to use prettier in react_03
+
+//====================================================================
+
+//Chapter five 
+
+//we install eslint 
+//command is npm install --save-dev eslint
+//we will use eslint to lint the code
+
+//then we run the command npx eslint --init
+//and then we will answer the questions to set up eslint
+//we will use the following options
+//1. To check syntax
+//2. JavaScript modules (import/export)
+//3. React  
+//4. JavaScript
+//5. Browser
+//6. Use a popular style guide
+
+//we added this in react_03 only
+
+//chapter five is done
+//we learnt how to use eslint in react_03
+
+//====================================================================
