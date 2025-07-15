@@ -63,3 +63,17 @@
 //so now whenever react gets a new element it will compare the new element with the old element and update the virtual DOM
 //this is what as known react's diffing algorithm
 //and then it will update the real DOM with the new element
+
+//===================================================================
+
+// props are properties which are object basically
+//props are this {}
+// in Chapter three we will learn about props
+// in App2.js we will learn how to use props in react
+//We basically built a component called Chai which takes props and returns a div with h1 and p elements
+//it is a reusuable component now
+//Chapter three is done
+
+//===================================================================
+
+//In Chapter four we will learn about state
