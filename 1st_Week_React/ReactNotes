@@ -130,3 +130,29 @@
 //we learnt how to use eslint in react_03
 
 //====================================================================
+
+//Chapter six
+//we used babel to 
+
+// In your HTML:
+
+// <script type="text/babel">
+//   // React JSX code here
+// </script>
+// You're writing JSX inside a <script> tag. But browsers don’t understand JSX directly. That’s where Babel comes in.
+
+//  Babel’s job:
+// Transpile JSX into regular JavaScript (using React.createElement) that browsers can understand.
+
+// Example:
+
+// <h1>Chai</h1>
+
+// Babel turns this into:
+
+// React.createElement("h1", {}, "Chai")
+
+// So, Babel is like a translator that converts JSX into JavaScript that browsers can understand.
+//That's what we did in react_04 , chapter six is done
+
+//====================================================================
