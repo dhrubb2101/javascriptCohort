@@ -173,4 +173,6 @@
 //====================================================================
 
 //Chapter seven
-
+//now in react_05 
+//I want to give control to react of index.html to index.js
+//here the work used to do via CDN we are doing it now via npm 
