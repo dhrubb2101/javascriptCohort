@@ -176,3 +176,64 @@
 //now in react_05 
 //I want to give control to react of index.html to index.js
 //here the work used to do via CDN we are doing it now via npm 
+//now what we did in index.js wouldn't work in index.html
+//because we are using ReactDOM.createRoot which is not available in the browser
+//because we are using ReactDOM from npm, 
+//so we need to use a bundler to bundle the code and make it work in the browser
+
+//Your setup won’t work directly in the browser because:
+//Problem:
+//You're importing modules (import React from "react" etc.) in index.js, but the browser doesn't understand ES Modules or JSX out of the box.
+
+//Solution:
+// Option 2: Use ES Modules + Bundler (Recommended)
+//If you're using import/export, you must use a bundler like:
+// Vite (recommended for modern apps)
+// create-react-app
+// Webpack (more complex)
+// These tools:
+// Transpile JSX to JS
+// Bundle your code
+// Serve it in a format the browser understands
+
+//what we want to do here is use a modern build tool
+//so that we can use jsx and ES module and also our able to use modern JavaScript syntax
+//one is esbuild an extremely fast bundler
+//in development we use esbuild and in production we use rollup
+
+//we also need hot module replacement (HMR) for development
+//HMR allows us to see changes in the browser without refreshing the page
+
+//Alternatively for vite we can use webpack or parcel or snowpack or rspack
+
+//command to install vite
+//npm install --save-dev vite @vitejs/plugin-react
+
+//after installing vite we need to create a vite.config.js file
+//this file will contain the configuration for vite
+//we copy the code from previous vite projects , I have mentioned the code here in the vite.config.js file
+//after you install vite , you need to fulfil some expectations
+//you need to create a src folder and inside that folder add
+//app.js and index.js file
+
+//now you can rename the app.js file to App.jsx and index.js file to index.jsx
+//in javascript we are using .jsx and this is vite configuration 
+//if vite allowed all of it to be run in js then it would be in js extension
+//why .jsx? because we are using jsx syntax in the file
+///what's it relation with vite?
+//vite is a build tool that allows us to use modern JavaScript syntax and JSX syntax
+
+//Now to run the project we go to package.json file and add a script
+// "scripts": {
+//     "dev": "vite"
+//   },
+
+//then go for command npm run dev
+//this will start the vite server and open the app in the browser
+//also import react in App.jsx file
+//and import ReactDOM from "react-dom/client" in App.jsx file
+
+//chapter seven is done
+
+//=====================================================================
+
