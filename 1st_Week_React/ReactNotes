@@ -237,3 +237,49 @@
 
 //=====================================================================
 
+//Chapter eight starts
+//we know DOM now but we don't know how to update DOM in react
+//how to update DOM in react
+//react is a engine and it tells how to update everything in DOM 
+//it tells a way and here we are going to learn that but before that we will learn 
+
+//how to take a web request 
+//web request means API calls 
+//there are two types of API calls
+//one is development API calls
+//one is production API calls
+//one the server can be with me 
+//or server can be with aws or digital ocean or any other cloud provider
+
+//CORS gets fixed in backend
+//CORS is a security feature implemented by web browsers to prevent malicious websites from making requests to a different domain than the one that served the original web page.
+//It restricts web pages from making requests to a different domain than the one that served the
+//browser implements CORS to protect users from cross-site request forgery (CSRF) attacks and other security vulnerabilities.
+
+//WE GET cors ERRORS when we do development
+
+//to avoid CORS we use Proxy works only in local development
+//we send all requests at /api
+//by proxy you can define the target of any request which goes to /api
+//ex target : "http://localhost:8000"
+//changeOrigin: true
+//how you use proxy is different in create-react-app and vite and etc
+//api goes like this 
+//http://localhost:8000/api/hello
+//but hoga kya ki jb mei yeh request bhejunga on http://localhost:5173/api/hello usse proxy rokega and kahega aapka origin yeh nahi hai yeh hai jo target set kia hoga http://localhost:8000 hogi toh cors errors nahi aayegi
+//toh usse kya hoga server ko lagega usne he request bheji hai
+
+//for proxy in vite we will add the following code in vite.config.js file
+// server: {
+//         proxy: {
+//             '/api': {
+//                 target: 'https://localhost:3000', // Adjust the target URL as needed
+//                 changeOrigin: true,
+//             },
+//         },
+//     },
+
+//now we have a webpage and a server and 
+//we want to send a request from the webpage to the server and get a response
+//and whatever value we get from the server we want to update the data on the webpage
+//if the data was empty before and after the request
