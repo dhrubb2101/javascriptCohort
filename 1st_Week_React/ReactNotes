@@ -318,3 +318,11 @@
 //const [message, setMessage] = useState("Loading")
 
 //basically here what we get is a variable and a method to change the variable
+//hamesha value issi tareeke se ayengi
+//because react reads it like this and react controls the DOM
+//agr koi bhi aisi value hai jo aapko change krni hai kahi bhi toh aap issi tareeke se he le kr aaoge
+//in the way of  const [variable, setVariable] = useState(initialValue)
+
+//here we are not learning about reat 
+//this is all about how your webpage works
+//it is your first first interactive paint
