@@ -326,3 +326,52 @@
 //here we are not learning about reat 
 //this is all about how your webpage works
 //it is your first first interactive paint
+
+//Now when a page loads , it does so in many states
+//initially page is about to be loaded - 1st state
+// then page is loading - 2nd state
+// then page is loaded - 3rd state
+// page is removed from the DOM 
+//this is lifecycle for every interactive element in react
+
+//===============================
+
+//now we are going to use useEffect
+//useEffect is a hook that allows you to perform side effects in function components
+//it was to replace the lifecycle methods in class components
+//componentDidMount, ComponentDidUnmount
+//in UseEffect we first mount the component and then unmount the component
+//mount the component means like koi function call kr rhe ho ya api call kr rhe ho , koi button click kr rhe ho this happens in UseEfect
+//useEffect( () => {})
+//unmount the component means like going to a some other page ya uska kaam khatam voh page se he hatt gaya hai - that happens in return in useEffect and it is called the cleanup function
+//useEffect(() => {
+
+ //return()
+ 
+
+//},[dependencies])
+
+//and another thing they also included a dependency array at last 
+//ki ho sakta hai yeh method aapko baar baar call krana ho 
+//for some reason like your variable message is changing
+//or some other thing changing on your webpage 
+//toh aap yaha pr uska naam likh do aur voh iss array ke andar ho toh voh isse dubaara run kr dega
+//because ui tohpura react ke control mei hai
+//react ne DOM toh le rkha hai
+//toh usse pura pata hai kab kya change ho raha hai
+//toh agr kahi bhi webpage pr kuch bhi change hota hai and usse array mei likh do toh voh usse dubaara run kr dega
+//toh pura useEffect function dubaara re run ho jayega
+//and if you don't want to run it again then you can leave the array empty
+
+//this UseEffect runs always first when the page is loaded 
+//Always
+//and we can write plenty of useEffects in a single component
+
+
+//useEffect(() => {}
+
+//  return() //this is componentDidUnMount
+
+//,[]) //this whole is componentDidMount
+
+//[] = this is updation
