@@ -12,6 +12,11 @@ export function App(){
         .catch((error) => setMessage("Error fetching data"))
         //there's no server set up here, so this will not work
     }, [])
+
+    // setMessage("Loaded")
+    setMessage(prev => prev + 1) //this is how you update the state in React, prev is the previous state
+    //you should never code like above line also 
+    
     return (
         <div>
             <h1>welcome to chaicode </h1>

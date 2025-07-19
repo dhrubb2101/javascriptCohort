@@ -377,3 +377,42 @@
 //[] = this is updation
 
 //chapter eight is still ongoing in react_06 covering the useEffect and useState
+
+//when using useState in chaiorder.jsx
+//in line 10 we are using setCount to update the state
+//two ways setCount can be represented
+//            <button onClick={() => setCount(prev => prev + 1)}>Serve Chai</button>
+// because prev is the previous state value and we are giving parameters here to setCount function that's why it is represented like this here
+// or another way can be 
+//            <button onClick={count}>Serve Chai</button>
+
+
+
+// or another we could do this create our own method and then call it 
+//basically the above method without the parameter one 
+
+//this is the better method to use useState as we create our custom method to update the state
+// import { useState } from "react"
+
+// export function ChaiCounter(){
+//     const [count, setCount] = useState(0)
+
+//     const serveChai = () => {
+//         setCount(prev => prev + 1)
+//     }
+
+//     return (
+//         <div>
+//             <h2>Chai Counter</h2>
+//             <p> You have served {count} cups of Chai</p>
+//             <button onClick={serveChai}>Serve Chai</button>
+//         </div>
+//     )
+// }
+// how smarty useState was designed was whenver we use useState it awlways works like this 
+// first you need a variable and then a mechanism to update the variable
+//and that is what  is being done here in app.jsx
+
+//======================================================================
+
+//now let's do one more thing of handling of the arrays in this
