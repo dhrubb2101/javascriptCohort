@@ -416,3 +416,12 @@
 //======================================================================
 
 //now let's do one more thing of handling of the arrays in this
+//you are able to now thing when the page first gets loaded you use a useEffect 
+//and it sends a request to the server hence the webpage sends a request to the server
+//basically the example we're taking is that we have a leetlab with a single dropdown where we select languages
+//so that sends a request to the serber asking what languages you support and then server endpoint which then send the 
+// number of languages supported  by use of Ids like specifiying the id  for all the languages supported
+//and then server repsonds with the data in the form of an array
+
+//Now if we are able to know how too handle the array in the react 
+//our work will be a lot easier
