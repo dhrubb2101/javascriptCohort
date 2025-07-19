@@ -283,3 +283,38 @@
 //we want to send a request from the webpage to the server and get a response
 //and whatever value we get from the server we want to update the data on the webpage
 //if the data was empty before and after the request
+//there's a patttern to do this
+//it doesn't happen like that you mkae a web request, declare a variable and ehrnever the value came in the variable and automatically react changes it it
+//it doesn't happen like that
+
+//till right now in fetch request what we were doing was 
+//we define a variable named message and message = hitesh initially
+//then we originate a fetch request
+//and once fetch request is done we update the message variable
+//say message = newData 
+//this is how javascript works
+
+//but in react we don't do that
+//to do that we read hooks for that
+
+//to make your life easier in react 
+//consider hooks -> functions
+//consider hooks as functions
+//if a hook is a function then it can return object, string, array,boolean 
+//in array we can return like below examples
+//[1,"1"],[variable,function()]
+
+
+//now what we will do is import two functions 
+//useState and useEffect from react
+//to use it we do it like this giving it some default value
+//ex useState("Loading")
+//and default can be anything another funtion even.
+//and this function is predefined in react
+//since this function executed it is destructured and return an array
+//the first element is the current state value
+//the second element is a function that updates the state value
+//we basically desstructure the function like this
+//const [message, setMessage] = useState("Loading")
+
+//basically here what we get is a variable and a method to change the variable
