@@ -2,9 +2,11 @@ import React from "react"
 import { useState } from "react"
 import { set } from "zod"
 import { ChaiMenu } from "./AllChai"
+import { useSpecialChai } from "./hooks/useSpecialChai.js"
 
 export function App(){
     const [message, setMessage] = useState("Loading...") //const[var,fn] = useState(initialValue)
+    const { chai, loading, error } = useSpecialChai() //this is a custom hook that fetches special chai data
 
     useEffect(() => {
         fetch(`http://localhost:3000/api`)
@@ -24,6 +26,7 @@ export function App(){
             <p>Serving hot chai with react</p>
             <h2>{message}</h2>
             <ChaiMenu />
+            <h3>{chai.name}</h3>
         </div>    
     )
 }

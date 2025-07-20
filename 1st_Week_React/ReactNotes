@@ -484,4 +484,6 @@
 //create a new folder inside src folder named hooks
 //create another file inside hooks folder named useSpecialChai.js
 //hooks doesn't return jsx 
-//
+//now since you know how to construct a custom hook , it's time to use it
+//consider it a function which needs to return three values
+//import the hook in App.jsx file

@@ -7,7 +7,7 @@ export function useSpecialChai(){
 
 
     useEffect(() => {
-        fetch("api/special-chai")
+        fetch("/api/special-chai")
         .then((res) => {
             if(!res.ok) throw new Error("Failed to fetch Special Chai")
                 return res.json()
@@ -22,5 +22,8 @@ export function useSpecialChai(){
         })
     }, [])
 
+    if(loading) return <h2>loading...</h2>
+    if(error) return <h2>Error: {error}</h2>
+    
     return { chai, loading, error }
 }
