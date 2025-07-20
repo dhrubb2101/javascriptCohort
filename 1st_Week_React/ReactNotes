@@ -470,3 +470,18 @@
 //key is missing => remove the DOM node
 
 //if keys are not present then issues will come related to re-render and re-ordering of the elements
+
+//Chapter eight is finally done
+
+//======================================================================================================
+
+//Chapter nine starts
+
+//now we will learn about creating our own custom hooks
+
+//I repeat Hook is just a function
+
+//create a new folder inside src folder named hooks
+//create another file inside hooks folder named useSpecialChai.js
+//hooks doesn't return jsx 
+//
