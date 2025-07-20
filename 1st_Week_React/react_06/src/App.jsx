@@ -1,6 +1,7 @@
 import React from "react"
 import { useState } from "react"
 import { set } from "zod"
+import { ChaiMenu } from "./AllChai"
 
 export function App(){
     const [message, setMessage] = useState("Loading...") //const[var,fn] = useState(initialValue)
@@ -22,6 +23,7 @@ export function App(){
             <h1>welcome to chaicode </h1>
             <p>Serving hot chai with react</p>
             <h2>{message}</h2>
+            <ChaiMenu />
         </div>    
     )
 }

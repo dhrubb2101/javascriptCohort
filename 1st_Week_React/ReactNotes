@@ -425,3 +425,48 @@
 
 //Now if we are able to know how too handle the array in the react 
 //our work will be a lot easier
+
+//=====================================================================
+
+//Now creating a component named AllChai.jsx
+
+//Now are you able to visualize how useEffect and useState will come into picture
+//Say when a page is loaded you send a fetch request to the server by using useEffect and that
+//what ever values we get in return we store it's state and use those states using useState
+
+//======================================================================
+
+//Problem - 1
+//To start a react file you should first export a function
+//Problem - 2 //where to store the data
+//so we create a variable and initialize it with an empty array
+//you can initialize it with any value you want like undefined or null but what is better an empty array right
+
+//if you want to write javascript in jsx file you do it within this { }
+//Also remember this if dependency array is empty then it will run only once when the component is mounted or the page is loaded
+//======================================================================
+
+//Now see to get AllChai component loaded, you call it's tag in App.jsx file
+
+//======================================================================
+
+//There's no guarantee that among the data uploaded are the values unique, visually you can see but the react doesn't know that
+//so we need to make sure that the data is unique
+//Also remember that the key are entered in the most outermost element of the within the loop
+//ex-  <li key={chai.name} >{chai.name}</li>
+
+//======================================================================
+
+//Learn this you will useEffect majorly to fetching of data
+
+//======================================================================
+
+//keys in react are required are used to determine which items have changed, are added, or are removed.
+//or they need to re-rendered or not
+//keys help react keep track of elements in a list and optimize rendering performance.
+
+//key is same => reuse DOM node
+//key is new => add a new DOM node
+//key is missing => remove the DOM node
+
+//if keys are not present then issues will come related to re-render and re-ordering of the elements
