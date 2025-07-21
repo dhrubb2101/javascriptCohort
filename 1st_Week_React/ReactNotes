@@ -487,3 +487,38 @@
 //now since you know how to construct a custom hook , it's time to use it
 //consider it a function which needs to return three values
 //import the hook in App.jsx file
+
+
+//chapter nine is done
+
+//======================================================================================================
+
+//Moving to Chapter ten of react (in react_06)
+//It's the final Chapter 
+//creating another custom hook called useContactForm.js
+
+//=======================================================================================================
+
+//in useSpecialChai.js file
+//in useState we have defined three variables chai, loading and error
+//initially ignore useEffect completely
+//and consider that code runs what will be the value of chai, it will be null right and loading will be true
+// because the page will be loading
+// and error will be false
+// so in 1sts render cycle chai will be null, loading will be true and error will be false
+//and then we will use useEffect to fetch the data from the server
+// then fetch will take it's own time to complete say 1 second
+//then if you look at line 17 in useSpecialChai.js file
+//it calls setChai and signal with it that there is some kind of data that we have received some kin of data update
+//therefore the state will re-render
+//and hence the chai variable on line 4 see some state update hence the whole hook will re-render
+//hence the value of chai will be updated to the data that we have received from the server
+//and hence the loading will be false and error will be false
+//and hence uss render cycle ke baad har render cycle mei chai mei data ayega
+
+//Chapter 10 is done
+//========================================================================================================
+
+//React ka try catch hota hai error boundary
+//Error boundary is a React component that catches JavaScript errors anywhere in its child component tree, logs those errors, and displays a fallback UI instead of crashing the whole component tree.
+//
