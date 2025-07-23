@@ -9,7 +9,7 @@
 //A framework has rules, it provides a structure for building applications, and it often comes with its own set of libraries and tools.
 //A library is unopinated, you can use it in any way you want, while a framework is opinionated, it has its own way of doing things.
 
-//react is more of a though process than a library
+//react is more of a thought process than a library
 //Two options that one there is js block of code in server and sent it to browser and then browser will get only a div with root id in it and then browser will run the js code and then it will render the UI
 //and then js will take care of the UI updates and add accordions, buttons etc
 //and another option is that we execute the js code in the server and then we send the html,css,js to the browser basically what is mentioned below
@@ -49,6 +49,17 @@
 //we learn here what is actually react, we learnt how react works in classic way
 //React just gives an element namely createElement
 //it is basically a method through which we created elements
+
+// In React.createElement, the format is:
+
+
+// React.createElement(
+//   type,        // string or component (e.g., "div", MyComponent)
+//   props,       // object with props (e.g., { className: "box" }) or null
+//   children     // optional, can be a string, React element, or array of elements
+// )
+
+
 //we are basically loading js and handling it in app.js
 
 // const container = document.getElementById('root')
