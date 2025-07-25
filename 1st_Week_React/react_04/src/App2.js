@@ -12,7 +12,7 @@ const Chai = (props) => {
 
 //We basically built a component called Chai which takes props and returns a div with h1 and p elements
 const App = () => {
-    return React.createElement( //this is 
+    return React.createElement( //this is how we create elements in React
         "div",
         {},
         [
