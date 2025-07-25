@@ -296,7 +296,7 @@
 //and whatever value we get from the server we want to update the data on the webpage
 //if the data was empty before and after the request
 //there's a patttern to do this
-//it doesn't happen like that you mkae a web request, declare a variable and ehrnever the value came in the variable and automatically react changes it it
+//it doesn't happen like that you make a web request, declare a variable and whenever the value came in the variable and automatically react changes it it
 //it doesn't happen like that
 
 //till right now in fetch request what we were doing was 
