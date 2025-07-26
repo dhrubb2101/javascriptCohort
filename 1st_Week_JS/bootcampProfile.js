@@ -5,8 +5,10 @@
 let name = "Rohit"
 //Number - 25, 25.9
 let age = 25.5;
-//boolean - true or false
+
 let isPaid = true;
+//boolean - true or false
+
 
 let favoriteClass = null
 //null means nothingness, it is empty

@@ -17,3 +17,4 @@ if(numberofGuest <= 2){
 }
 
 console.log(pizzaSize)
+//This is a simple pizza size calculator based on the number of guestss
