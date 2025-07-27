@@ -55,7 +55,7 @@ console.log(p1); // Piyush
 //so where you need memory that can grow dynamically, we use heap memory
 //in a heap, you can store anything and also remove anything or return anything
 // so in this case, 
-//const fname = 'Piyush
+//const fname = 'Piyush'
 //const p2 = fname
 //both gets stored in stack memory, '=' sign does is copy whatever is on RHS and store it in the LHS
 //now what happens we put the object in the heap memory and then put it's memory location in the stack memory
@@ -97,7 +97,7 @@ console.log(p1); // Piyush
 
 //creating a new object in heap memory
 
-//now if we want to capture the original objbect and not the reference to it, we can use the spread operator or Object.assign() method
+//now if we want to capture the original object and not the reference to it, we can use the spread operator or Object.assign() method
 //we want to copy an actual object and not the reference to it
 //sp p1 is an address 
 //and we create a new variable pr and store an object in it which will exactly be the same object but with a different memory location 

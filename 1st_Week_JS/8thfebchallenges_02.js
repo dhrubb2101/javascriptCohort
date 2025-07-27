@@ -14,7 +14,7 @@ if(index > -1) {
 // teas.pop("Oolong")
 // console.log(teas);
 
-//Problem: Filter the list to only include teas that are caffeinated
+//Problem: Filter the list to only include teas that are caffeinated //doubt
 teas.filter(tea => tea !== "Masala" && tea !== "Ginger" && tea !== "Black" && tea !== "Green" && tea !== "White")
 
 //Problem: Sort the list of teas in alphabetical order 
