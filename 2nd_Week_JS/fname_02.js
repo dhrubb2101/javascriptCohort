@@ -112,3 +112,5 @@ console.log(p1); // Piyush
 //Deep Copy means that all the properties are copied and the nested objects are also copied to a new memory location in heap memory
 //if we convert the object to a string using JSON.stringify() and then parse it back to an object using JSON.parse(), it will create a deep copy of the object
 //Deep copy is passed by value
+
+//saw the video again
