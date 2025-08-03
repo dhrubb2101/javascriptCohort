@@ -11,7 +11,7 @@ const tea = {
 tea.chai()
 
 const myTeas = ["lemon tea","orange tea"]
-myTeas.chai()
+myTeas.chai() 
 obj.chai()
 
 //so here we defined a custom property chai on the prototype of object
