@@ -89,7 +89,7 @@ obj1.__proto__.__proto__ = Object.prototype; //obj1 is inheriting properties fro
 console.log(obj1.getFullname())
 console.log(obj2.getFullname())
 
-//both have __proto__ property will be prpototype of the object the built in class
+//both have __proto__ property will be prototype of the object the built in class
 //obj2.__proto__ = obj1; //obj2 is inheriting properties from obj1
 // and it is also changing the reference and updating the __proto__ property of obj2 and changing the reference to obj1
 
@@ -99,7 +99,7 @@ console.log(obj2.toString())
 //and it is a way to create objects in javascript
 //and it is a way to create objects that can inherit properties from other objects
 
-//Why is everything is an object in JavaScript?
+//Why is everything an object in JavaScript?
 //In JavaScript, almost everything is an object
 //This is because JavaScript is a prototype-based language
 //and it uses prototypes to create objects
