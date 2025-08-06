@@ -139,3 +139,5 @@ console.log(obj2.toString())
 // }
 
 //so using extend keyword we are inheriting properties of class A in class B
+
+//
