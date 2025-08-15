@@ -44,3 +44,74 @@ let symbolVar = Symbol() //Symbol is a primitive datatype
 console.log(typeof nothing); // Output: object (this is a quirk in JavaScript)
 console.log(typeof undefinedVar)
 
+
+//=======================================================
+
+//object datatype
+
+let person = {
+    name: "hitesh",
+    age: 19,
+    isStudent:true
+}
+
+//========================================================
+
+//page,forms,session
+//page - is the current page you are on (sennding the page to user)
+//forms - is the data you are submitting
+//session - user logged in or not (and it's authority)
+
+//========================================================
+
+//you'll always be recieving data in js
+//now you hsould know the convert the data  
+//as data can be sent in different format 
+//for ex:
+
+let num = "42"; // string
+//zyadatar data is sent in string format when travelling the web
+//toh humme usse convert krne ki techniques aani chahiye and sab techniques ke pros and cons hote hain
+//and uske expectedResult bhi pata hone chahiye
+let convertedNum = Number(num); // Convert string to number
+
+console.log(convertedNum); // Output: 42 (number type)
+console.log(typeof convertedNum); // Output: number
+
+//=======================================================
+
+//if 
+//this is the standard way to convert string to number
+
+let num1 = "42a"
+let convertedNum1 = Number(num1)
+//this will give NaN (Not a Number) because "42a" cannot be converted to a number
+//it is a response and not a datatype
+//jb bhi mei aage badhunga, mei conditionally check krke aage badhunga ki meine jo conversion kia hai ki actually mei uska type number hai ya not a number hai
+
+console.log(convertedNum1); // Output: NaN
+console.log(typeof convertedNum1); // Output: number (but it is NaN)
+
+//=======================================================
+//another method to do the conversion 
+let num2 = "42a"
+let convertedNum2 = +num2
+
+console.log(convertedNum2); // Output: NaN
+console.log(typeof convertedNum2); // Output: number (but it is NaN)
+
+//=======================================================
+
+let num3 ="42"
+let convertedNum3 = +num3
+
+console.log(convertedNum3); // Output: 42
+console.log(typeof convertedNum3); // Output: number    
+
+//=======================================================
+
+let num4 = "a42a" 
+let convertedNum4 = parseInt(num4)
+
+console.log(convertedNum4); // Output: 42
+console.log(typeof convertedNum4); // Output: number
