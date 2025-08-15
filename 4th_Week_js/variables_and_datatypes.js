@@ -208,3 +208,24 @@ console.log(x >= y); // false (Greater than or equal to)
 console.log(Math.max(5, 10)); // Output: 10
 console.log(Math.min(5,10)); // Output: 5
 console.log(Math.random()); // Output: A random number between 0 and 1
+
+console.log(Math.floor(Math.random() * 10) )
+
+
+//=========================================================
+
+//Strings
+
+let firstName = "Hitesh"
+let lastName = "Chaudhary"
+let fullName = firstName + " " + lastName
+
+console.log(fullName); // Output: "Hitesh Chaudhary"    
+
+//======
+
+let message = "Hello World"
+
+console.log(message.length); // Output: 11 (length of the string)
+console.log(message.toUpperCase()); // Output: "HELLO WORLD" (convert to uppercase)
+console.log(message.toLowerCase()); // Output: "hello world" (convert to lowercase)
