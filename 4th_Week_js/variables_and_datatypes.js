@@ -115,3 +115,42 @@ let convertedNum4 = parseInt(num4)
 
 console.log(convertedNum4); // Output: 42
 console.log(typeof convertedNum4); // Output: number
+
+// ChatGPT said:
+// Here’s what’s happening in your two cases — it’s all about where the number starts in the string and how parseInt() works:
+
+// Case 1:
+
+// let num4 = "a42a";
+// let convertedNum4 = parseInt(num4);
+// parseInt() starts reading from the first character.
+
+// If the first character is not a number (or +/-), parsing stops immediately and returns NaN.
+// "a42a" starts with a, so it can’t even begin parsing a number.
+
+
+// convertedNum4 // NaN
+// typeof convertedNum4 // "number"
+
+
+// Case 2:
+
+// let num4 = "42a";
+// let convertedNum4 = parseInt(num4);
+// Here, the string starts with 4, so parseInt() begins reading and keeps going until it hits a non-digit (a).
+
+// It successfully parses "42" and ignores the rest.
+
+// convertedNum4 // 42
+// typeof convertedNum4 // "number"
+
+
+//  Rule of thumb for parseInt()
+
+// If the string starts with digits → parse until a non-digit is hit.
+// If the string starts with a non-digit → return NaN.
+// If you want to fail completely when extra characters are present, use Number() instead of parseInt().
+//=======================================================
+
+//chaicode.com/event/1234543abbbcd2313
+
