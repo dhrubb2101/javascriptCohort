@@ -161,3 +161,19 @@ let convertedString = String(str)
 
 console.log(convertedString); // Output: "123"
 console.log(typeof convertedString); // Output: string
+
+//=======================================================
+
+//Operations
+
+let a = 10
+let b = 3 
+
+let sum =  a + b // Addition
+let difference = a - b // Subtraction       
+let product = a * b // Multiplication
+let quotient = a / b // Division
+let remainder = a % b // Modulus (Remainder)
+let power = a ** b // Exponentiation (a raised to the power of b)
+
+//========================================================
