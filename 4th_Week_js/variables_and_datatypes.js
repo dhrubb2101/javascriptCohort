@@ -154,3 +154,10 @@ console.log(typeof convertedNum4); // Output: number
 
 //chaicode.com/event/1234543abbbcd2313
 
+//=======================================================
+
+let str = 123
+let convertedString = String(str)
+
+console.log(convertedString); // Output: "123"
+console.log(typeof convertedString); // Output: string
