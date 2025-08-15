@@ -37,7 +37,7 @@ const pi = 3.14
 let number = 42 //Number is a primitive datatype
 let text = "Hello, World!" //String is a primitive datatype
 let isTrue = true //Boolean is a primitive datatype
-let nothing = null //Null is a primitive datatype (output will be object due to JavaScript's type coercion)
+let nothing = null //Null is a primitive datatype (output will be object due to JavaScript's type coercion)(this is an exception). it should have been null datataype but it is defined as object datataype.
 let undefinedVar = undefined //undefined is the primitive datatype
 let symbolVar = Symbol() //Symbol is a primitive datatype
 
