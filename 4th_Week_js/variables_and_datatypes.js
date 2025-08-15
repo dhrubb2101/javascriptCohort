@@ -192,3 +192,19 @@ console.log(x >= y); // false (Greater than or equal to)
 
 //========================================================
 
+//every language has it's libraries and modules
+//Js has it's own libraries and modules
+//for ex
+//Math
+//DateTime
+
+//Nodejs has it's own libraries and modules
+//for Ex
+//Crypto
+//http
+
+//========================================================
+
+console.log(Math.max(5, 10)); // Output: 10
+console.log(Math.min(5,10)); // Output: 5
+console.log(Math.random()); // Output: A random number between 0 and 1
