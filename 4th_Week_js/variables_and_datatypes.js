@@ -177,3 +177,18 @@ let remainder = a % b // Modulus (Remainder)
 let power = a ** b // Exponentiation (a raised to the power of b)
 
 //========================================================
+
+//comparision operators
+
+let x = 5
+let y = 10 
+
+console.log(x == y); // false (Equality) //checks only the data value and not the type
+console.log(x === y); // false (Strict Equality) //checks both data value and type
+console.log(x > y); // false (Greater than)
+console.log(x < y); // true (Less than)
+console.log(x <= y); // true (Less than or equal to)
+console.log(x >= y); // false (Greater than or equal to)
+
+//========================================================
+
