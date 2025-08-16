@@ -229,3 +229,46 @@ let message = "Hello World"
 console.log(message.length); // Output: 11 (length of the string)
 console.log(message.toUpperCase()); // Output: "HELLO WORLD" (convert to uppercase)
 console.log(message.toLowerCase()); // Output: "hello world" (convert to lowercase)
+console.log(message.indexOf("World")); // Output: 6 (index of "World" in the string)
+console.log(message.slice(0, 5))
+
+//================================================
+
+//Template literals
+
+let myName = "Hitesh"
+
+let greeting = `Hello ${myName}, from chaicode`
+
+//within dollar sign and curly braces, you can put any expression
+
+//================================================
+
+//example of template literals with expressions
+
+// let myName = "Dhrubb";
+
+// //  variable
+// console.log(`Hello ${myName}, from chaicode`);
+
+// //  arithmetic
+// console.log(`2 + 3 = ${2 + 3}`);
+
+// // function call
+// function greet(name) {
+//   return "Mr. " + name;
+// }
+// console.log(`Hello ${greet(myName)}`);
+
+// // conditional (ternary)
+// console.log(`You are ${myName.length > 5 ? "cool" : "short-named"}`);
+
+// //  object property
+// let user = { age: 25 };
+// console.log(`Age: ${user.age}`);
+
+// // method calls
+// console.log(`Uppercase: ${myName.toUpperCase()}`);
+
+//================================================
+
