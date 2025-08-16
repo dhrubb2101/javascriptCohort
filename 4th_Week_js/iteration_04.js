@@ -62,4 +62,61 @@ let mostActiveUser = userActivity.reduce((maxUser, user) =>
     user.activityCount > maxUser.activityCount ? user : maxUser
 );
 
-console.log(mostActiveUser); // Output
+// console.log(mostActiveUser); // Output
+
+//=========================================================
+
+let expenses = [
+    {description: "Groceries", amount: 50, category: "Food"},
+    {description: "Electricity Bill", amount: 100, category: "Utilities"},
+    {description: "Dinner", amount: 30, category: "Food"},
+    {description: "Internet Bill", amount: 50, category: "Utilities"}
+]
+
+let expenseReport = expenses.reduce((report,expense)=>{
+   report[expense.category] += expense.amount
+   //report[expense.category] = (report[expense.category] || 0) + expense.amount; //this is dynamic and above is static
+   
+   return report
+},{Food: 0, Utilities: 0});
+
+console.log("Expense Report:", expenseReport);
+
+
+
+//==========================================================
+
+let tasks = [
+    {description: "Write Report", completed: false, priority: 2},
+    {description: "Send email", completed: true, priority: 3},
+    {description: "Prepare Presentation", completed: false, priority: 3},
+]
+
+let pendingSortedTasks = tasks
+ .filter((task) => !task.completed)
+ .sort((a,b) => a.priority - b.priority)
+
+console.log(pendingSortedTasks); // Output: [{description: "Write Report", completed: false, priority: 2}, {description: "Prepare Presentation", completed: false, priority: 3}]
+
+//==========================================================
+
+let movieRatings = [
+    {title: "Movie A", ratings: [4,5,3] },
+    {title: "Movie B", ratings: [5,4,4] },
+    {title: "Movie C", ratings: [3,2,4] },
+]
+
+let averageRatings = movieRatings.map((movie) => {
+    let total = movie.ratings.reduce((sum, rating) => sum + rating, 0)
+    let average = total / movie.ratings.length
+    // movie.ratings = average // updating the ratings to average
+    // return movie //Piyush sir added a challenge
+    return {title: movie.title, averageRatings: average.toFixed(2)}
+})
+
+//=========================================================
+
+//tried different challenges with reduce method . Practice it. 
+//==========================================================
+
+    
