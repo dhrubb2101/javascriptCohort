@@ -109,3 +109,11 @@ checktruthyvalue(NaN); // Output: "Falsy"
 checktruthyvalue([1,2,3]); // Output: "Truthy" (non-empty string is truthy)
 
 //========================================================
+
+function login(username,password){
+    if(username === 'admin' && (password === '1234' || loginIp === '126')){
+        console.log("Login successful")
+    }else {
+        console.log("Invalid credentials")
+    }
+}
