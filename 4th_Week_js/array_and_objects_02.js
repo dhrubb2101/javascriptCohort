@@ -65,8 +65,16 @@ let updatedChaiRecipe = {
 
 console.log(updatedChaiRecipe)
 
-let {name,ingredients} = chaiRecipe; //destructuring the object
+let {name,myingredients} = chaiRecipe; //destructuring the object
 let [firstChai, secondChai] = chaiTypes //destructuring the array
 
+//these all fours are variables
+//console.log(ingredients)// Output: { teaLeaves: 'Assam Tea', milk: 'Full Cream Milk', spices: [ 'DaalChini', 'Ginger' ] }
+console.log(secondChai) // Output: "Ginger Chai"
+console.log(name) // Output: "Masala Chai"
+console.log(firstChai) // Output: "Masala Chai"
+console.log(myingredients) // Output: { teaLeaves: 'Assam Tea', milk: 'Full Cream Milk', spices: [ 'DaalChini', 'Ginger' ] }
 //=========================================================
 
+//data gets done here 
+//we understand datatypes now
