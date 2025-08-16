@@ -54,3 +54,19 @@ let chaiRecipe = {
     },
     instruction:"Boil water,add tea leaves,milk, sugar and spices"
 }
+
+console.log(chaiRecipe.ingredients.spices[1])
+
+let updatedChaiRecipe = {
+    ...chaiRecipe,
+    instruction:"Boil water,add tea leaves,milk,sugar,spices with some love",
+
+}
+
+console.log(updatedChaiRecipe)
+
+let {name,ingredients} = chaiRecipe; //destructuring the object
+let [firstChai, secondChai] = chaiTypes //destructuring the array
+
+//=========================================================
+
