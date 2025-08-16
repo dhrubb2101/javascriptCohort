@@ -34,6 +34,8 @@ function calculateDiscount(totalAmount){
     }
 }
 
+
+
 //calculateDiscount(totalAmount) // Output: 1080 (10% discount applied)
 let finalBill = console.log(calculateDiscount("1200")) // Output: 1080 (10% discount applied, string input converted to number)
 
@@ -43,7 +45,12 @@ let finalBill = console.log(calculateDiscount("1200")) // Output: 1080 (10% disc
 
 //whereever in a function we use return statement, it will return the value and hence comes out of the function
 
+//========================================================
 
+//ternary operator
+return totalAmount > 100 ? totalAmount * 0.9 : totalAmount
+// let loading = true
+//return isLoading ? () : ()
 //========================================================
 
 /*
@@ -100,3 +107,5 @@ checktruthyvalue([]); // Output: "Truthy"
 checktruthyvalue({}); // Output: "Truthy"
 checktruthyvalue(NaN); // Output: "Falsy"
 checktruthyvalue([1,2,3]); // Output: "Truthy" (non-empty string is truthy)
+
+//========================================================
