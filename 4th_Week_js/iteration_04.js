@@ -42,3 +42,24 @@ console.log(lowStockItems); // Output: [{ name: "widget A", stock: 30 }, { name:
 
 // let lowStockItems = inventory.filter((item) => { 
 //     return item.stock < 50 })
+
+//=========================================================
+
+let userActivity = [
+    { user: "Alice", activityCount: 45 },
+    { user: "Bob", activityCount: 30 },
+    { user: "Charlie", activityCount: 25 },
+    { user: "David", activityCount: 50 },
+    { user: "Eve", activityCount: 60 },
+]
+
+//find most active user
+//here max user is the accumulator and user is the current value
+//and here reduce takes initial value as an array[0] as no initial value is specified 
+//and hence here reduce is used in a very different way and hence being used very diffeerently
+//reduce takes initial value as first value of array and when reduce acts as a loop, it will compare each user with the maxUser and return the user with the maximum activity count
+let mostActiveUser = userActivity.reduce((maxUser, user) => 
+    user.activityCount > maxUser.activityCount ? user : maxUser
+);
+
+console.log(mostActiveUser); // Output
