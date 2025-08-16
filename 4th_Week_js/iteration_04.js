@@ -25,3 +25,20 @@ console.log(totalSales); // Output: 2230
 
 //========================================================
 
+let inventory = [
+    { name: "widget A", stock: 30 },
+    { name: "widget B", stock: 120 },
+    { name: "widget C", stock: 45 },
+    { name: "widget D", stock: 70 },
+
+]
+
+let lowStockItems = inventory.filter((item) => item.stock < 50)
+console.log(lowStockItems); // Output: [{ name: "widget A", stock: 30 }, { name: "widget C", stock: 45 }]
+
+// different methods to write the function in js
+// let lowStockItems = inventory.filter((item) => (item.stock < 50))
+// console.log(lowStockItems); 
+
+// let lowStockItems = inventory.filter((item) => { 
+//     return item.stock < 50 })
