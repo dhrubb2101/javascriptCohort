@@ -13,12 +13,14 @@ const b = 2
 
 console.log('SUM',a + b)
 
+setTimeout(() => console.log('I am delayed'), 5 * 1000);
+setTimeout( obj.greet, 2 * 1000);
+
 console.log('Bye Bye')
 
 //setTimeout( function() { console.log('Yeyeyeye') }, 1000 * 5)
 
-setTimeout(() => console.log('I am delayed'), 5 * 1000);
-setTimeout( obj.greet, 2 * 1000); // This will call the greet function after 2 seconds
+ // This will call the greet function after 2 seconds
 
 //=========================================================
 
@@ -40,3 +42,24 @@ setTimeout( obj.greet, 2 * 1000); // This will call the greet function after 2 s
 //when the call stack is empty, the event loop checks the callback queue and moves the setTimeout code to the call stack for execution
 //event loop is the one that checks the call stack and the callback queue
 //and takes the code from the callback queue and adds it to the call stack for execution
+
+//now in this setTimeout code
+// console.log("Hello from JS");
+
+// const a = 1
+// const b = 2
+
+// console.log('SUM',a + b)
+
+// setTimeout(() => console.log('I am delayed'), 5 * 1000);
+// setTimeout( obj.greet, 0);
+
+// console.log('Bye Bye')
+
+//what happens is even if timeOut delay is zero, it will still go to the callback queue and wait for the call stack to be empty
+//and then it will be executed
+//since it is a timeout code of 0 seconds it will go to browser set up a background clock of 0 seconds
+//and then it will be added to the callback queue and wait for the call stack to be empty
+//that's why in output we see "Bye Bye" first and then we see "I am delayed last" becuase this code gets executed at last 
+
+//=========================================================
