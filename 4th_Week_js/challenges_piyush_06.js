@@ -1,22 +1,22 @@
-const obj = {
-    personName: "Mukul",
-    greet: function() {
-        console.log(`Hello, ${this.personName}`);
-    }
-}
+// const obj = {
+//     personName: "Mukul",
+//     greet: function() {
+//         console.log(`Hello, ${this.personName}`);
+//     }
+// }
 
 
-console.log("Hello from JS");
+// console.log("Hello from JS");
 
-const a = 1
-const b = 2
+// const a = 1
+// const b = 2
 
-console.log('SUM',a + b)
+// console.log('SUM',a + b)
 
-setTimeout(() => console.log('I am delayed'), 5 * 1000);
-setTimeout( obj.greet, 2 * 1000);
+// setTimeout(() => console.log('I am delayed'), 5 * 1000);
+// setTimeout( obj.greet, 2 * 1000);
 
-console.log('Bye Bye')
+// console.log('Bye Bye')
 
 //setTimeout( function() { console.log('Yeyeyeye') }, 1000 * 5)
 
@@ -63,3 +63,39 @@ console.log('Bye Bye')
 //that's why in output we see "Bye Bye" first and then we see "I am delayed last" becuase this code gets executed at last 
 
 //=========================================================
+//now do you understnad why setTimeout code was coming in last 
+//==========================================================
+
+// function xyz(){
+//     const abc = 1
+// }
+
+//scope of abc inside xyz function 
+//abc is not accessible outside the xyz function
+//it gets destroyed once it goes out of the xyz function    
+//=========================================================
+
+const obj2 = {
+    personName: "Akash",
+    greet: function() {
+        console.log(`Hello, ${this.personName}`);
+    }
+}
+console.log("Hello from JS");
+
+// setTimeout(obj2.greet, 1000 * 5); // Output: "Hello, undefined"
+setTimeout(obj2.greet.bind(obj2), 1000 * 5); // Output: "Hello, Akash"
+
+console.log('Bye Bye');
+
+//=========================================================
+//Promise in js
+
+console.log("Hello from JS");
+
+setTimeout(() => console.log("Hello after 2s"), 2* 1000)
+
+console.log("Bye")
+
+//=========================================================
+
