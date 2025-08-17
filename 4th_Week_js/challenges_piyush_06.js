@@ -90,12 +90,60 @@ console.log('Bye Bye');
 
 //=========================================================
 //Promise in js
+//if there is a client (user,laptop,browser) 
+//client sends a request to the server to recieve some data from the server
+//it takes some time for the server to process the request and send the data back to the client
+//it takes 2-3 seconds
+//so in this case what happens is whenever we call an API , call stack is always in a hurry and since client has not recieved the data yet 
+//it will not wait for the server to respond and will move on to the next line of code
+//in this it returns a promise, the call stack returns a promise to the client that it will send the data back to the client once it is ready
+//and then the client can use the data once it is ready
+///this is where the promise comes into play
+
+//promise is therefore used in cases where we din't have the data currently but it will come in the future there we use promises concept
+//in future we will recieve the result and in the meantime we use promise
+//
 
 console.log("Hello from JS");
 
 setTimeout(() => console.log("Hello after 2s"), 2* 1000)
 
+Promise.resolve().then(() => console.log("Promise Resolve Hogya"))
 console.log("Bye")
+
+//output will be 
+//Hello from JS
+//Promise Resolve Hogya
+//Bye
+//Hello after 2s
 
 //=========================================================
 
+console.log("Hello from JS");
+
+setTimeout(() => console.log("Hello after 2s"), 0)
+
+Promise.resolve().then(() => console.log("Promise Resolve Hogya"))
+
+setTimeout(() => console.log("Hello after 2s"), 0)
+
+console.log("Bye")
+
+//output will be
+//Hello from JS 
+//Promise Resolve Hogya
+//Bye
+//Hello after 2s
+
+
+//=========================================================
+
+//in browsers we can run timers, promises in background
+////there are two queues in the browser
+//one is the callback queue and another is the microtask queue
+//callback queue is used for setTimeout, setInterval, setImmediate, etc.
+//microtask queue is used for promises and mutation observer callbacks
+//microtask queue has higher priority than callback queue
+//so when the call stack is empty, the event loop checks the microtask queue first and executes all the microtasks before moving on to the callback queue
+//consider microtask queue as a high priority queue and callback queue as a low priority queue
+//consider microtask queue as ladies first for toilet
