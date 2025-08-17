@@ -135,3 +135,10 @@ let person4 = {
 //person3.greet() // no we are directly calling greet here
 //person3.greet.call(person4) //we are calling greet function of person3 object with the context of person4 object
 person3.greet.call({personName: "Mukul"})
+
+
+//=========================================================
+
+//try using bind method on your own
+
+//=========================================================
