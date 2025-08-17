@@ -147,3 +147,35 @@ console.log("Bye")
 //so when the call stack is empty, the event loop checks the microtask queue first and executes all the microtasks before moving on to the callback queue
 //consider microtask queue as a high priority queue and callback queue as a low priority queue
 //consider microtask queue as ladies first for toilet
+
+//=========================================================
+
+console.log("Hello from JS");
+
+setTimeout(() => console.log("Hello after 2s"), 0)
+
+Promise.resolve().then(() => {
+    console.log("1. Promise Resolve Hogya")
+    
+       Promise.resolve().then(() => {
+           console.log("2. Promise Resolve Hogya")
+
+           Promise.resolve().then(() => {
+               console.log("3. Promise resolve hogaya")
+
+               Promise.resolve().then(() => {
+                   console.log("4. Promise resolve hogaya")
+               })
+           })
+       })
+   })
+
+//starvation of the call stack
+//as once one promise gets resolved, it will keep on resolving the next promise in the chain
+//one promise gets resolved then another promise gets in queue in micro task queue and that goes on infinitely 
+//therefore callback queue ki baari kabhi ayegi he nahi 
+//that is call starvation of the it's callback queue
+
+
+
+console.log("Bye")
