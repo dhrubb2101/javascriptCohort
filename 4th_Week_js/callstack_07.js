@@ -139,8 +139,19 @@
 //there is a concept known as "Temporal Dead Zone" (TDZ)
 //so anything above first you declare a variable and you try above where the variable is declared to access it. it
 //will throw an error as it is a dead zone
+//you can access it only after declaration
+//variable gets hoisted but you can't access it in temporal dead zone
+//you can see the proof by error coming "Cannot access 'age' before initialization"
+//and not this error coming ReferenceError : age is not defined'
+
+
 
 console.log('Age is ', age);
 
 let age = 25;
 
+//===========================================
+
+//so things in callstack works like this in low level design. 
+//the whole global execution context gets pushed in call stack
+//every codes , global execution context gets pushed to call stack and then it runs and then afterwards the whole global execution context gets deleted.
