@@ -1,26 +1,40 @@
 let chaiTypes = ["Masala Chai", "Ginger Chai","Green Chai" ,"Lemon Chai"];
 
 console.log(chaiTypes[2]);
+console.log(chaiTypes[3]);
 
 //========================================================
 
 console.log(`Total chai Types: ${chaiTypes.length}`)
+console.log(`All Chai Types : ${chaiTypes.length}`)
 
 chaiTypes.push("Herbal Tea") // adds item to end
+chaiTypes.push("Black Tea") // add item to end 
+
+console.log(chaiTypes)
 
 const data = chaiTypes.pop() //removes last item and returns it
 
 console.log(data)   // Output: "Herbal Tea"
 
-let index = chaiTypes.indexOf("Green-Chai"); // output: 2
+let index = chaiTypes.indexOf("Ginger Chai"); // output: 2
 console.log(index)
+let indexChai = chaiTypes.indexOf("Lemon Chai")
+console.log(indexChai)
 
 //========================================================
 
 if(index !== -1) {
-    chaiTypes.splice(index, 1); // removes "Green Chai" from the array
+    chaiTypes.splice(index, 1); // removes "Lemon Chai" from the array
 }
-console.log(chaiTypes); // Output: ["Masala Chai", "Ginger Chai", "Lemon Chai"]
+console.log(chaiTypes); // Output: ['Masala Chai','Ginger Chai','Green Chai','Lemon Chai', 'Herbal Tea']
+
+chaiTypes.splice(index, 1)
+
+// splice(start, deleteCount) changes the original array.
+// start = index → the found position.
+// deleteCount = 1 → remove 1 element.
+// Effect: Removes the first matching item from the array safely.
 
 //========================================================
 
@@ -64,6 +78,8 @@ let updatedChaiRecipe = {
 }
 
 console.log(updatedChaiRecipe)
+
+//The ...chaiRecipe copies all properties, and the instruction key is overridden with the new string.
 
 let {name,myingredients} = chaiRecipe; //destructuring the object
 let [firstChai, secondChai] = chaiTypes //destructuring the array
