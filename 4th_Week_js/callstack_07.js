@@ -137,7 +137,8 @@
 
 //in both let and const 
 //there is a concept known as "Temporal Dead Zone" (TDZ)
-//so anything above first you declare a variable
+//so anything above first you declare a variable and you try above where the variable is declared to access it. it
+//will throw an error as it is a dead zone
 
 console.log('Age is ', age);
 
