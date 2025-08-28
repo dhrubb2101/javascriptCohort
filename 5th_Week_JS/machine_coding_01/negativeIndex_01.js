@@ -65,3 +65,7 @@ const user = {
 
 //some properties we need to hide for that we use proxyObject
 // proxyUser.password
+
+//getting familiar and using get and set traps of proxy object
+//===============================================
+
