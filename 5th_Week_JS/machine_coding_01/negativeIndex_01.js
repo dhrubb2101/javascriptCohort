@@ -69,3 +69,27 @@ const user = {
 //getting familiar and using get and set traps of proxy object
 //===============================================
 
+//how do we access .length property of array
+
+//=========================================================\
+
+function negativeIndex(arr){
+    return new Proxy(arr, {})
+
+}
+
+//explanantion on why we can return a proxy object from a function
+
+// A function in JavaScript can return anything — a number, string, object, function, array, or even a Proxy.
+// Proxy is just another object created with new Proxy(...). So when you do:
+
+// function negativeIndex(arr){
+//     return new Proxy(arr, {})
+// }
+
+
+// new Proxy(arr, {}) creates a Proxy object.
+// That object is just like any other JS object (like {} or []).
+// Since functions can return any value, you can return that Proxy.
+// So the function isn’t doing anything special — it’s just returning the object that new Proxy creates.
+// The reason you are able to return it is the same reason you can return, say, a plain object:
