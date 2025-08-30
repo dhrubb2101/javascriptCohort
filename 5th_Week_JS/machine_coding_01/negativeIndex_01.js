@@ -74,8 +74,17 @@ const user = {
 //=========================================================\
 
 function negativeIndex(arr){
-    return new Proxy(arr, {})
+    return new Proxy(arr, { //in this arr is the array we are passing and in return we ar getting a proxied array ( {} )
+        get(target, prop){
+            const index = Number(prop)
+            if(index < 0){
+                return target[target.length + index] //say you give index -2
+            }
+            return target[index]
 
+        }
+
+    }) 
 }
 
 //explanantion on why we can return a proxy object from a function
@@ -93,3 +102,4 @@ function negativeIndex(arr){
 // Since functions can return any value, you can return that Proxy.
 // So the function isn’t doing anything special — it’s just returning the object that new Proxy creates.
 // The reason you are able to return it is the same reason you can return, say, a plain object:
+
