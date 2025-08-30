@@ -118,6 +118,8 @@ function negativeIndex(arr){
 
 
 //yaha pr negativeIndexing read krna aapne accessible kr dia hai ab next mei negativeIndexing set krna hai
+//using set and get trap to do negative indexing first we use get to make it accessible to read the negativeIndexing and then using set to set the negative indexing.
+
 
 // new Proxy(arr, {}) creates a Proxy object.
 // That object is just like any other JS object (like {} or []).
