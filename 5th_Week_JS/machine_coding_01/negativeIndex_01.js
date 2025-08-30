@@ -92,6 +92,7 @@ function negativeIndex(arr){
 // A function in JavaScript can return anything — a number, string, object, function, array, or even a Proxy.
 // Proxy is just another object created with new Proxy(...). So when you do:
 
+//negativeIndexing via Proxy Array
 function negativeIndex(arr){
      return new Proxy(arr, {
         get(target, prop){
@@ -101,10 +102,22 @@ function negativeIndex(arr){
                 //the logic behind this consider an array [1,2,3,4,5] and target[target.length + index] target.length is 5 and say index is -2 so 5 + (-2) = 3 so target[3] = 4
             }
             return target[index]
-        }
-     })
-}
+        },
+        set(target, prop, value){
+            const index = Number(prop)
+            if(index < 0){
+                target[target.length + index] = value
 
+            }else{
+                target[index] = value
+            }
+            return true; //indicates that the assignment was successful
+     }
+    })
+};
+
+
+//yaha pr negativeIndexing read krna aapne accessible kr dia hai ab next mei negativeIndexing set krna hai
 
 // new Proxy(arr, {}) creates a Proxy object.
 // That object is just like any other JS object (like {} or []).
