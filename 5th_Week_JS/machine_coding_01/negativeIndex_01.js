@@ -6,11 +6,11 @@ const { negative } = require("zod");
 
 //===========================
 
-const user = {
-    name: "hitesh",
-    age: 40,
-    password: "123"
-}
+// const user = {
+//     name: "hitesh",
+//     age: 40,
+//     password: "123"
+// }
 
 // const proxyUser = new Proxy(user, {
 //     get(target, prop){
@@ -73,19 +73,19 @@ const user = {
 
 //=========================================================\
 
-function negativeIndex(arr){
-    return new Proxy(arr, { //in this arr is the array we are passing and in return we ar getting a proxied array ( {} )
-        get(target, prop){
-            const index = Number(prop)
-            if(index < 0){
-                return target[target.length + index] //say you give index -2
-            }
-            return target[index]
+// function negativeIndex(arr){
+//     return new Proxy(arr, { //in this arr is the array we are passing and in return we ar getting a proxied array ( {} )
+//         get(target, prop){
+//             const index = Number(prop)
+//             if(index < 0){
+//                 return target[target.length + index] //say you give index -2
+//             }
+//             return target[index]
 
-        }
+//         }
 
-    }) 
-}
+//     }) 
+// }
 
 //explanantion on why we can return a proxy object from a function
 
@@ -118,8 +118,13 @@ function negativeIndex(arr){
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-negativeIndex(arr)
+let newArr = negativeIndex(arr)
 
+console.log(arr[-1])
+console.log(newArr[-1])
+newArr[-1] = 22
+console.log(arr)
+console.log(newArr)
 
 //yaha pr negativeIndexing read krna aapne accessible kr dia hai ab next mei negativeIndexing set krna hai
 //using set and get trap to do negative indexing first we use get to make it accessible to read the negativeIndexing and then using set to set the negative indexing.
