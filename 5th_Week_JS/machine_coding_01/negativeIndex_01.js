@@ -116,6 +116,10 @@ function negativeIndex(arr){
     })
 };
 
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+negativeIndex(arr)
+
 
 //yaha pr negativeIndexing read krna aapne accessible kr dia hai ab next mei negativeIndexing set krna hai
 //using set and get trap to do negative indexing first we use get to make it accessible to read the negativeIndexing and then using set to set the negative indexing.
@@ -128,3 +132,4 @@ function negativeIndex(arr){
 // The reason you are able to return it is the same reason you can return, say, a plain object:
 //returning here a proxied array
 
+//====================================================================================================
