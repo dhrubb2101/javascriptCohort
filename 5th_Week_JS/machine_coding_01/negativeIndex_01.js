@@ -190,5 +190,59 @@ console.log(newArr)
 // set = "ye value rakh lo"
 
 // Aapne bilkul sahi analogy banayi 👍 Proxy ka kaam hi yeh hota hai: normal array/object ke operations ko customize karna.
+
+//=========
+
+// explain the concept console.log(arr[-1]) , -1 would be passing in prop         get(target, prop){
+// ChatGPT said:
+
+// Achha, step by step samjhata hoon 👇
+
+// Case: console.log(arr[-1])
+// 1. JavaScript mein array bhi ek object hota hai
+// Jab aap arr[-1] likhte ho, JS internally usse object property access ki tarah treat karta hai.
+// -1 ko JS pehle " -1" string mein convert kar deta hai.
+// Matlab ye ho jaata hai:
+// arr["-1"]
+
+// 2. Normal array (without Proxy)
+// Normal array ke paas keys hoti hain "0", "1", "2", ... up to length-1.
+// Lekin " -1" ek valid key nahi hai, toh JS undefined return karega.
+
+// let arr = [1,2,3];
+// console.log(arr[-1]); // undefined
+// console.log(arr["-1"]); // undefined (same cheez)
+
+// 3. Proxy-wrapped array
+
+// Ab maan lo aapne Proxy lagaya hai:
+
+// let newArr = new Proxy(arr, {
+//   get(target, prop) {
+//     console.log("prop mila:", prop, "type:", typeof prop);
+//     const index = Number(prop);
+//     if (index < 0) {
+//       return target[target.length + index];
+//     }
+//     return target[prop];
+//   }
+// });
+
+
+// Jab aap console.log(newArr[-1]) likhte ho:
+// Proxy ka get trap trigger hota hai.
+// prop ki value string " -1" hoti hai.
+// Aap usse Number(prop) karte ho, jo -1 ban jaata hai.
+// Condition index < 0 true ho jaati hai.
+// Ab aap last element return kar dete ho.
+
+// ✅ Summary:
+// arr[-1] → Normal array: JS ise string " -1" key banata hai → koi value nahi → undefined.
+// newArr[-1] → Proxy intercept karta hai, prop = "-1" milta hai, aap logic lagate ho aur correct element return karte ho.
+
+//========
+//how will you identify whether to use the get or set trap?
+//if you're printing something like using console.log(), you'll use the get trap.
+//if you're assigning a value like newArr[-1] = 22, you'll use the set trap.
 //====================================================================================================
 
