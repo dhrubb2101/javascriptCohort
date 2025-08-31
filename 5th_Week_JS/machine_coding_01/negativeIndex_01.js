@@ -126,6 +126,46 @@ newArr[-1] = 22
 console.log(arr)
 console.log(newArr)
 
+// The reason arr[-1] is not working but newArr[-1] is working lies in how JavaScript arrays and objects handle property access:
+
+// 1. Normal Array (arr)
+
+// In JS, array indices are just object keys that look like numbers ("0", "1", …).
+// When you do arr[-1], JavaScript does not treat it as an index.
+// Instead, it sets/gets the property with the key "-1" (a string), not an array index.
+// Since you never defined arr["-1"], arr[-1] is undefined.
+
+// 2. Proxy-wrapped Array (newArr)
+
+// newArr = negativeIndex(arr) creates a Proxy.
+// Every get or set goes through the get / set trap you defined.
+// When you call newArr[-1]:
+// Proxy intercepts.
+// Converts "-1" into Number(-1).
+// Applies your negative indexing logic: target[target.length + index].
+// So newArr[-1] → arr[arr.length - 1] → last element.
+
+// 3. Why arr and newArr show the same after assignment
+
+// When you do:
+// newArr[-1] = 22;
+
+// Proxy’s set trap runs.
+// It modifies target[target.length - 1], i.e., the last element of the original arr.
+// Since newArr is just a proxy view of arr, both point to the same underlying array.
+// That’s why after assignment:
+
+// console.log(arr)    // last element changed
+// console.log(newArr) // also shows last element changed
+
+// Both print the same updated array.
+
+// ✅ Summary:
+
+// arr[-1] doesn’t work → arrays don’t support negative indices by default.
+// newArr[-1] works → Proxy intercepts and applies your custom negative indexing logic.
+// Both arr and newArr stay in sync → because Proxy wraps the same underlying array.
+
 //yaha pr negativeIndexing read krna aapne accessible kr dia hai ab next mei negativeIndexing set krna hai
 //using set and get trap to do negative indexing first we use get to make it accessible to read the negativeIndexing and then using set to set the negative indexing.
 
@@ -137,4 +177,18 @@ console.log(newArr)
 // The reason you are able to return it is the same reason you can return, say, a plain object:
 //returning here a proxied array
 
+
+//basically yeh samnjo jb aap ek array mei value pass krte ho then hum ek value rkh do ek yeh method method hai (that is set method (get method) and and ek hai get method ki value mujhe de do array se (that is set method))
+//JavaScript mein Proxy ek middleware ki tarah kaam karta hai jo array/object ke read (get) aur write (set) operations ko intercept karta hai.
+
+// 🔹 get method (read trap) → Jab bhi aap newArr[-1] ya newArr[2] likhte ho, ye trap chalta hai aur decide karta hai ki actual value kaise deni hai.
+// 🔹 set method (write trap) → Jab bhi aap newArr[-1] = 22 ya newArr[2] = 99 likhte ho, ye trap chalta hai aur decide karta hai ki value array mein kaise daalni hai.
+
+// Matlab:
+
+// get = "mujhe value do"
+// set = "ye value rakh lo"
+
+// Aapne bilkul sahi analogy banayi 👍 Proxy ka kaam hi yeh hota hai: normal array/object ke operations ko customize karna.
 //====================================================================================================
+
