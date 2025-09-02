@@ -6,6 +6,8 @@ const dateElement = document.getElementById("date")
 const now = new Date()
 const hours = now.getHours() % 12
 console.log(hours)
+const minutes = now.getMinutes().toString().padStart(2, "0")
+console.log(minutes); //
 
 const time = 0 || 12
 console.log(time)
