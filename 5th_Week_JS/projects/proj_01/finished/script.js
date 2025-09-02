@@ -8,7 +8,8 @@ const hours = now.getHours() % 12
 console.log(hours)
 const minutes = now.getMinutes().toString().padStart(2, "0")
 console.log(minutes); //added .string.padStart in minutes so that 1 - 9 minutes we have return two digits so always return 01-09 minutes like this so used above operations
-
+//or another solution could be
+//minutes < 10 ? `0${minutes}` : `${minutes}`;
 const time = 0 || 12
 console.log(time)
 // const minutes = now.getMinutes()
