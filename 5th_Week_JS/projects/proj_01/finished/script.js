@@ -5,9 +5,27 @@ function updateClock() {
 const dateElement = document.getElementById("date")
 
 const now = new Date()
-const hours = now.getHours() % 12
+const hours = now.getHours() % 12 || 12
 console.log(hours)
 const minutes = now.getMinutes().toString().padStart(2, "0")
+//padStart ensures two-digit format for minutes
+//padStart(maxLen, number)
+//now.getMinutes()
+
+// Returns the current minutes (0–59) as a number.
+// Example: 5
+// .toString()
+// Converts that number into a string, because padStart works only on strings.
+// Example: 5 → "5"
+// .padStart(2, "0")
+// Ensures the string is at least 2 characters long.
+// If it’s shorter, it adds "0" at the beginning.
+// Example:
+// "5".padStart(2, "0") → "05"
+// "12".padStart(2, "0") → "12" (unchanged)
+//✅ So, the whole line guarantees that minutes will always be two digits ("00"–"59"), which is the standard clock format.
+
+
 console.log(minutes); //added .string.padStart in minutes so that 1 - 9 minutes we have return two digits so always return 01-09 minutes like this so used above operations
 //or another solution could be
 //minutes < 10 ? `0${minutes}` : `${minutes}`;
