@@ -7,7 +7,7 @@ const now = new Date()
 const hours = now.getHours() % 12
 console.log(hours)
 const minutes = now.getMinutes().toString().padStart(2, "0")
-console.log(minutes); //
+console.log(minutes); //added .string.padStart in minutes so that 1 - 9 minutes we have return two digits so always return 01-09 minutes like this so used above operations
 
 const time = 0 || 12
 console.log(time)
