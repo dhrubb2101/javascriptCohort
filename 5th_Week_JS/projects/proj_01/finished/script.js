@@ -30,4 +30,13 @@ timeElement.textContent = `${hours}:${minutes}:${seconds}:${ampm}`
 
 
 
-setInterval(updateClock, interval)
+setInterval(updateClock, 1000)
+//setInterval mtlab mei har interval mei kuch kaam krunga aur krte he rhunga
+//ams setTimeout ka use karke hum ek baar kaam kar sakte hain
+//setTimeout(updateClock, interval)
+//bas ek baar use hota hai
+
+
+updateClock()
+
+//window.onload = updateClock
