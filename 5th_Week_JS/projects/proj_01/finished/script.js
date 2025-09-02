@@ -50,10 +50,12 @@ timeElement.textContent = `${hours}:${minutes}:${seconds}:${ampm}`
 
 setInterval(updateClock, 1000)
 //setInterval mtlab mei har interval mei kuch kaam krunga aur krte he rhunga
+//basically interval set krta hai jismei voh kaam krega and krta he rahega
 //ams setTimeout ka use karke hum ek baar kaam kar sakte hain
+//setTimeout hai basically ki itni der baad mei yeh krunga
 //setTimeout(updateClock, interval)
 //bas ek baar use hota hai
-
+//setInterval(callbackFunction, interval)
 
 updateClock()
 
