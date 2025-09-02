@@ -60,3 +60,18 @@ setInterval(updateClock, 1000)
 updateClock()
 
 //window.onload = updateClock
+
+//=====================================
+
+//For date part go through the MDN documentation
+
+// Date.prototype.toLocaleDateString()
+// This method returns a string with a language-sensitive representation of the date portion of this date.
+// Basically first parameter for it defines the area timezone like PST etc and second parameter is for options like weekday, year, month, day etc
+// Example:
+// const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+// const formattedDate = now.toLocaleDateString('en-US', options);
+// dateElement.textContent = formattedDate;
+//or
+//dateElement.textContent = now.toLocaleDateString('en-US', options);
+//dateElement.textContent = now.toLocaleDateString('undefined', options);
