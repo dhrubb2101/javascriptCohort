@@ -42,7 +42,7 @@ const ampm = now.getHours() >= 12 ? "PM" : "AM"
 //we collected a lot of data here now we have store it.
 
 timeElement.textContent = `${hours}:${minutes}:${seconds}:${ampm}`
-
+dateElement.textContent = now.toLocaleDateString(undefined, options);
 }
 //======
 
