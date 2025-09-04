@@ -33,3 +33,75 @@
 //and promise aage se kehta hai tu mujhe ek callback function de
 //ki bhai jb bhi promise pura hoga iss callback function ko call-stack mei daal dunga
 //toh basically tera yeh code tb execute kr jayega jb value available hogi
+
+//=========================================================================================
+
+///how to code promises
+
+//write this in browser (inspect element in console )
+//we are using fetch() function here to fetch data through a api call
+
+// console.log('Hi')
+// const data = fetch('https://api.freeapi.app/api/v1/public/randomproducts')
+// console.log('Data is', data)
+// console.log('Bye')
+
+// //output
+// Hi
+// Data is Promise { <pending> }
+// Bye
+
+// //console.log("Hi")
+// //const data = fetch('https://api.freeapi.app/api/v1/public/randomproducts')
+// data.then((res) => console.log('Data Agya,res'))
+// console.log('Bye')
+
+// output
+// Hi
+// Bye
+//Data Agya,res(which shows the fetched data)
+
+{/* Case 1:
+console.log('Hi')
+const data = fetch('https://api.freeapi.app/api/v1/public/randomproducts')
+console.log('Data is', data)
+console.log('Bye')
+
+
+fetch() always returns a Promise immediately.
+That’s why console.log('Data is', data) prints:Data is Promise { <pending> }
+(pending means the request hasn’t completed yet).
+JS doesn’t wait for fetch to finish, it just moves to the next line.
+
+Output order:
+
+Hi
+Data is Promise { <pending> }
+Bye
+
+Case 2:
+console.log("Hi")
+const data = fetch('https://api.freeapi.app/api/v1/public/randomproducts')
+data.then((res) => console.log('Data Agya', res))
+console.log('Bye')
+
+Here you attach a .then(...) to the Promise.
+JS again doesn’t wait, so it prints Hi and Bye first.
+When the network request completes, the .then(...) callback runs.
+
+Output order:
+
+Hi
+Bye
+Data Agya <Response object>
+
+
+👉 In short:
+fetch is asynchronous.
+Without .then or await, you only get a pending Promise.
+With .then (or await inside async function), you get the actual response later. */}
+
+//=====================================================================================
+
+//This ultimately allows us to run the code asynchronously and handle the result when it's ready.
+//this is the concept of promise
