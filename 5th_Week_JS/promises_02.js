@@ -80,10 +80,10 @@ Data is Promise { <pending> }
 Bye
 
 Case 2:
-console.log("Hi")
-const data = fetch('https://api.freeapi.app/api/v1/public/randomproducts')
-data.then((res) => console.log('Data Agya', res))
-console.log('Bye')
+console.log("Hi") //sync operation
+const data = fetch('https://api.freeapi.app/api/v1/public/randomproducts') //async operation
+data.then((res) => console.log('Data Agya', res))// synchronous operation
+console.log('Bye') 
 
 Here you attach a .then(...) to the Promise.
 JS again doesn’t wait, so it prints Hi and Bye first.
@@ -105,3 +105,19 @@ With .then (or await inside async function), you get the actual response later. 
 
 //This ultimately allows us to run the code asynchronously and handle the result when it's ready.
 //this is the concept of promise
+//To complete asynchronous operations, we use Promises.
+//just explain to you till now what is promise
+
+//=====================================================================================
+
+//now we study how to implement a promise
+//when you first create a promise , it is in a pending state
+//like an api call is pending until it gets a response
+//yeh promise execute ho rha hai like jaise he aappne api call execute kri voh server tk abhi ja rhi hai
+//after pending state two things happen 
+//either promise gets fulfilled that whatever data you asked for you get it
+//or promise gets rejected that there was an error and you get an error message
+//say if server is down or anything
+//so promise has two states after pending
+//fulfilled
+//rejected
