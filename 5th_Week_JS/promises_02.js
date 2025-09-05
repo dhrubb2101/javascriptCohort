@@ -121,3 +121,8 @@ With .then (or await inside async function), you get the actual response later. 
 //so promise has two states after pending
 //fulfilled
 //rejected
+
+//Promise by default is in pending state
+//so promise calls a then function from it's prototype 
+//and us then ke andar ke ek function de de
+//
