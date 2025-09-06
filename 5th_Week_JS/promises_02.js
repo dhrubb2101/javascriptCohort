@@ -85,6 +85,14 @@ const data = fetch('https://api.freeapi.app/api/v1/public/randomproducts') //asy
 data.then((res) => console.log('Data Agya', res))// synchronous operation
 console.log('Bye') 
 
+//.then is property of Promise, promise.prototype has function with name of then 
+//and then function bolta hai ki tum na ek callback function de do
+//aur jb bhi value available hogi mei callback function ko call kr dunga and value pass kr dunga 
+Promise.prototype.then = function(callback){
+  //when value available
+  callback(value)
+}
+
 Here you attach a .then(...) to the Promise.
 JS again doesn’t wait, so it prints Hi and Bye first.
 When the network request completes, the .then(...) callback runs.
