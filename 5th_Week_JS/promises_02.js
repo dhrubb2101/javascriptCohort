@@ -92,6 +92,9 @@ Promise.prototype.then = function(callback){
   //when value available
   callback(value)
 }
+//jaise he value available hoti hai voh callback function  ko microtask queue mei daal dia hoga and vaha se callstack and then call kia hoga
+//and callstack runs it
+//
 
 Here you attach a .then(...) to the Promise.
 JS again doesn’t wait, so it prints Hi and Bye first.
