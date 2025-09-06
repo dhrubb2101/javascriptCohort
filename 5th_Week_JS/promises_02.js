@@ -219,3 +219,28 @@ With .then (or await inside async function), you get the actual response later. 
 //to get it clear to use JSON data we have to first convert it from Json String to JSON object
 //we have to parse the json string to json object
 //for ex -
+//showin in promises_03.html in week_05 js folder line 10
+//response.json() - this function also returns a promise
+//this is a function which basically parses the json string to json object
+//so we have to use .then function again to get the json object
+//like - response.json().then((data) => console.log(data))
+//here data is the json object
+
+//for ex - 
+     fetch("https://api.freeapi.app/api/v1/public/randomproducts")
+        .then((response) => { //this .then is of fetch
+          response.json().then((obj)=> console.log(obj)); //here .then if of json function which parses the json string to json object
+        })
+        .catch((err) => {
+            console.log('Error converting JSON') //.catch is of JSON and not fetch
+        })
+        .finally(() => {});
+
+      
+
+//here we know from fetch we know we get the data in json format beforehand -->
+//here in response.json() - .json() is a function which parses the json string to json object and then json string we get is from response mentioned here in response.json()
+//and in return as a whole it returns a promise
+//so we use .then function again to get the json object
+//and in that .then function we get the json object which we can use
+//here obj is the json object

@@ -6,13 +6,34 @@
     <title>Use of Promise!</title>
   </head>
   <body>
+    <ul id="items"></ul>
     <script>
+      const items = document.getElementById("items");
       fetch("https://api.freeapi.app/api/v1/public/randomproducts")
         .then((response) => {
-          const parsedData = response.json();
+          response
+            .json()
+            .then((obj) => {
+              const products = obj.data.data;
+              console.log(products); //output array of objects
+              products.forEach((products) => {
+                const li = document.createElement("li");
+                li.innerText = products.title;
+                items.appendChild(li);
+              });
+            })
+            .catch((err) => {
+              console.log("Error hai bhai", err);
+            });
         })
-        .catch((err) => {})
-        .finally(() => {});
+        .catch((err) => {
+          console.log("Network Error hai bhai", err);
+        })
+        .finally(() => {
+          console.log("Fetch operation completed");
+        });
     </script>
   </body>
 </html>
+
+<!-- //here we know from fetch we know we get the data in json format beforehand -->
