@@ -94,7 +94,11 @@ Promise.prototype.then = function(callback){
 }
 //jaise he value available hoti hai voh callback function  ko microtask queue mei daal dia hoga and vaha se callstack and then call kia hoga
 //and callstack runs it
-//
+
+
+//Promise.then(userFn => microtaskQueue(callFn) //event loop will do it's work by putting the callback function in call stack and running it 
+
+//async operations krne ke liye promises use hote hai 
 
 Here you attach a .then(...) to the Promise.
 JS again doesn’t wait, so it prints Hi and Bye first.
