@@ -137,7 +137,81 @@ With .then (or await inside async function), you get the actual response later. 
 //fulfilled
 //rejected
 
+//=====================================================================================
+
 //Promise by default is in pending state
 //so promise calls a then function from it's prototype 
 //and us then ke andar ke ek function de de
-//
+//mei iss function ko call kr dunga jb bhi promise fulfilled hoga
+//when this promise gets fulfilled toh jo .then ke andar function hai voh call ho jayega
+
+//for ex - 
+// console.log("Hi") //sync operation
+// const data = fetch('https://api.freeapi.app/api/v1/public/randomproducts') //async operation
+// data.then( function(){ console.log('Lo ji ,data Agya')})// synchronous operation
+// console.log('Bye') 
+//here the promise gets fulfilled and then function is called
+//output
+//Hi
+//Bye
+//Lo ji ,data Agya
+
+//=====================================================================================
+//now what if promise gets rejected
+
+//we get error
+
+//=====================================================================================
+
+//.catch(function) 
+//yeh bhi promise ka ek function hai jo promise ke prototype se aata hai
+//yeh function bhi ek callback function leta hai
+//aur yeh callback function ko call krta hai jb promise reject hota hai
+//for ex -
+// console.log("Hi") //sync operation
+// const data = fetch('https://apioiiio.freeapi.app/api/v1/public/randomproducts') //async operation
+// data.then( function(){ console.log('Lo ji ,data Agya')})// synchronous operation
+// console.log('Bye') 
+// data.catch( function(){ console.log('Areey Yaaar')})
+
+//=====================================================================================
+
+//finally(function)
+//yeh bhi promise ka ek function hai jo promise ke prototype se aata hai
+//yeh function bhi ek callback function leta hai
+//aur yeh callback function ko call krta hai jb promise fulfilled ho ya reject ho
+//yeh har baar call hota hai chahe promise fulfilled ho ya reject ho
+//for ex -
+// console.log("Hi") //sync operation
+// const data = fetch('https://apioiiio.freeapi.app/api/v1/public/randomproducts') //async operation
+// data.then( function(){ console.log('Lo ji ,data Agya')})// synchronous operation
+// console.log('Bye') 
+// data.catch( function(){ console.log('Areey Yaaar')})
+// data.finally( function(){ console.log('Mujhe Farak ni padhta hai')})
+
+//=====================================================================================
+
+//This is how we use promises in JavaScript to handle asynchronous operations effectively.
+
+//=====================================================================================
+
+//there's another state of promise called settled state
+//as per coding perspective, settled state is when the promise is either fulfilled or rejected
+// it's just a jargon term to indicate that the promise is no longer pending; it has reached a final state, either success (fulfilled) or failure (rejected).
+////in coding settled state is not used in js 
+//you'll never see settled state in code anywhere
+
+//=====================================================================================
+
+//you request something form server
+//it's answer can be Text,image,docPDF,JSON
+//most of the time we get JSON
+//JSON - JavaScript Object Notation
+//it's a format to send data from server to client  
+//it's a string in key value pair format
+//like - {"name":"Dhrub","age":24}
+//JSON is always in double quotes
+//and we convert JSON to object using JSON.parse() function
+//and we convert object to JSON using JSON.stringify() function0
+//JSON.parse() and JSON.stringify() are synchronous functions
+//here we are using json.parse() function to convert json to object
