@@ -215,3 +215,7 @@ With .then (or await inside async function), you get the actual response later. 
 //and we convert object to JSON using JSON.stringify() function0
 //JSON.parse() and JSON.stringify() are synchronous functions
 //here we are using json.parse() function to convert json to object
+
+//to get it clear to use JSON data we have to first convert it from Json String to JSON object
+//we have to parse the json string to json object
+//for ex -
