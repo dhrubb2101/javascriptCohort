@@ -244,3 +244,70 @@ With .then (or await inside async function), you get the actual response later. 
 //so we use .then function again to get the json object
 //and in that .then function we get the json object which we can use
 //here obj is the json object
+
+//======================================================================================
+
+//now in promises_03.html in week_05 js 
+//code is correct where we are fetching the data from api and rendering it on browser to display using promise
+//go and check it out
+//line 10 onwards   
+//but to clean the code we are now going to use promise chaining
+
+//for ex - (how to do it)
+// fetch(url)
+//  .then(response => response.json()) // from .then we get a response and then parse response into JSON and then return a promise
+//  .then(obj => {}) //Whatever value the previous promise resolves with gets passed into this parameter. (basically json object gets passed here)
+// .catch() //if any of the calls fail say fetch or .then then it comes to catch showcasing the error
+
+//=================================================================================
+
+//the right way to write it it
+
+// Example of using fetch and promises to render product titles in a browser environment
+
+// fetch("https://api.freeapi.app/api/v1/public/randomproducts")
+//   .then((response) => {
+//       return response.json();
+//   })
+//   .then((obj) => {
+//       const products = obj.data.data;
+//       console.log(products); //output array of objects
+//       products.forEach((product) => {
+//           const li = document.createElement("li");
+//           li.innerText = product.title;
+//           items.appendChild(li);
+//       });
+//   })
+//   .catch((err) => {
+//     console.log("Network Error hai bhai", err);
+//   })
+//   .finally(() => {
+//     console.log("Fetch operation completed");
+//   });
+
+//========================================================================================
+
+//and if you want to clean the code even more do this and store the whole code inside a function and then call it in then 
+
+//function(renderToScreen){
+// const products = obj.data.data;
+//       console.log(products); //output array of objects
+//       products.forEach((product) => {
+//           const li = document.createElement("li");
+//           li.innerText = product.title;
+//           items.appendChild(li);
+//       });
+//}
+// fetch("https://api.freeapi.app/api/v1/public/randomproducts")
+//   .then((response) => {
+//       return response.json();
+//   })
+//   .then(renderToScreen)
+//   .catch((err) => {
+//     console.log("Network Error hai bhai", err);
+//   })
+//   .finally(() => {
+//     console.log("Fetch operation completed");
+//   });
+
+//Best way to write a clean code for promise
