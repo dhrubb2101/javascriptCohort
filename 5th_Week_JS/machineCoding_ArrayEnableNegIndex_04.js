@@ -110,3 +110,5 @@ console.log(`ProxyArr Updated Arr`, proxyArr)
 
 // console.log(`Updated Arr`, arr)
 // console.log(`ProxyArr Updated Arr`, proxyArr)
+
+//proxy object finishes here
