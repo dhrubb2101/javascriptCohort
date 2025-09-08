@@ -19,6 +19,11 @@ console.log('File Reading Success' ,contents)
 
 console.log('End Of Program')
 
+//output
+// Starting Program
+// File Reading Success  Hello, I am content of hello_05.txt 
+// End Of Program
+
 //this is a synchronous code
 //as you can see in the output the program is blocked until the file is read
 //hence it is called blocking code
@@ -45,13 +50,66 @@ const contents1 = fs.readFile('./hello.txt', 'utf-8', function(err, content) { /
 //hence it is a non-blocking code
 //it will not block the program until the file is read
 //it will continue executing the next line of code
-console.log('File Reading Success' ,contents1)
 
 console.log('End Of Program')
 
+//output
+// Starting Program
+// End Of Program
+// File Reading Success Hello, I am content of hello_05.txt
+
 
 //=====================================================================================
+//consider another fuunction which first has blocking code and we want to turn it into asynchronous code
 
+console.log('Start of Program')
+const result = sum(2, 5)
+console.log('End of Program')
+
+function sum(a, b){
+    return a + b;
+}
+
+//output
+// Start of Program
+// 7
+// End of Program
+//here the function sum is a blocking code
+//as the function sum is a synchronous code
+//hence it is a blocking code
+//so the program is blocked until the function sum is executed
+
+//====
+//now we want to turn this blocking code into non-blocking code
+
+console.log('Start of Program')
+
+sum(2,5, (value)=> {
+    console.log('Result is', value) //this will be called when the sum function is executed
+})
+
+console.log('End of Program')
+
+function sum(a, b, cb){
+    setTimeout(()=> {
+        cb(a + b);
+    }, 5*1000) //simulating a delay of 5 seconds
+}
+
+//output
+// Start of Program
+// End of Program
+// Result is 7
+//here the function sum is a non-blocking code
+//as the function sum is an asynchronous code
+//hence it is a non-blocking code
+//so the program is not blocked and continues executing the next line of code
+//the result is printed after 5 seconds
+//as we have used setTimeout to simulate a delay of 5 seconds
+//hence the result is printed after 5 seconds
+
+//this is how we turn a blocking code into non-blocking code using a callback function
+//=====================================================================================
 //consider a server which is handling multiple requests
 //if one request is taking time to process then the other requests will be blocked until the first request is completed
 //this is called blocking code
