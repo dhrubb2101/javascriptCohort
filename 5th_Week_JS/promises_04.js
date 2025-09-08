@@ -74,6 +74,8 @@ function sum(a, b){
 // Start of Program
 // 7
 // End of Program
+
+
 //here the function sum is a blocking code
 //as the function sum is a synchronous code
 //hence it is a blocking code
@@ -100,6 +102,8 @@ function sum(a, b, cb){
 // Start of Program
 // End of Program
 // Result is 7
+
+//here we use setTimeout to simulate a delay of 5 seconds for say a very heavy computation of a heavy function
 //here the function sum is a non-blocking code
 //as the function sum is an asynchronous code
 //hence it is a non-blocking code
