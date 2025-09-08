@@ -1,0 +1,1 @@
+Hello, I am content of hello_05.txt 

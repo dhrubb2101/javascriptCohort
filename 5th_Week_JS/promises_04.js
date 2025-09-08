@@ -7,3 +7,10 @@
 
 //=====================================================================================
 
+//let's write a code to read a file using fs module
+const fs = require('fs')
+
+console.log('Starting Program')
+
+const contents = fs.readFileSync('./hello.txt','utf-8')
+//reading the content of the file , it is sorta of a blocking code 
