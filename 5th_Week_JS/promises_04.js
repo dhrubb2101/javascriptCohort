@@ -19,6 +19,37 @@ console.log('File Reading Success' ,contents)
 
 console.log('End Of Program')
 
+//this is a synchronous code
+//as you can see in the output the program is blocked until the file is read
+//hence it is called blocking code
+
+//=====================================================================================
+
+//now if we want this code to be non-blocking code, hence asynchronous code
+
+//we do it like this
+
+const fs = require('fs')
+
+console.log('Starting Program')
+
+const contents1 = fs.readFile('./hello.txt', 'utf-8', function(err, content) { //we pass a callback function as the last argument 
+    if(err){
+        console.log('Error in file reading', err);
+    }else {
+        console.log('File Reading Success', content)
+    }
+});
+//readfile is an asynchronous function
+//it takes time to read the file
+//hence it is a non-blocking code
+//it will not block the program until the file is read
+//it will continue executing the next line of code
+console.log('File Reading Success' ,contents1)
+
+console.log('End Of Program')
+
+
 //=====================================================================================
 
 //consider a server which is handling multiple requests
@@ -32,13 +63,13 @@ console.log('End Of Program')
 //Meaning of a callback function 
 //Actual Meaning with an example
 
-function testing (x) {
-    x();
-}
+// function testing (x) {
+//     x();
+// }
 
-testing(1)
-testing('Piyush')
-testing( function(){}) //here we are passing a function as an argument to another function
+// testing(1)
+// testing('Piyush')
+// testing( function(){}) //here we are passing a function as an argument to another function
 //this is called a callback function
 //a callback function is a function that is passed as an argument to another function and is executed after some operation is completed
 
