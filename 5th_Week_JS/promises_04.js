@@ -240,3 +240,11 @@ function sum(a, b, cb){
 // Synchronous: You go to a restaurant, order food, and just sit there doing nothing until food comes.
 // Asynchronous (callback): You order food, then continue talking with friends. When the food is ready, the waiter (callback) comes and serves you.
 // ✅ So, with callbacks, your code does not waste time waiting for long operations. Instead, you keep the program responsive and let the result arrive later.
+
+//=====================================================================================
+
+// Promises are a modern way to handle asynchronous operations in JavaScript, providing a cleaner and more manageable alternative to traditional callbacks.
+
+//when promises were not present , we used to use callbacks to handle asynchronous operations which was always passed as a last parameter to the function.
+//callbacks were always passed as the last parameter to the function
+//and error as first parameter to the callback function
