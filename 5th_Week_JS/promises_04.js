@@ -8,16 +8,16 @@
 //=====================================================================================
 
 //let's write a code to read a file using fs module
-const fs = require('fs')
+// const fs = require('fs')
 
-console.log('Starting Program')
+// console.log('Starting Program')
 
-const contents = fs.readFileSync('./hello.txt','utf-8')
-//reading the content of the file , it is sorta of a blocking code 
+// const contents = fs.readFileSync('./hello.txt','utf-8')
+// //reading the content of the file , it is sorta of a blocking code 
 
-console.log('File Reading Success' ,contents)
+// console.log('File Reading Success' ,contents)
 
-console.log('End Of Program')
+// console.log('End Of Program')
 
 //output
 // Starting Program
@@ -34,24 +34,24 @@ console.log('End Of Program')
 
 //we do it like this
 
-const fs = require('fs')
+// const fs = require('fs')
 
-console.log('Starting Program')
+// console.log('Starting Program')
 
-const contents1 = fs.readFile('./hello.txt', 'utf-8', function(err, content) { //we pass a callback function as the last argument 
-    if(err){
-        console.log('Error in file reading', err);
-    }else {
-        console.log('File Reading Success', content)
-    }
-});
+// const contents1 = fs.readFile('./hello.txt', 'utf-8', function(err, content) { //we pass a callback function as the last argument 
+//     if(err){
+//         console.log('Error in file reading', err);
+//     }else {
+//         console.log('File Reading Success', content)
+//     }
+// });
 //readfile is an asynchronous function
 //it takes time to read the file
 //hence it is a non-blocking code
 //it will not block the program until the file is read
 //it will continue executing the next line of code
 
-console.log('End Of Program')
+// console.log('End Of Program')
 
 //output
 // Starting Program
@@ -62,13 +62,13 @@ console.log('End Of Program')
 //=====================================================================================
 //consider another fuunction which first has blocking code and we want to turn it into asynchronous code
 
-console.log('Start of Program')
-const result = sum(2, 5)
-console.log('End of Program')
+// console.log('Start of Program')
+// const result = sum(2, 5)
+// console.log('End of Program')
 
-function sum(a, b){
-    return a + b;
-}
+// function sum(a, b){
+//     return a + b;
+// }
 
 //output
 // Start of Program
@@ -84,19 +84,19 @@ function sum(a, b){
 //====
 //now we want to turn this blocking code into non-blocking code
 
-console.log('Start of Program')
+// console.log('Start of Program')
 
-sum(2,5, (value)=> {
-    console.log('Result is', value) //this will be called when the sum function is executed
-})
+// sum(2,5, (value)=> {
+//     console.log('Result is', value) //this will be called when the sum function is executed
+// })
 
-console.log('End of Program')
+// console.log('End of Program')
 
-function sum(a, b, cb){
-    setTimeout(()=> {
-        cb(a + b);
-    }, 5*1000) //simulating a delay of 5 seconds
-}
+// function sum(a, b, cb){
+//     setTimeout(()=> {
+//         cb(a + b);
+//     }, 5*1000) //simulating a delay of 5 seconds
+// }
 
 //output
 // Start of Program
@@ -280,8 +280,27 @@ const contents2 = fs.readFile('./hello.txt', 'utf-8', function(err, content) { /
         fs.writeFile('backup.txt', content, function(err){
             if(err){
                 console.log('Error in file writing backup.txt', err);
+            }else{
+                fs.unlink('hello.txt', function(err){
+                    if(err){
+                        console.log('Error in deleting hello.txt', err);
+                    }else{
+                        console.log('hello.txt deleted successfully');
+                    }
+                });
             }
-
-        })
+        });
     }
 });
+
+//when we are calling callbacks inside callbacks
+//it is called callback hell
+//it is also called pyramid of doom
+//because the code is not readable
+//it is very difficult to debug such code
+//because ek ka input dusre ka output hai
+//that's why we had to callbacks inside callbacks
+//hence it is called callback hell
+
+//=====================================================================================
+
