@@ -248,3 +248,40 @@ function sum(a, b, cb){
 //when promises were not present , we used to use callbacks to handle asynchronous operations which was always passed as a last parameter to the function.
 //callbacks were always passed as the last parameter to the function
 //and error as first parameter to the callback function
+
+//here we saw in promises_04 how callbacks were used if promises were not there!
+
+//=====================================================================================
+
+//1. Read the contents of file from hello.txt
+//2. Then create new file named as backup.txt 
+//3. Copy the contents of hello file to backup file
+//4. delete the hello file
+//this is a sequence of steps dependent on each other
+
+//to write it in blocking code
+//const file = fs.ReadFileSync(hello)
+// fs.createFile(backup)
+// fs.writeFile(backup,file)
+// fs.delete(hello)
+//wrote code here synchronously
+
+//now to write it in non-blocking code
+
+const fs = require('fs')
+
+console.log('Starting Program')
+
+const contents2 = fs.readFile('./hello.txt', 'utf-8', function(err, content) { //we pass a callback function as the last argument 
+    if(err){
+        console.log('Error in file reading', err);
+    }else {
+        console.log('File Reading Success', content)
+        fs.writeFile('backup.txt', content, function(err){
+            if(err){
+                console.log('Error in file writing backup.txt', err);
+            }
+
+        })
+    }
+});
