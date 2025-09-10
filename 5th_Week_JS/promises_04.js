@@ -251,7 +251,7 @@
 
 //here we saw in promises_04 how callbacks were used if promises were not there!
 
-//=====================================================================================
+//===================================================================================== down below written using callbacks is legacy code
 
 //1. Read the contents of file from hello.txt
 //2. Then create new file named as backup.txt 
@@ -302,11 +302,12 @@ const contents2 = fs.readFile('./hello.txt', 'utf-8', function(err, content) { /
 //that's why we had to callbacks inside callbacks
 //hence it is called callback hell
 
-//=====================================================================================
+//===================================================================================== //modern way of writing the same code using promises
 
 //when we do the same example using promises
 
-const fsv2 = require('fs/promises')
+const fsv2 = require('fs/promises');
+const { callbackify } = require('util');
 
 console.log('Starting Program')
 
@@ -327,3 +328,38 @@ fsv2
 //hence it is more readable and easier to debug
 //because we are not doing callbacks inside callbacks
 //hence it is not called callback hell or pyramid of doom
+
+//=====================================================================================
+
+//custom promises  - we use this to convert legacy code to promise based code
+
+//callback supported code ko convert krna hai promise supported code mei
+
+//readFile
+//writeFile
+//unlink 
+//are callback fucntions that need to be promisified
+
+function readFileWithPromise(filepath, encoding){
+    return new Promise((resolve,reject) => { //when we create a new promise it takes a function as an argument which has two parameters resolve and reject 
+        //it basically creates a new promise which is in pending state
+        fs.readFile(filepath, encoding, (err, content) => {
+            if(err){
+                reject(err) //means the promise is rejected it will go into the rejected state
+                //reject('Piyush') //Signal do - user ke catch functions ko execute kr do
+            }else {
+                resolve(content) // meeans the promise is fulfilled it will go into the fulfilled state
+                //resolve('Piyush') //Signal do - user ke then functions ko execute kr do
+            }
+        });
+    });
+}
+
+//so here we have succesfully created a custom promise where we converted legacy code to promise based code
+//now we can use this custom promise to read a file
+
+const result = readFileWithPromise('./hello.txt', 'utf-8')
+
+result
+.then((e)=> console.log('File reading success', e))
+.catch((e)=> console.log('Error', e))
