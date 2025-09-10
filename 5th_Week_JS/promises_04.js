@@ -396,3 +396,19 @@ readFileWithPromise('./hello.txt', 'utf-8')
 //this is called as promisification of a callback function
 //we have converted a callback function to a promise function
 //hence we can use this custom promise to read a file
+
+
+//===============================================================================================================
+
+// Promises has pending, fulfilled and rejected states
+// A promise has .then , .catch and .finally functiona
+
+//.then , .catch and .finally functions are used to handle the promise states
+//basically they consume the promise
+//.then also works as a callback function
+//so it's a possibility that within it code can go into callback hell
+//hence we use async await to avoid callback hell
+//it is nothing but a  syntactic sugar over promises
+//they work internally over promises only
+//they help in running asynchronous code in synchornous way mei run krne mei help krte hai 
+//===============================================================================================================
