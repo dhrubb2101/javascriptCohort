@@ -304,3 +304,26 @@ const contents2 = fs.readFile('./hello.txt', 'utf-8', function(err, content) { /
 
 //=====================================================================================
 
+//when we do the same example using promises
+
+const fsv2 = require('fs/promises')
+
+console.log('Starting Program')
+
+fsv2
+.readFile('./hello.txt', 'utf-8')
+.then((content)=> {
+    console.log('File reading success',content)
+    fsv2.writeFile('./backup.txt', content)
+.then(()=> fsv2.unlink('./hello.txt'))
+.catch((e)=> console.log('Error', e))
+})
+
+
+//=====================================================================================
+
+//both the programs are doing the same thing
+//but the second program is using promises
+//hence it is more readable and easier to debug
+//because we are not doing callbacks inside callbacks
+//hence it is not called callback hell or pyramid of doom
