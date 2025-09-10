@@ -355,11 +355,44 @@ function readFileWithPromise(filepath, encoding){
     });
 }
 
+function writeFileWithPromise(filepath, content){
+    return new Promise((resolve,reject) => {
+        fs.writeFile(filepath,content, function(err){
+            if(err){
+                reject(err)
+            }else{
+                resolve()
+            }
+        })
+    })
+}
+
+function unlinkWithPromise(filepath){
+    return new Promise((resolve,reject) => {
+        fs.unlink(filepath, function(err){
+            if(err){
+                reject(err)
+
+            }else{
+                resolve()
+            }
+        })
+    })
+}
+
 //so here we have succesfully created a custom promise where we converted legacy code to promise based code
 //now we can use this custom promise to read a file
 
-const result = readFileWithPromise('./hello.txt', 'utf-8')
+readFileWithPromise('./hello.txt', 'utf-8')
+.then(content => writeFileWithPromise('./backup.txt'))
+.then(()=> unlinkWithPromise('./hello.txt'))
+.catch(e => console.log('Error', e))
+.finally(()=> console.log("All done"))
 
-result
-.then((e)=> console.log('File reading success', e))
-.catch((e)=> console.log('Error', e))
+// result
+// .then((e)=> console.log('File reading success', e))
+// .catch((e)=> console.log('Error', e))
+
+//this is called as promisification of a callback function
+//we have converted a callback function to a promise function
+//hence we can use this custom promise to read a file
