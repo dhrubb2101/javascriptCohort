@@ -494,6 +494,50 @@ console.log('Ending Program')
 // Finally block executed
 // doTasks completed
 
+//basically the larger code still runs is asynchronous code
+//it just looks because of async await it looks like synchronous code
+//hence it is called as syntactic sugar over promises
+//it makes the code more readable and easier to debug
+//it helps in running asynchronous code in a synchronous way
+//here the function dotasks gets called and it is a promise
+//hence it will not block the program
+//the program will continue executing the next line of code
+//hence "Ending Program" is printed before "All done with async await"
+//hence the asynchronous code is working in a synchronous way
+//and within the function as well since we are using await asyc it ensures within the async function the asynchronous code behaves like a synchronous code where promise for each line of code is resolved before going to the next line of code
+
+//==========================================================================================
+// chatgpt said
+// What you got right
+// async functions always return a Promise ✔️
+// That’s why you can use .then(...) after calling doTasks() ✔️
+// The main thread doesn’t wait for doTasks() to finish; it moves on to "Ending Program" ✔️
+// Inside the async function, using await makes each async call execute sequentially, just like synchronous code ✔️
+
+// 🔹 Where the explanation can be clearer
+// “Asynchronous code is working in a synchronous way” →
+// That’s true inside doTasks (because of await).
+// But outside, it’s still asynchronous. That’s why "Ending Program" prints before the doTasks logs.
+// So the async code doesn’t really “become synchronous”; it just looks synchronous within that async function.
+// Promises and non-blocking behavior →
+// Promises don’t “make the larger code synchronous.”
+// They allow async tasks to complete later without blocking the main thread.
+// What really happens: the async tasks are deferred to the event loop / microtask queue, so JS keeps running the rest of the script first.
+
+
+// 🔹 Corrected takeaway
+// Inside doTasks → await makes async calls execute in sequence (synchronous-like).
+// Outside doTasks → the async function runs in the background, and JS continues to the next line ("Ending Program") immediately.
+
+// That’s why the output order is:
+
+// Starting Program
+// Ending Program
+// All done with async await
+// Finally block executed
+// doTasks completed
+
+
 //==========================================================================
 // chatgpt said
 
