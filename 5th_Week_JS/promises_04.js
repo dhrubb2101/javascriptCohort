@@ -625,3 +625,34 @@ console.log('Ending Program')
 //readFileWithPromise('./hello.txt', 'utf-8').then(fileContent => console.log(content))
 //this above line represent the same thing as the line with await keyword
 console.log('Ending Program')
+
+//===========================================================================================
+
+//consider another example
+//we write a wait function which takes seconds as input and returns a promise which is resolved after the given seconds
+//we use setTimeout to simulate a delay of given seconds
+//we use this wait function in the doTasks function to wait for 10 seconds before deleting the hello.txt file
+
+function wait(seconds){
+    return new Promise((resolve, reject)=> {
+        setTimeout(function (){
+            resolve()
+        }, seconds * 1000)
+    })
+
+}async function doTasks(){
+    try{
+        const filecontent = await readFileWithPromise('./hello.txt', 'utf-8')
+        await writeFileWithPromise('./backup.txt', filecontent)
+        //wait 10 seconds
+        await wait(10)
+        await unlinkWithPromise('./hello.txt')
+        console.log('All done with async await')
+    } catch (error) {
+        console.log('Error', error)
+    } finally {
+        console.log('Finally block executed')
+    }
+}
+
+//===========================================================================================
