@@ -482,6 +482,9 @@ async function doTasks(){
    
 
 doTasks().then(() => console.log('doTasks completed'))
+//doTasks is a promise
+//hence we can use .then function to handle the promise
+//.then function will be executed when the promise is resolved
 
 console.log('Ending Program')
 //output
