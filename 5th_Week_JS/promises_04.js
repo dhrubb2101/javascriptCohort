@@ -412,3 +412,167 @@ readFileWithPromise('./hello.txt', 'utf-8')
 //they work internally over promises only
 //they help in running asynchronous code in synchornous way mei run krne mei help krte hai 
 //===============================================================================================================
+
+//An example of of where async and await come into play
+//where a Asynchronous code works in a synchronous way
+
+console.log('Starting Program')
+
+readFileWithPromise('./hello.txt', 'utf-8')
+.then(content => writeFileWithPromise('./backup.txt'))
+.then(()=> unlinkWithPromise('./hello.txt'))
+.catch(e => console.log('Error', e))
+.finally(()=> console.log("All done"))
+
+console.log('Ending Program')
+
+//output
+// Starting Program
+// Ending Program
+// All done
+
+//here the asynchronous code is working in a synchronous way
+//see from line 421 to 426
+//the code is written in a synchronous way
+//but it is working in an asynchronous way
+//hence it is called as asynchronous code working in a synchronous way
+//how it working in synchronous way
+//because each line of code is dependent on the previous line of code
+//and running in sync after the previous line of code is executed
+//hence it is called as asynchronous code working in a synchronous way
+//===============================================================================================================
+
+//we use promise chaining to avoid callback hell like chaining of .then functions or 
+//we use async await to avoid callback hell
+
+//===============================================================================================
+
+//async await example 
+
+console.log('Starting Program')
+
+readFileWithPromise('./hello.txt', 'utf-8')
+.then(content => writeFileWithPromise('./backup.txt'))
+.then(()=> unlinkWithPromise('./hello.txt'))
+.catch(e => console.log('Error', e))
+.finally(()=> console.log("All done"))
+
+// ==================== AURA +99999999999 ===============( syntactic sugar over promises )========================
+
+//async await is a modern way to handle asynchronous operations in JavaScript
+//it is a syntactic sugar over promises
+//it makes the code more readable and easier to debug
+//it helps in running asynchronous code in a synchronous way
+
+console.log('Starting Program')
+
+//async function always returns a promise
+async function doTasks(){
+    try{
+        const filecontent = await readFileWithPromise('./hello.txt', 'utf-8')
+        await writeFileWithPromise('./backup.txt', filecontent)
+        await unlinkWithPromise('./hello.txt')
+        console.log('All done with async await')
+    } catch (error) {
+        console.log('Error', error)
+    } finally {
+        console.log('Finally block executed')
+    }
+}
+   
+
+doTasks().then(() => console.log('doTasks completed'))
+
+console.log('Ending Program')
+//output
+// Starting Program
+// Ending Program
+// All done with async await
+// Finally block executed
+// doTasks completed
+
+//==========================================================================
+// chatgpt said
+
+// Execution order:
+
+// "Starting Program" → printed immediately.
+// doTasks() is invoked, but since it’s async, control returns immediately to the next line.
+// "Ending Program" → printed before doTasks() finishes.
+
+// Inside doTasks() (async):
+// If hello.txt exists →
+// Content copied to backup.txt
+// hello.txt deleted
+
+// Logs:
+
+// All done with async await
+// Finally block executed
+
+
+// If an error occurs (e.g., file missing) →
+
+// Logs:
+
+// Error [Error: ENOENT: no such file or directory, open './hello.txt']
+// Finally block executed
+
+// After doTasks() resolves, .then(...) runs → logs:
+
+// doTasks completed
+
+// ✅ Guaranteed output order (assuming no errors, hello.txt exists):
+// Starting Program
+// Ending Program
+// All done with async await
+// Finally block executed
+// doTasks completed
+
+
+// 👉 Would you like me to also show the error-case output order (when hello.txt is missing)?
+
+// You said:
+// if it is working like synchronous shouldn't async output come in between
+
+// ChatGPT said:
+
+// Good question 👍
+// Here’s the key:
+// async/await makes async code look synchronous inside the function body, but the function itself is still asynchronous.
+// When you call doTasks(), JavaScript immediately returns a Promise without waiting for the body to finish.
+
+// That’s why:
+
+// console.log("Starting Program")
+// doTasks()
+// console.log("Ending Program")
+
+
+// prints:
+
+// Starting Program
+// Ending Program   // printed before doTasks finishes
+// ...async logs later...
+
+
+// So inside doTasks the steps happen one after another (sequentially, like sync).
+// But outside, the function is async → control is returned to the caller right away.
+
+// 👉 In short:
+// Inside doTasks: synchronous-looking execution.
+// From the outside: asynchronous execution (so "Ending Program" jumps ahead).
+//==================================================================
+//here the code is stopping the code execution until the file is read before writing the file that is until readFileWithPromise promise is executed and resolved 
+//that's why await keyword is used in line 460 where it is asking file be read before going to the next line of code WHERE a backup file needs to be created of file read
+//then in line 461 await is used becuase file can be deleted only after it is written 
+//hence await keyword is used to stop the code execution until the promise is resolved
+//similarly in line 462 await is used because file can be deleted only after it is written
+//hence await keyword is used to stop the code execution until the promise is resolved
+//if you put in await keyword here it will resolve the promise here itself
+//and whatever value you were going to get from .then gets returned here itself
+//await kehta hai jo bhi uske aage promise hai usse ussi samay run kro and resolve kro and jo .then uska value return krna hai voh krei ussi time
+
+//readFileWithPromise('./hello.txt', 'utf-8').then(fileContent => console.log(content))
+//this above line represent the same thing as the line with await keyword
+console.log('Ending Program')
