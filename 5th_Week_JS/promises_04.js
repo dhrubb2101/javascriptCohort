@@ -539,6 +539,8 @@ console.log('Ending Program')
 
 
 //==========================================================================
+// async/await is syntactic sugar on top of .then chaining, making it look synchronous and even cleaner.
+//==================================================================
 // chatgpt said
 
 // Execution order:
