@@ -639,8 +639,17 @@ function wait(seconds){
             resolve()
         }, seconds * 1000)
     })
+}
 
-}async function doTasks(){
+// wait(20).then(() => {
+//     console.log('Waited for 20 seconds')
+// }) //this will wait for 20 seconds and then print the message
+//what is happening here is wait function returns a promise which is resolved after the given seconds
+//hence we can use .then function to handle the promise
+//.then function will be executed when the promise is resolved
+
+
+async function doTasks(){
     try{
         const filecontent = await readFileWithPromise('./hello.txt', 'utf-8')
         await writeFileWithPromise('./backup.txt', filecontent)
