@@ -102,7 +102,10 @@ if(!Array.prototype.myForEach){
 }
 const arr =  [1,2,3,4]
 
-arr.myForEach()
+arr.myForEach((currentItem, index) => {
+    console.log(`At Index : ${index}, Value: ${currentItem}`)
+})
+//here as a paramter we are passing the callback function
 
 // Why this?
 // Inside your custom myForEach, this refers to the array on which the method was called.
@@ -113,4 +116,44 @@ arr.myForEach()
 
 //===========================================================================   
 
+//similarly we can make polyfill of map function
+
+//map function takes a callback function as an argument and returns a new array with the results of calling the callback function on each item of the array
+
+if(!Array.prototype.myMap){
+    Array.prototype.myMap = function(cb){
+        const result = []
+        for(let i = 0; i < this.length; i++){
+            const value = cb(this[i], i)
+            result.push(value)
+        }
+        return result
+
+    }
+
+    const trippledArray = arr.myMap((e) => e * 3)
+    console.log(trippledArray) // [3,6,9,12]
+}
+
+//===========================================================================
+
+//similarly we can make polyfill of reduce function
+
+//reduce function takes a callback function and an initial value as arguments and returns a single value by applying the callback function on each item of the array
+const res = arr.reduce((accumulator, currentValue) => accumulator + currentValue)
+console.log(res) //10
+
+if(!Array.prototype.myReduce){
+    Array.prototype.myReduce = function(cb){
+        let acc = this[0] //accumulator
+        for(let i = 1; i < this.length; i++){
+           acc =  cb(acc, this[i])
+        }
+        return acc
+    }
+
+}
+
+const myRes = arr.myReduce((accumulator, currentValue) => accumulator + currentValue)
+console.log({res, myRes}) //10
 
