@@ -185,3 +185,38 @@ if(!Array.prototype.myReduce){
 
 const myRes = arr.myReduce((accumulator, currentValue) => accumulator + currentValue, 12)
 console.log({res, myRes}) 
+
+//===========================================================================
+
+//to clean this code , basically code should not be repeated
+
+if(!Array.prototype.myReduce){
+    Array.prototype.myReduce = function(cb,initialValue = undefined){
+        let acc = initialValue || this[0]; //this line means if initialValue is passed then acc = initialValue else acc = this[0]
+        //if initialValue is passed then we start loop from i=0 else we start loop from i=1
+        const startIndex = initialValue ? 0 : 1; //if initialValue is passed then startIndex = 0 else startIndex = 1
+        for(let i = startIndex; i < this.length; i++){ //here in for loop we use i=1 because acc is already this[0]
+           acc =  cb(acc, this[i])
+        }
+        return acc
+    }
+    
+
+}
+
+const myRes1 = arr.myReduce((accumulator, currentValue) => accumulator + currentValue, 12)
+console.log({res, myRes1}) //22
+//===========================================================================
+
+//to write polyfill of custom promise
+
+function wait(seconds){
+    return new Promise((resolve, reject) => { //Promise is a class because P is captial
+        setTimeout(() => resolve(), seconds*1000)
+    })
+}
+
+wait(10)
+.then(() => console.log("Promise Resolved After 10 seconds"))
+.catch(() => console.log("Promise Rejected After 10 seconds"))
+.finally(() => console.log("Mei toh har baar chalunga bhai"))
