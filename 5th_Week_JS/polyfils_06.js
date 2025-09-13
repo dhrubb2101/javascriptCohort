@@ -220,3 +220,10 @@ wait(10)
 .then(() => console.log("Promise Resolved After 10 seconds"))
 .catch(() => console.log("Promise Rejected After 10 seconds"))
 .finally(() => console.log("Mei toh har baar chalunga bhai"))
+
+//promise is a class which takes a function as an argument
+//jaise he promise ka object banate ho ek executor funtion do 
+//is executor function ke paas do cheezo ka access which are resolve and reject and resolve ko call krne pr:
+//promise gets fulfilled  and jitene bi then functions hai voh run kr jaate hai
+//and reject ko call krne pr promise reject ho jaata hai and sabhi catch function call ho jaate 
+//and finally toh ahr baar krna he hai
