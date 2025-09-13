@@ -141,12 +141,39 @@ if(!Array.prototype.myMap){
 
 //reduce function takes a callback function and an initial value as arguments and returns a single value by applying the callback function on each item of the array
 const res = arr.reduce((accumulator, currentValue) => accumulator + currentValue)
-console.log(res) //10
+// console.log(res) //10
+
+// if(!Array.prototype.myReduce){
+//     Array.prototype.myReduce = function(cb){
+//         let acc = this[0] //accumulator
+//         for(let i = 1; i < this.length; i++){
+//            acc =  cb(acc, this[i])
+//         }
+//         return acc
+//     }
+
+// }
+
+// const myRes = arr.myReduce((accumulator, currentValue) => accumulator + currentValue)
+// console.log({res, myRes}) //10
+
+//===========================================================================
+
+//say if initial value was passed
 
 if(!Array.prototype.myReduce){
-    Array.prototype.myReduce = function(cb){
+    Array.prototype.myReduce = function(cb,initialValue = undefined){
+        if(!initialValue){
+
         let acc = this[0] //accumulator
-        for(let i = 1; i < this.length; i++){
+        for(let i = 1; i < this.length; i++){ //here in for loop we use i=1 because acc is already this[0]
+           acc =  cb(acc, this[i])
+        }
+        return acc
+    }
+    else{
+        let acc = initialValue //accumulator
+        for(let i = 0; i < this.length; i++){
            acc =  cb(acc, this[i])
         }
         return acc
@@ -154,6 +181,7 @@ if(!Array.prototype.myReduce){
 
 }
 
-const myRes = arr.myReduce((accumulator, currentValue) => accumulator + currentValue)
-console.log({res, myRes}) //10
+}
 
+const myRes = arr.myReduce((accumulator, currentValue) => accumulator + currentValue, 12)
+console.log({res, myRes}) 
