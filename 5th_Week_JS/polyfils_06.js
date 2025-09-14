@@ -316,6 +316,11 @@ class MyPromise {
     }
 
     finally(cb){
+        if(this._state !== 'pending'){
+            console.log(`Apka promise toh pehle he pura/reject hogya hai, run he kr deta hu`)
+            cb() //immediately call the callback function if promise is already fulfilled or rejected
+            return this;
+        }
         this._finallyCallbacks.push(cb)
         return this;
     }
