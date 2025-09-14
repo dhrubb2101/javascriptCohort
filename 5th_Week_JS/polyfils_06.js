@@ -290,22 +290,28 @@ class MyPromise {
         this._successCallbacks = []; //to store all the then callbacks
         this._errorCallbacks = []; //to store all the catch callbacks
         this._finallyCallbacks = []; //to store all the finally callbacks
+        this.value = undefined; //to store the resolved value
         executorFn(this.resolverFunction.bind(this),this.rejectorFunction.bind(this)) //calling the executor function with resolve and reject functions
         
     }
 
     then(cb){
+        if(this._state === 'fulfilled'){
+            console.log(`Apka promise toh pehle he pura hogya, run he kr deta hu`)
+            cb(this.value) //immediately call the callback function if promise is already fulfilled
+        }
         this._successCallbacks.push(cb)
-        cb() //immediately call the callback function if promise is already fulfilled
-        //console.log(`Apka promise toh pehle he pura hogya, run he kr deta hu`)
         return this;
 
     }
 
     catch(cb){
+        if(this._state === 'rejected'){
+            console.log(`Apka promise toh pehle he reject  hogya hai, run he kr deta hu`)
+            cb() //immediately call the callback function if promise is already rejected
+            return this;
+        }
         this._errorCallbacks.push(cb)
-        cb() //immediately call the callback function if promise is already rejected
-        //console.log(`Apka promise toh pehle he reject  hogya hai, run he kr deta hu`)
         return this;
     }
 
@@ -317,6 +323,7 @@ class MyPromise {
     resolverFunction(value){
         this._state = 'fulfilled'
         console.log(`Fulfilling Promise, running ${this._successCallbacks.length} callbacks`)
+        this.value = value; //store the resolved value
         this._successCallbacks.forEach((cb)=> cb())
         this._finallyCallbacks.forEach((cb)=> cb())
     }
