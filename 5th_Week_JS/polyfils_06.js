@@ -227,3 +227,57 @@ wait(10)
 //promise gets fulfilled  and jitene bi then functions hai voh run kr jaate hai
 //and reject ko call krne pr promise reject ho jaata hai and sabhi catch function call ho jaate 
 //and finally toh ahr baar krna he hai
+
+class MyPromise {
+    constructor(executor) {
+        this._state = 'pending'; //initial state of promise
+        this._successCallbacks = []; //to store all the then callbacks
+        this._errorCallbacks = []; //to store all the catch callbacks
+        this._finallyCallbacks = []; //to store all the finally callbacks
+        executorFn(this.resolverFunction.bind(this),this.rejectorFunction.bind(this)) //calling the executor function with resolve and reject functions
+        
+    }
+
+    then(cb){
+        this._successCallbacks.push(cb)
+        return this;
+
+    }
+
+    catch(cb){
+        this._errorCallbacks.push(cb)
+        return this;
+    }
+
+    finally(cb){
+        this._finallyCallbacks.push(cb)
+        return this;
+    }
+
+    resolverFunction(value){
+        this._state = 'fulfilled'
+        this._successCallbacks.forEach((cb)=> cb())
+        this._finallyCallbacks.forEach((cb)=> cb())
+    }
+
+    rejectorFunction(err){
+        this._state = 'rejected'
+        this._errorCallbacks.forEach((cb)=> cb(err))
+        this._finallyCallbacks.forEach((cb)=> cb())
+    }
+}
+
+
+function wait(seconds){
+    const p =  new Promise((resolve, reject) => { //Promise is a class because P is captial
+        setTimeout(() => resolve('hahaha'), seconds*1000)
+        // setTimeout(() => reject(), seconds*1000)
+    })
+    return p
+}
+
+wait(10)
+.then((res) => console.log("Promise Resolved After 10 seconds", res))
+.catch((err) => console.log("Promise Rejected After 10 seconds", err))
+.finally(() => console.log("Mei toh har baar chalunga bhai"))
+
