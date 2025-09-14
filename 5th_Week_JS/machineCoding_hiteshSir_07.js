@@ -21,10 +21,16 @@ function greet(name){
     console.log(`Hello ${name}`)
 }
 
-ptaNahi(greet("hitesh"), 3)
-ptaNahi(greet("hitesh"), 3)
-ptaNahi(greet("hitesh"), 3)
-ptaNahi(greet("hitesh"), 3)
+const sachMeiNhiPta = ptaNahi(() => greet("hitesh"), 3000) //but here line 24 pr hum ek function expression de rhe hai jo abhi humme call krna hai kia ni hai abhi
+// ptaNahi(greet("hitesh"), 3000) //in 25,26,27 we are calling the greet function and uska return statement hum pata ni mei daal rhe
+sachMeiNhiPta()
+sachMeiNhiPta()
+sachMeiNhiPta()
+// //VV.V.Important
+// ptaNahi(greet("hitesh"), 3000)
+// ptaNahi(greet("hitesh"), 3000).
+
+
 
 
 //this ptaNahi function is a higher order function because it returns a function
