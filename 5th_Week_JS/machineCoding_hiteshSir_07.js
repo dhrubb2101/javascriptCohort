@@ -65,3 +65,23 @@ sachMeiNhiPta()
 
 // The arguments object is array-like (not a real array), so if you want to use it with apply, it works fine.
 // In your code, you wrote “bind returns a particular function and we provide it with context” → correct, but add that you still need to call that returned function later.
+
+//=====================================================================================
+
+//So basically ek story se samjho debounce concept ko
+//there is a mother and a daughter 
+//The mother promised her a daughter a box of chocolate if she kept for five minutes without asking for it.
+//so say the daughter for the first time started asking for it within just one minute 
+//so the mother said no and reset the clock for five minutes again
+//then the daughter again started asking for it within just two minutes
+//so the mother again said no and reset the clock for five minutes again
+//then the daughter again started asking for it within just three minutes   
+//so the mother again said no and reset the clock for five minutes again
+//then the daughter again started asking for it within just four minutes
+//so the mother again said no and reset the clock for five minutes again
+//then the daughter again started asking for it within just five minutes
+//so this time the mother said yes and gave her the box of chocolate
+//so basicallly the same thing happens in debounce concept where we take in consideration the last time the function was invoked
+//and the rest api requests before it are deleted or ignored    
+//so the function is invoked only after a certain amount of time has passed since the last time it was invoked
+//=====================================================================================
