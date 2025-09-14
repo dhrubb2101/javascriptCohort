@@ -281,3 +281,80 @@ wait(10)
 .catch((err) => console.log("Promise Rejected After 10 seconds", err))
 .finally(() => console.log("Mei toh har baar chalunga bhai"))
 
+//===========================================================================
+
+
+class MyPromise {
+    constructor(executor) {
+        this._state = 'pending'; //initial state of promise
+        this._successCallbacks = []; //to store all the then callbacks
+        this._errorCallbacks = []; //to store all the catch callbacks
+        this._finallyCallbacks = []; //to store all the finally callbacks
+        executorFn(this.resolverFunction.bind(this),this.rejectorFunction.bind(this)) //calling the executor function with resolve and reject functions
+        
+    }
+
+    then(cb){
+        this._successCallbacks.push(cb)
+        cb() //immediately call the callback function if promise is already fulfilled
+        //console.log(`Apka promise toh pehle he pura hogya, run he kr deta hu`)
+        return this;
+
+    }
+
+    catch(cb){
+        this._errorCallbacks.push(cb)
+        cb() //immediately call the callback function if promise is already rejected
+        //console.log(`Apka promise toh pehle he reject  hogya hai, run he kr deta hu`)
+        return this;
+    }
+
+    finally(cb){
+        this._finallyCallbacks.push(cb)
+        return this;
+    }
+
+    resolverFunction(value){
+        this._state = 'fulfilled'
+        console.log(`Fulfilling Promise, running ${this._successCallbacks.length} callbacks`)
+        this._successCallbacks.forEach((cb)=> cb())
+        this._finallyCallbacks.forEach((cb)=> cb())
+    }
+
+    rejectorFunction(err){
+        this._state = 'rejected'
+        this._errorCallbacks.forEach((cb)=> cb(err))
+        this._finallyCallbacks.forEach((cb)=> cb())
+    }
+}
+
+
+function wait(seconds){
+    const p =  new Promise((resolve, reject) => { //Promise is a class because P is captial
+        resolve('hahaha')
+        // setTimeout(() => resolve('hahaha'), seconds*1000)
+        // setTimeout(() => reject(), seconds*1000)
+    })
+    return p
+}
+
+const p = wait(10)
+
+console.log('Registering Callbacks')
+
+p.then((res) => console.log(`V1, Promise Resolved After 10 seconds", res`))
+.catch((err) => console.log(`V1, Promise Rejected After 10 seconds", err`))
+.finally(() => console.log(`V1, Mei toh har baar chalunga bhai`))
+
+
+p.then((res) => console.log(`V2, Promise Resolved After 10 seconds", res`))
+.catch((err) => console.log(`V2, Promise Rejected After 10 seconds", err`))
+.finally(() => console.log(`V2, Mei toh har baar chalunga bhai`))
+
+//here the code will not work  
+//here at line 338 promise gets resolved and at line 338 it does not have any callbacks to call because the callbacks are added after the state of the promise is changed so the callbacks are not called
+//mere callback register hone se pehle he promise resolve ho gaya
+//isse pehle function register ho paata unhone resolver function run kr dia and unke success callbacks khaali tha
+//kyuki callbacks add hone se pehle ya callbacks register hone se pehle  hi promise resolve ho gaya
+//and successcallbacks mei push kr paata usse pehle he promise got resolved
+
