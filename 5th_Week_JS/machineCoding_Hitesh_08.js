@@ -1,3 +1,8 @@
+//throttle function
+//======================================================================================
+// Throttling ensures a function is called at most once in a specified time period.
+// It limits the rate of function execution, useful for performance optimization.
+
 const ptaNahi = (fn, delay) => {
     let myId = null;
     return (...args) => {
@@ -55,3 +60,6 @@ ptaNahi()
 // Now the next call can pass the if check again, and fn can run.
 
 //======================================================================================
+
+// Example usage
+
