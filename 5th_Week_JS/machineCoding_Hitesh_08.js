@@ -63,3 +63,8 @@ ptaNahi()
 
 // Example usage
 
+//vahi same mother and daughter ki story but throa difference hai 
+//The mother prmised the daughter that she will get a box of chocolate if she keep quiet till 3PM
+//and it's 12PM now, so the daughter started asking for it at 12:30PM
+//it doesn't matter she will get the chocolate at 3PM only.
+//it doesn't matter how many time she she asks before 3PM she'll get the box of chocolate at3PM only that is throttle function
