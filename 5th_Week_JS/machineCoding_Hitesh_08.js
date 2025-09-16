@@ -19,6 +19,9 @@ Sa
 ptaNahi()
 ptaNahi()
 ptaNahi()
+
+////throttling bhai aise samjho ki myId ko null value di and fir ek function return kiya jismei humne check kiya ki agar myId null hai to hi function ko call karna hai
+//fir line 11 se main throttling ki kahani shru hoti hai ki jb voh settimeout functiion run hua and uska jb tk delay pura ni ho jaata hai tb tk voh kisi aur request ko ni dekhega and jb voh delay pura hoga `
 //======================================================================================
 
 // Breaking it down
