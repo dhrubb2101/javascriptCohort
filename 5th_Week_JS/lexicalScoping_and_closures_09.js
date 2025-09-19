@@ -27,6 +27,8 @@
 
 // console.log('Value of fname is', fname)
 
+//output
+//error
 // //cannot [redeclare] block-scoped variable 'fname
 
 //=====================================================================================
@@ -47,3 +49,40 @@ sayName() //Yes
 //In SayName Hitesh
 //why and how?
 //why when a global variable is defined the function picks up the updated value of same variable inside the function and not the global variable 
+//why 
+//let's see global execution context
+//it has two parts
+//memory phase
+//code phase
+//memory phase runs first 
+//In Memory phase, variables are first defined and variables are first initialized with undefined
+//and function always into the memory phase with it's whole body
+//so now in memory phase , until now fname is defined as undefined
+//then in code phase piyush is assigned to fname
+//first ine is done
+//in code phase ignore the function body for now
+//then comes console.log, it runs in code phase
+//it looks for fname 
+//which is found in memory phase
+//then function gets invoked
+//then see whether that function exists in memory phase
+//yes it exists
+//har function ka ek function execution context banta hai
+//iske bi do phase hote hai
+//memory phase
+//code phase
+//in memory phase of function execution context
+//and in function we also defined a variable named fname
+//which is again defined inside as undefined
+//then as there is novariable or function inside the function
+//we go to code phase of function execution context
+//then in code phase of function execution context
+//Hitesh is assigned to fname
+//then console.log runs
+//it looks for fname
+//it finds it in memory phase of function execution context
+//now the function execution context is deleted
+
+//also remember, hr function ka function execution context calls stack mei push hota hai
+
+//yaha function execution context ke andar memory phase mei ek [[scope]] naam ka special cheez hota hai jismei is
