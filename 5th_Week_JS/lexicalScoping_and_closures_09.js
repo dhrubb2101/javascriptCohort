@@ -104,4 +104,27 @@ sayName() //Yes
 //jab bhi aap ek function ke andar variable ko read krte ho 
 //-to pehle voh khud ke memory phase mei check krta hai that is local 
 //-then it checks in it's [[scope]] that is parent scope
-//
+//and if not present in that parent scope it check the parent of that parent scope
+//-this goes on until it reaches the global scope
+//-if not found even in global scope then it throws an error
+//for example //=====================================================================================
+
+let fname = 'Piyush'
+
+function sayName(){
+    let lename = 'Garg'
+
+    function inner(){
+        console.log('Fname is', fname is, 'lname is', lname)
+        //it looks for fname in it's memory phase
+        //not found
+        //it looks for fname in it's [[scope]] that is parent scope
+        return;
+
+    }
+    inner()
+
+}
+
+console.log('Value of Fname is', fname)
+sayName()
