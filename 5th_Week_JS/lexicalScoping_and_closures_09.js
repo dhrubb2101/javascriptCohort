@@ -109,22 +109,32 @@ sayName() //Yes
 //-if not found even in global scope then it throws an error
 //for example //=====================================================================================
 
-let fname = 'Piyush'
+// let fname = 'Piyush'
 
-function sayName(){
-    let lename = 'Garg'
+// function sayName(){
+//     let lename = 'Garg'
 
-    function inner(){
-        console.log('Fname is', fname is, 'lname is', lname)
-        //it looks for fname in it's memory phase
-        //not found
-        //it looks for fname in it's [[scope]] that is parent scope
-        return;
+//     function inner(){
+//         console.log('Fname is', fname is, 'lname is', lname)
+//         //it looks for fname in it's memory phase
+//         //not found
+//         //it looks for fname in it's [[scope]] that is parent scope
+//         return;
 
-    }
-    inner()
+//     }
+//     inner()
 
-}
+// }
 
-console.log('Value of Fname is', fname)
-sayName()
+// console.log('Value of Fname is', fname)
+// sayName()
+
+//this is called lexical scoping
+//mtlb sayName() function ke lexical scope mei parent scope hai global scope jaha pr fname defined hai and which comes inside lexical scope of sayName() function
+//and inner() function ke lexical scope mei parent scope hai sayName() function jaha pr lname defined hai and which comes inside lexical scope of inner() function
+//so inner() function can access both fname and lname
+
+//because the function is lexically present inside the parent function
+//so it can access the variable of parent function
+//but parent function cannot access the variable of inner function
+//because parent function is not lexically present inside the inner function
