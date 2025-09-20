@@ -74,7 +74,6 @@ sayName() //Yes
 //in memory phase of function execution context
 //and in function we also defined a variable named fname
 //which is again defined inside as undefined
-//then as there is novariable or function inside the function
 //we go to code phase of function execution context
 //then in code phase of function execution context
 //Hitesh is assigned to fname
@@ -85,4 +84,24 @@ sayName() //Yes
 
 //also remember, hr function ka function execution context calls stack mei push hota hai
 
-//yaha function execution context ke andar memory phase mei ek [[scope]] naam ka special cheez hota hai jismei is
+//yaha function execution context ke andar memory phase mei ek [[scope]] naam ka special cheez hota hai jiske anadr uss parent ka reference hota hai
+
+//Consider if you don't define fname inside the function this time, can fname still exist inside the function 
+//let's see
+//does fname exist inside the function execution context
+//no it doesn't exist
+//then it looks for fname in it's [[scope]] which is the parent and parent is the one that defines the function
+//that is whatever is the outer scope of the function is the parent
+//and in the outer scope fname is defined
+//so it finds it there
+//and it prints Piyush
+//now you understood
+//basically if there is a inner function inside sayName() then the variables defined inside sayName() will be the parent of that inner function
+
+//in here basically the vairable fname exist in two different scopes if it is defined within function and outsside of it and in memory phase variable can only be defined once , though it does in two different scopes
+//but if it is defined only outside the function then it exists in only one scope that is global scope
+
+//jab bhi aap ek function ke andar variable ko read krte ho 
+//-to pehle voh khud ke memory phase mei check krta hai that is local 
+//-then it checks in it's [[scope]] that is parent scope
+//
