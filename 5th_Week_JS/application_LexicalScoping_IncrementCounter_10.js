@@ -221,3 +221,61 @@ console.log(y()) //3
 // 🔑 Why?
 
 // Because the inner function (saved in x) closes over the variable count and keeps updating the same one every time you call x().
+
+//===================================================
+//Basically an understanding of closure function and why it has access to the variable of its outer function even after outer function has finished executing because there's reference of that variable in the inner function
+function test(){
+    let obj = {
+        value : 10 //10MB
+    }
+    return true;
+
+}
+
+test() //10MB
+//As test execution gets done
+//the memory allocated to obj gets cleared
+//memory gets cleared by garbage collector
+//so again memory becomes 0MB
+
+//===================================================
+
+function test(){
+    let obj = {
+        value : 10 } //10MB
+        return function(){
+            console.log(obj)
+        }
+    }
+
+
+
+const innerFn = test() 
+
+innerFn() //10MB
+//can you still access obj
+//yes because innerFn is a closure function
+//it has access to its lexical scope
+//garbage collector will not clear the memory
+//memory will not be cleared
+//so memory will still be 10MB
+//why
+//because you're returning the inner function and it has reference to obj
+//so memory will not be cleared
+//===================================================
+
+//another example of closure function
+// function createCounter1(stepSize = 1. initialValue = 0){
+//     return function(){
+//         initialValue = initialValue + stepSize
+//         return initialValue
+//     } 
+// }
+
+// const i1 = createCounter1(1,1)
+
+// console.log(i1()) //2
+// console.log(i1()) //3
+// console.log(i1()) //4   
+// console.log(i1()) //5
+// console.log(i1()) //6
