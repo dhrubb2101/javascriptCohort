@@ -327,6 +327,9 @@ let logger = createInstance()
 const logger2 = createInstance()
 const logger3 = createInstance()
 
+createInstance()() //here we are calling the inner function immediately
+//here we are directly calling the inner function of createInstance immediately
+
 logger()
 logger()
 logger()
