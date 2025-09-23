@@ -262,9 +262,17 @@ innerFn() //10MB
 //why
 //because you're returning the inner function and it has reference to obj
 //so memory will not be cleared
+
+//A function returning a function with its lexical scope binded is called closure function
 //===================================================
 
 //another example of closure function
+
+//closure function with parameter
+// here we can set the step size and initial value of the counter
+//closure function here allows controlled access to the variable of its outer function
+
+
 // function createCounter1(stepSize = 1. initialValue = 0){
 //     return function(){
 //         initialValue = initialValue + stepSize
@@ -279,3 +287,20 @@ innerFn() //10MB
 // console.log(i1()) //4   
 // console.log(i1()) //5
 // console.log(i1()) //6
+
+//===================================================
+
+// Another example of closure function
+//debounce function
+//A debounce function is a function that delays the processing of the input until a certain amount of time has passed since the last input was received.
+//This is useful for preventing a function from being called too frequently, such as when a user is typing in a search box or resizing a window.
+
+function createDebouncedVersion(fn, delay){
+    let timerId = null
+
+    return function(){
+        clearTimeout(timerId)
+        timerId = setTimeout(fn, delay)
+    }
+
+}
