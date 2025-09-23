@@ -304,3 +304,37 @@ function createDebouncedVersion(fn, delay){
     }
 
 }
+
+function apiCall(){}
+
+const apiCallWDebounce = createDebouncedVersion(apiCall, 1000)
+apiCallDebounce()
+
+//===================================================
+
+//memory leak in closure function
+
+function createInstance(){
+    let store = {
+        value: 100,
+    } // 100MB - if in our case this object had 100MB of data
+    return function(){ //
+        console.log(store)
+    }
+}
+
+let logger = createInstance()
+const logger2 = createInstance()
+const logger3 = createInstance()
+
+logger()
+logger()
+logger()
+logger()
+logger()
+
+//iske baad kya mujhe store chahiye?
+logger = null //cuz as soon as you do this the reference to that closure function is lost
+//ab store ko garbage collector clear kar dega
+//memory will be 0MB
+// 1 Million line of code
