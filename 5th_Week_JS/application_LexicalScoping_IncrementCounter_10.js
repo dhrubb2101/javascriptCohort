@@ -341,3 +341,4 @@ logger = null //cuz as soon as you do this the reference to that closure functio
 //ab store ko garbage collector clear kar dega
 //memory will be 0MB
 // 1 Million line of code
+//
