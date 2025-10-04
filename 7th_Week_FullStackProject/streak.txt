@@ -4,3 +4,4 @@
 "update for 3 days ago" 
 "update for 2 days ago" 
 "update for yesterday" 
+"update $(date)" 
