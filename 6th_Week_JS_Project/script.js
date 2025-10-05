@@ -61,3 +61,13 @@ allBoards.forEach(board => {
     })
 })
 
+
+//Features we need to add further 
+// -Edit task
+//-Delete Task
+//Dynamically add boards
+//Remove Boards
+//Drag - Sorting
+//Tasks - Local Stoage (store)
+//Board Head count shows count on number of tasks
+//Time on Every Task
