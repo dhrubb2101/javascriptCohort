@@ -1,0 +1,12 @@
+Check the node version first when creating a full stack project
+
+You run the js code using commands
+node filename.js
+bun filename.js
+
+Though we'll beusing just node for now
+
+we tested a js filename.js file using node command in terminal
+
+Then install the npm package manager using
+npm init -y
