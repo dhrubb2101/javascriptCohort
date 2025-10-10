@@ -10,8 +10,24 @@ we tested a js filename.js file using node command in terminal
 
 Then install the npm package manager using
 npm init -y
+y here indicates yes to all the default questions
 
 We are not looking at the structure of the project first 
 
 but seeing can we even do the project at the first place
+
+Then decide the entry point of the project
+
+here by default it is index.js
+
+You see it when you pass the command npm init
+
+//===================================================================
+
+now when you began to create the files for the fullstack project
+
+we start with file that is defined as the entry point of the project
+here in this case it is index.js
+
+//===================================================================
 
