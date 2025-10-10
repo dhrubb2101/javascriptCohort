@@ -10,3 +10,8 @@ we tested a js filename.js file using node command in terminal
 
 Then install the npm package manager using
 npm init -y
+
+We are not looking at the structure of the project first 
+
+but seeing can we even do the project at the first place
+
