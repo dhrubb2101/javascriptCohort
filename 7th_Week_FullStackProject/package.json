@@ -1,0 +1,12 @@
+{
+  "name": "7th_week_fullstackproject",
+  "version": "1.0.0",
+  "description": "a node fullstack project with authentication",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
