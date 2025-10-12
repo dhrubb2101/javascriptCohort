@@ -39,3 +39,43 @@ here in this case it is index.js
 -we can also use import but for that we need to set the type of the project as module in package.json file
 -they just bring the data from another file to the current file
 -we'll use module here
+
+//===================================================================
+
+-you can see the critical structure of the project
+-you can see it in env file or env.sample file
+-like what is happening in the project , what services are being used in the project and what database is being used in the project
+
+//===================================================================
+
+there is a platform called render
+//where you host your fullstack project for free
+//there you add your environment variables 
+in env file we database password and other or openAI API keys, Razorpay username and password etc
+all these are sensitive data
+what mail services are being used in the project
+what payment gateway is being used in the project
+all these are mentioned in the env file
+you push the env file directly to serber or you push the env.sample file to the server
+
+//===================================================================
+
+Now next step is 
+there's a client and a server
+client sends request to the server
+server processes the request and sends back the response to the client
+client will request at /
+and server will respond with a message "cohort"
+so we create a server using express framework
+//express is a third party library
+
+//===================================================================
+
+next step is to install express framework using
+npm install express
+
+//===================================================================
+
+if you want to see what libraries and dependencies are installed in your project
+you can see it in package.json file and package-lock.json file
+you can see the packages in the dependencies object in package.json file
