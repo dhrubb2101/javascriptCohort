@@ -79,3 +79,20 @@ npm install express
 if you want to see what libraries and dependencies are installed in your project
 you can see it in package.json file and package-lock.json file
 you can see the packages in the dependencies object in package.json file
+
+//===================================================================
+
+go to index.js and copy the express code
+//here command require is being used 
+instead we use import command
+import express from 'express';
+and remove the require command
+which is 
+const express = require('express');
+
+here express as a function is being called and the return value is stored in the app variable
+const app = express();
+express ki saari shakti app ko transfer ho rhi hai 
+
+
+//===================================================================
