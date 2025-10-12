@@ -134,3 +134,10 @@ then write PORT in env file
 then we download the dotenv package using
 npm install dotenv
 //it helps us to read the env file and set the environment variables in the process.env object
+
+//===================================================================
+
+then we go to index.js file and import dotenv package   
+import dotenv from "dotenv"
+dotenv.config()
+//it reads the env file and sets the environment variables in the process.env object

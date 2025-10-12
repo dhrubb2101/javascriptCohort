@@ -1,7 +1,10 @@
 import express from "express"
+import dotenv from "dotenv"
+
+dotenv.config()
 
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 app.get('/', (req, res) => {
   res.send('Cohort')
@@ -12,6 +15,8 @@ app.get('/hitesh', (req, res) => {
 app.get('/piyush', (req, res) => {
   res.send('Piyush')
 })
+
+// console.log(process.env.PORT || 3000)
 //Common Error here we are going to make 
 //always add slash '/' in the starting of the url
 //http://localhost:3000/hitesh
@@ -23,7 +28,7 @@ app.get('/piyush', (req, res) => {
 //get type ki request / pr aa rhi hai
 //thr callback pura jo syntax hai voh express ke thorugh dia ja rha hai
 
-app.listen(port, () => {
+app.listen(process.env.PORT , () => {
   console.log(`Example app listening on port ${port}`)
 })
 
