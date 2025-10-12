@@ -172,3 +172,7 @@ app.use(cors());
 //like this
 app.use(cors({ origin: 'http://example.com' }));
 //it enables CORS for the route /api
+//cors basically allows the frontend to access the backend resources
+//that is cors sirf ussi frontend ko access dena chah rha hai jiska url humne cors me dia hai for it to accessed in the backend
+
+//===================================================================
