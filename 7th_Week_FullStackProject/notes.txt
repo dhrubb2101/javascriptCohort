@@ -106,3 +106,23 @@ npm install nodemon --save-dev
 //it is not used in the production phase of the project
 
 //it monitors the node and whenever there is need it reloads it
+//====================================================================
+
+Then we go to package.json file and add a script to start the server using nodemon
+"scripts": {
+    "start": "nodemon index.js"
+  },
+
+//===================================================================
+
+//the dependencies that are installed in package.json are crucial dependencies for
+//development dependencies are those which are used in the development phase of the project
+//command for them is 
+npm i -D nodemon
+
+//===================================================================
+
+now we'll run the project by command
+npm run start
+and the last word here is start we can change that any other word in "scripts" object in package.json file
+and then use that in command
