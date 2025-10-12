@@ -126,3 +126,11 @@ now we'll run the project by command
 npm run start
 and the last word here is start we can change that any other word in "scripts" object in package.json file
 and then use that in command
+
+//===================================================================
+
+go to .env file
+then write PORT in env file 
+then we download the dotenv package using
+npm install dotenv
+//it helps us to read the env file and set the environment variables in the process.env object
