@@ -94,5 +94,15 @@ here express as a function is being called and the return value is stored in the
 const app = express();
 express ki saari shakti app ko transfer ho rhi hai 
 
-
+Then we give a port number to the server to listen to the requests
+const PORT = 3000;
 //===================================================================
+
+Then we install 
+npm install nodemon
+npm install nodemon --save-dev
+//--save-dev means it is a dev dependency
+//it is used in the development phase of the project
+//it is not used in the production phase of the project
+
+//it monitors the node and whenever there is need it reloads it
