@@ -141,3 +141,34 @@ then we go to index.js file and import dotenv package
 import dotenv from "dotenv"
 dotenv.config()
 //it reads the env file and sets the environment variables in the process.env object
+
+//===================================================================
+
+//use of process.env.PORT (you define port accordingly) in index.js
+
+//===================================================================
+
+user first send request to frontend (client)
+then frontend sends request to backend (server)
+then backend processes the request and sends back the response to the frontend (client)
+then frontend shows the response to the user
+
+//===================================================================
+
+//CORS Error
+//CORS means Cross Origin Resource Sharing
+//it is a security feature implemented by browsers to prevent malicious websites from accessing resources on other websites
+//when the frontend and backend are on different domains or ports, the browser considers them as different origins
+//so when the frontend sends a request to the backend, the browser blocks the request and shows a CORS error
+//to fix this error, we need to enable CORS on the backend
+//we can do this by using the cors package
+//we can install it using npm install cors  
+
+//===================================================================
+
+app.use(cors());
+//it enables CORS for all routes and origins
+//if you want to enable CORS for specific routes or origins, you can pass options to the cors function
+//like this
+app.use(cors({ origin: 'http://example.com' }));
+//it enables CORS for the route /api
