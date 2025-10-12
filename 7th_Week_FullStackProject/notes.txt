@@ -31,3 +31,11 @@ here in this case it is index.js
 
 //===================================================================
 
+-we use third party libraries in our code to get some code functionality
+-so they are two instances one is
+-require
+-import
+-to use require we need to set the type of the project as commonjs in package.json file
+-we can also use import but for that we need to set the type of the project as module in package.json file
+-they just bring the data from another file to the current file
+-we'll use module here
