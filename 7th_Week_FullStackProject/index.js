@@ -11,6 +11,14 @@ app.use(cors({
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
+app.use(express.json())
+//To accept JSON data in request body
+
+app.use(express.urlencoded({ extended: true }))
+//To accept URL encoded data in request body
+//for ex
+
+
 const port = process.env.PORT || 3000
 
 app.get('/', (req, res) => {

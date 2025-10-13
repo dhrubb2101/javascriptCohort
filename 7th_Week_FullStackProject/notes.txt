@@ -176,3 +176,14 @@ app.use(cors({ origin: 'http://example.com' }));
 //that is cors sirf ussi frontend ko access dena chah rha hai jiska url humne cors me dia hai for it to accessed in the backend
 
 //===================================================================
+
+//now there's a new problem
+
+//we want to send data {"name": "hitesh"} from frontend to backend
+//until now we were sending only web requests from backend to frontend
+
+//===================================================================
+
+//now we have no issue if backend directly communicates with the database
+//in first iteration we'll be using  mongodb then we will be using postgreSQL
+//to talk to mongodb we'll be using mongoose package which will in turn talk to mongodb
