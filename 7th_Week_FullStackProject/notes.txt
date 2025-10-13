@@ -187,3 +187,8 @@ app.use(cors({ origin: 'http://example.com' }));
 //now we have no issue if backend directly communicates with the database
 //in first iteration we'll be using  mongodb then we will be using postgreSQL
 //to talk to mongodb we'll be using mongoose package which will in turn talk to mongodb
+
+//===================================================================
+
+we'll be creating utils.js file in which we will be creating a function to connect to the database
+//then we will be exporting that function to index.js file and calling it in index.js file
