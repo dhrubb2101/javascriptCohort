@@ -1,2 +1,2 @@
-"update" 
-"streak $(date)" 
+"streak start" 
+"update for 5 days ago" 
