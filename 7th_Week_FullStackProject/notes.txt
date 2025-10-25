@@ -244,3 +244,35 @@ You export db so you can import and call it in your main file (server.js, etc.) 
 now we want to connect to database in index.js
 go to index.js file 
 make sure to update the username and password in the mongodb atlas website what yoou put in the env file
+
+//================================================================================================================================
+
+Now constructing a new project entirely
+//the structure of the project will always remain same 
+first install mongoose and express 
+then cors and .env is necessary
+and then nodemon 
+and then come to index.js line 1-19 will come always and be repeated in every structure of project
+or till line 21 where we define the port.
+
+//====================================================
+so firstly name your project what to build 
+then secondly we figure out data to host, kya feature hai that all is dependent upon data 
+//so what data to host is most important 
+//if in a data we want to verify whether a user is verified or not and if in a database there's no verified field how will you tell whether a user is verified or not
+so always focus most on what you store in database
+say 
+
+//====================================================
+
+say we're building an authentication system
+where basics take place where user registers and logins
+(That's your What to Build)
+now as for (What To Store & Host)
+you go with storing 
+name
+email
+password
+Role : USER, ADMIN
+
+this is your User Schema or structure
