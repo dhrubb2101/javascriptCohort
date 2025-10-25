@@ -208,3 +208,13 @@ we can create amultiple database user as well
 //now in IP access list in mongodb 
 //Ip white-listing - to access a database you need a username and password 
 // and secondly an added layer of security is what IP is being used to an fetch a particular request
+//here so the second security layer you need to add specific Ip to access the server.
+
+//====================================================================================
+
+cluster has collections options where it creates a sample database 
+you can delete it as well
+
+//=====================================================================================
+
+after database we need ip_whitelisting then a username and password
