@@ -223,3 +223,13 @@ after database we need ip_whitelisting then a username and password
 
 added a mongodb_url taken from cluster in .env file 
 always remember when entering db_password add special charater in the middle and not in the end because the line goes like @cluster.
+also add a base_url in .env file
+
+//===============================================
+
+then we import this 
+import dotenv from "dotenv"
+dotenv.config() in db.js
+
+//=================================================
+
