@@ -1,5 +1,8 @@
 import express from "express"
 import dotenv from "dotenv"
+import cors from "cors"
+import db from "./utils/db.js"
+
 
 dotenv.config()
 
@@ -42,6 +45,9 @@ app.get('/piyush', (req, res) => {
 
 //get type ki request / pr aa rhi hai
 //thr callback pura jo syntax hai voh express ke thorugh dia ja rha hai
+
+//connect to db
+db();
 
 app.listen(process.env.PORT , () => {
   console.log(`Example app listening on port ${port}`)

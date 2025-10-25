@@ -233,3 +233,14 @@ dotenv.config() in db.js
 
 //=================================================
 
+export default db
+we use this in db.js because 
+dotenv.config() loads your .env file variables into process.env.
+process.env.MONGO_URL accesses your MongoDB connection string.
+You export db so you can import and call it in your main file (server.js, etc.) like:
+
+//===========================
+
+now we want to connect to database in index.js
+go to index.js file 
+make sure to update the username and password in the mongodb atlas website what yoou put in the env file
