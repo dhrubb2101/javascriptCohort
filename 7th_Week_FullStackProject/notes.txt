@@ -203,3 +203,8 @@ we'll be creating utils.js file in which we will be creating a function to conne
 //as if consider this example where if your database was in tokyo but your server is here in mumbai then the latency of data will increase.
 // That's why we keep the server and the database at the same place.
 //as otherwise data will reach the server very late.
+//now as a cluster is being set up , now to connect to the database we give it a username and password 
+we can create amultiple database user as well
+//now in IP access list in mongodb 
+//Ip white-listing - to access a database you need a username and password 
+// and secondly an added layer of security is what IP is being used to an fetch a particular request
