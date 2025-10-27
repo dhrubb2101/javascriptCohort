@@ -276,3 +276,34 @@ password
 Role : USER, ADMIN
 
 this is your User Schema or structure
+
+now a verification  of user which that when we click on email that account gets verified
+you have to store that too , so we'll need to make a field for it too.
+
+-isVerified
+-Location
+-CreatedAt
+-PasswordReset
+
+
+//===============================================================================
+
+Side Quest - To see the flow for password reset in an authentication system
+
+consider three things user, backend, database
+to do this user goes to backend via some route like /reset
+user will also send it's email too to the backend 
+the aim is to password reset 
+email will then go to the database where it is showed email exists then only password reset would be allowed
+and it is made aware to backend that email exists
+Now we create a unique code made of random strings called token in backend 
+//so now when the user sends the reset request to backend and you check the database for email ,you generate a token in backend & send a copy of token to the user as response and keep one copy of token in database.
+and then user comes back again with /reset-password URL and he'll bring that copy of token with it and the database will check whether it has that token and password reset will happen for that particular user whose token matches
+that token which goes to the user goes inside an email
+
+so now we create two fields inside the database 
+passwordResetToken
+passwordResetExpires
+
+this is the flow of password reset
+//=============================================================================================
