@@ -132,6 +132,12 @@ console.log(typeof convertedNum4); // Output: number
 // convertedNum4 // NaN
 // typeof convertedNum4 // "number"
 
+// In JavaScript, NaN (Not-a-Number) is a special numeric value that represents an invalid number operation — not a separate type.
+// Here’s why its type is "number":
+// JavaScript has only one numeric type: Number.
+// NaN is actually one of the possible values of this Number type, just like Infinity, -Infinity, or 42.
+// So even though NaN means “not a valid number,” it’s still stored and treated as a number type internally.
+
 
 // Case 2:
 
