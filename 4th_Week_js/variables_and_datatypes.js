@@ -42,7 +42,7 @@ let undefinedVar = undefined //undefined is the primitive datatype
 let symbolVar = Symbol() //Symbol is a primitive datatype
 
 console.log(typeof nothing); // Output: object (this is a quirk in JavaScript)
-console.log(typeof undefinedVar)
+console.log(typeof undefinedVar) // Output: undefined
 
 
 //=======================================================
@@ -98,7 +98,7 @@ let num2 = "42a"
 let convertedNum2 = +num2
 
 console.log(convertedNum2); // Output: NaN
-console.log(typeof convertedNum2); // Output: number (but it is NaN)
+console.log(typeof convertedNum2); // Output: number (but it is NaN)     
 
 //=======================================================
 
