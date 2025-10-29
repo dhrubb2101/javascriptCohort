@@ -236,8 +236,11 @@ console.log(message.length); // Output: 11 (length of the string)
 console.log(message.toUpperCase()); // Output: "HELLO WORLD" (convert to uppercase)
 console.log(message.toLowerCase()); // Output: "hello world" (convert to lowercase)
 console.log(message.indexOf("World")); // Output: 6 (index of "World" in the string)
-console.log(message.slice(0, 5))
+console.log(message.slice(0, 5)) // Output: "Hello" (extract substring from index 0 to 5)
 
+// slice(start, end) extracts characters from start index up to but not including end.
+// So it takes characters from index 0 → 4 (H, e, l, l, o).
+// Index 5 (the space) is not included.
 //================================================
 
 //Template literals
@@ -259,6 +262,9 @@ let greeting = `Hello ${myName}, from chaicode`
 
 // //  arithmetic
 // console.log(`2 + 3 = ${2 + 3}`);
+// Backticks (` `) allow template literals.
+// ${...} lets you embed expressions inside the string.
+// JavaScript evaluates 2 + 3 first, then inserts the result into the string.
 
 // // function call
 // function greet(name) {
@@ -267,7 +273,10 @@ let greeting = `Hello ${myName}, from chaicode`
 // console.log(`Hello ${greet(myName)}`);
 
 // // conditional (ternary)
-// console.log(`You are ${myName.length > 5 ? "cool" : "short-named"}`);
+// console.log(`You are ${myName.length > 5 ? "cool" : "short-named"}`); //output will be "You are cool"
+// myName.length > 5 is the condition.
+// If it’s true, "cool" will be inserted.
+// If it’s false, "short-named" will be inserted.
 
 // //  object property
 // let user = { age: 25 };
