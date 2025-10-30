@@ -1,15 +1,15 @@
 let chaiTypes = ["Masala Chai", "Ginger Chai","Green Chai" ,"Lemon Chai"];
 
-console.log(chaiTypes[2]);
-console.log(chaiTypes[3]);
+console.log(chaiTypes[2]); //output: "Green Chai"
+console.log(chaiTypes[3]); //output: "Lemon Chai"
 
 //========================================================
 
-console.log(`Total chai Types: ${chaiTypes.length}`)
-console.log(`All Chai Types : ${chaiTypes.length}`)
+console.log(`Total chai Types: ${chaiTypes.length}`)   // Output: Total chai Types: 4
+console.log(`All Chai Types : ${chaiTypes.length}`)   // Output: All Chai Types : 4
 
+chaiTypes.push("Black Tea") // adds item to end 
 chaiTypes.push("Herbal Tea") // adds item to end
-chaiTypes.push("Black Tea") // add item to end 
 
 console.log(chaiTypes)
 
@@ -17,9 +17,9 @@ const data = chaiTypes.pop() //removes last item and returns it
 
 console.log(data)   // Output: "Herbal Tea"
 
-let index = chaiTypes.indexOf("Ginger Chai"); // output: 2
+let index = chaiTypes.indexOf("Ginger Chai"); // output: 1
 console.log(index)
-let indexChai = chaiTypes.indexOf("Lemon Chai")
+let indexChai = chaiTypes.indexOf("Lemon Chai") // output: 3
 console.log(indexChai)
 
 //========================================================
@@ -29,8 +29,9 @@ if(index !== -1) {
 }
 console.log(chaiTypes); // Output: ['Masala Chai','Ginger Chai','Green Chai','Lemon Chai', 'Herbal Tea']
 
-chaiTypes.splice(index, 1)
+chaiTypes.splice(index, 1) 
 
+//here the index is 3 (for "Lemon Chai") which was found using indexOf() on line 20.
 // splice(start, deleteCount) changes the original array.
 // start = index → the found position.
 // deleteCount = 1 → remove 1 element.
@@ -43,7 +44,12 @@ chaiTypes.splice(index, 1)
 chaiTypes.forEach((chai, index) => {
     console.log(`${index + 1}: ${chai}`)
 })
-
+// Output:
+// 1: Masala Chai
+// 2: Ginger Chai
+// 3: Green Chai
+// 4: Lemon Chai
+// 5: Black Tea
 //================================
 
 //how to merge two arrays
