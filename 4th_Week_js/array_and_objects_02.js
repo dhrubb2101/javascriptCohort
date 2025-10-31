@@ -61,7 +61,7 @@ let newChaiTypes = [...chaiTypes, "Chamomile Tea"] //spread operator basically s
 console.log(allChaiTypes); // Output: ["Masala Chai", "Ginger Chai", "Lemon Chai", "Oolong Tea", "White Tea"]
 console.log(newChaiTypes); // Output: ["Masala Chai", "Ginger
 
-//=========================================================
+//======================================================================
 
 //object literals
 
@@ -80,7 +80,6 @@ console.log(chaiRecipe.ingredients.spices[1])
 let updatedChaiRecipe = {
     ...chaiRecipe,
     instruction:"Boil water,add tea leaves,milk,sugar,spices with some love",
-
 }
 
 console.log(updatedChaiRecipe)
