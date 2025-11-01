@@ -25,11 +25,12 @@ console.log(indexChai)
 //========================================================
 
 if(index !== -1) {
-    chaiTypes.splice(index, 1); // removes "Lemon Chai" from the array
+    chaiTypes.splice(index, 1); // removes "Ginger Chai" from the array
 }
-console.log(chaiTypes); // Output: ['Masala Chai','Ginger Chai','Green Chai','Lemon Chai', 'Herbal Tea']
-
-chaiTypes.splice(index, 1) 
+// if(index = -1){
+//     chaiTypes.splice(indexChai, 1); // removes "Lemon Chai" from the array
+// }
+console.log(chaiTypes); // Output: ['Masala Chai','Green Chai','Lemon Chai', 'Black Tea']
 
 //here the index is 3 (for "Lemon Chai") which was found using indexOf() on line 20.
 // splice(start, deleteCount) changes the original array.
@@ -45,24 +46,27 @@ chaiTypes.forEach((chai, index) => {
     console.log(`${index + 1}: ${chai}`)
 })
 
-chaiTypes.forEach((chai, index))
+// chaiTypes.forEach((chai, index))
 // Output:
 // 1: Masala Chai
-// 2: Ginger Chai
-// 3: Green Chai
-// 4: Lemon Chai
-// 5: Black Tea
+// 2: Green Chai
+// 3: Lemon Chai
+// 4: Black Tea
 //================================
 
 //how to merge two arrays
 let moreChaiTypes = ["Oolong Tea", "White Tea"]
 
-let allChaiTypes = chaiTypes.concat(moreChaiTypes)
+// let allChaiTypes = chaiTypes.concat(moreChaiTypes)
+let allChaiTypes1 = chaiTypes.concat(moreChaiTypes, ["Herbal Tea", "Fruit Tea"])
+let allChaiTypes2 = chaiTypes.concat(...chaiTypes, "Oolong Tea", "White Tea", "Orange Tea")
 
+let newChaiTypes2 = [...chaiTypes, ...allChaiTypes1, "COOL Tea"]
 let newChaiTypes = [...chaiTypes, "Chamomile Tea"] //spread operator basically spreads the elements of the array chaiTypes and adds "Chamomile Tea" to the end
-console.log(allChaiTypes); // Output: ["Masala Chai", "Ginger Chai", "Lemon Chai", "Oolong Tea", "White Tea"]
+console.log(allChaiTypes1); // Output: ["Masala Chai", "Ginger Chai", "Lemon Chai", "Oolong Tea", "White Tea", "Herbal Tea", "Fruit Tea"]
 console.log(newChaiTypes); // Output: ["Masala Chai", "Ginger Chai", "Lemon Chai", "Chamomile Tea"]
-
+console.log(allChaiTypes2); // Output: ["Masala Chai", "Ginger Chai", "Lemon Chai", "Masala Chai", "Ginger Chai", "Lemon Chai", "Oolong Tea", "White Tea", "Orange Tea"]
+console.log(newChaiTypes2); // Output: ["Masala Chai", "Ginger Chai", "Lemon Chai", "Masala Chai", "Ginger Chai", "Lemon Chai", "Oolong Tea", "White Tea", "Herbal Tea", "Fruit Tea", "COOL Tea"]
 //======================================================================
 
 //object literals
@@ -88,7 +92,7 @@ console.log(updatedChaiRecipe)
 
 //The ...chaiRecipe copies all properties, and the instruction key is overridden with the new string.
 
-let {name,myingredients} = chaiRecipe; //destructuring the object
+let {name,ingredients} = chaiRecipe; //destructuring the object
 let [firstChai, secondChai] = chaiTypes //destructuring the array
 
 //these all fours are variables
@@ -96,7 +100,7 @@ let [firstChai, secondChai] = chaiTypes //destructuring the array
 console.log(secondChai) // Output: "Ginger Chai"
 console.log(name) // Output: "Masala Chai"
 console.log(firstChai) // Output: "Masala Chai"
-console.log(myingredients) // Output: { teaLeaves: 'Assam Tea', milk: 'Full Cream Milk', spices: [ 'DaalChini', 'Ginger' ] }
+console.log(ingredients) // Output: { teaLeaves: 'Assam Tea', milk: 'Full Cream Milk', spices: [ 'DaalChini', 'Ginger' ] }
 //=========================================================
 
 //data gets done here 
