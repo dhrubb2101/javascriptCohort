@@ -44,6 +44,8 @@ chaiTypes.splice(index, 1)
 chaiTypes.forEach((chai, index) => {
     console.log(`${index + 1}: ${chai}`)
 })
+
+chaiTypes.forEach((chai, index))
 // Output:
 // 1: Masala Chai
 // 2: Ginger Chai
@@ -59,7 +61,7 @@ let allChaiTypes = chaiTypes.concat(moreChaiTypes)
 
 let newChaiTypes = [...chaiTypes, "Chamomile Tea"] //spread operator basically spreads the elements of the array chaiTypes and adds "Chamomile Tea" to the end
 console.log(allChaiTypes); // Output: ["Masala Chai", "Ginger Chai", "Lemon Chai", "Oolong Tea", "White Tea"]
-console.log(newChaiTypes); // Output: ["Masala Chai", "Ginger
+console.log(newChaiTypes); // Output: ["Masala Chai", "Ginger Chai", "Lemon Chai", "Chamomile Tea"]
 
 //======================================================================
 
