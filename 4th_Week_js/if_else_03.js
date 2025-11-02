@@ -8,8 +8,9 @@ function prepareChai(type){
         console.log("Preparing regular chai")
     }
 }
+
 //basic syntax for funtion declaration
-//it is a factory where some work tak place
+//it is a factory where some work take place
 
 prepareChai("Masala Chai")  // Output: "Adding spices to the chai"
 prepareChai("Green Chai")  // Output: "Preparing regular chai"
@@ -34,8 +35,6 @@ function calculateDiscount(totalAmount){
     }
 }
 
-
-
 //calculateDiscount(totalAmount) // Output: 1080 (10% discount applied)
 let finalBill = console.log(calculateDiscount("1200")) // Output: 1080 (10% discount applied, string input converted to number)
 
@@ -49,6 +48,7 @@ let finalBill = console.log(calculateDiscount("1200")) // Output: 1080 (10% disc
 
 //ternary operator
 return totalAmount > 100 ? totalAmount * 0.9 : totalAmount
+
 // let loading = true
 //return isLoading ? () : ()
 //========================================================
@@ -80,6 +80,19 @@ function trafficLight(color){
             return "Go";
         default:
             return "Invalid color";
+    }
+}
+
+function trafficLight(color){
+    switch(color){
+        case "red":
+            return "Stop";
+        case "yellow":
+            return "Slow down";
+        case "green":
+            return "Go";
+        default:
+            return  "Invalid color";
     }
 }
 
