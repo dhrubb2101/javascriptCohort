@@ -11,12 +11,14 @@ let salesData = [
 //here when we use this (()=>{}) we always need to return something
 //here if we use this instead (()=>()) we don't need to return anything in this
 
+
 let initialValue 
 let totalSales = salesData.reduce((acc,sale)=>acc + sale.price,0)
 console.log(totalSales); // Output: 2230
 
 //basically in reduce method what is happening is 
 //this is the callback (acc,sale)=>acc + sale.price
+//sale → current element from the array during each loop
 //and there is an accumulator which takes initial value which is specified as 0
 //and since reduce is basically a loop, it will iterate over each element in the array
 //and it will add the price of each sale to the accumulator
@@ -37,6 +39,7 @@ let lowStockItems = inventory.filter((item) => item.stock < 50)
 console.log(lowStockItems); // Output: [{ name: "widget A", stock: 30 }, { name: "widget C", stock: 45 }]
 
 // different methods to write the function in js
+
 // let lowStockItems = inventory.filter((item) => (item.stock < 50))
 // console.log(lowStockItems); 
 
@@ -58,11 +61,12 @@ let userActivity = [
 //and here reduce takes initial value as an array[0] as no initial value is specified 
 //and hence here reduce is used in a very different way and hence being used very diffeerently
 //reduce takes initial value as first value of array and when reduce acts as a loop, it will compare each user with the maxUser and return the user with the maximum activity count
-let mostActiveUser = userActivity.reduce((maxUser, user) => 
-    user.activityCount > maxUser.activityCount ? user : maxUser
-);
 
-// console.log(mostActiveUser); // Output
+let mostActiveUser = userActivity.reduce((maxUser, user))
+let mostActiveUser1 = userActivity.reduce((maxUser, user) => {
+    return user.activityCount > maxUser.activityCount ? user : maxUser;
+});
+console.log(mostActiveUser); // Output: { user: "Eve", activityCount: 60 }
 
 //=========================================================
 
@@ -76,19 +80,17 @@ let expenses = [
 let expenseReport = expenses.reduce((report,expense)=>{
    report[expense.category] += expense.amount
    //report[expense.category] = (report[expense.category] || 0) + expense.amount; //this is dynamic and above is static
-   
+//    This automatically creates new categories, doesn't need {Food: 0, Utilities: 0} predefined.
    return report
 },{Food: 0, Utilities: 0});
 
-console.log("Expense Report:", expenseReport);
-
-
+console.log("Expense Report:", expenseReport); //
 
 //==========================================================
 
 let tasks = [
     {description: "Write Report", completed: false, priority: 2},
-    {description: "Send email", completed: true, priority: 3},
+    {description: "Send email", completed: true, priority: 1},
     {description: "Prepare Presentation", completed: false, priority: 3},
 ]
 
