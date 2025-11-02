@@ -84,7 +84,13 @@ let expenseReport = expenses.reduce((report,expense)=>{
    return report
 },{Food: 0, Utilities: 0});
 
-console.log("Expense Report:", expenseReport); //
+console.log("Expense Report:", expenseReport); 
+
+// let expenseReport1 = expenses.reduce((report, expense) => {
+//     report[expense.category] = report[expense.category] + expense.amount; //OR follow below approach
+//     report[expense.category] = (report[expense.category] || 0) + expense.amount;
+//     return report;
+// })
 
 //==========================================================
 
