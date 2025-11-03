@@ -1,10 +1,10 @@
-function greet(parameter) {
-    console.log(`Hello ${name}`);
-}
+// function greet(parameter) {
+//     console.log(`Hello ${name}`);
+// }
 
-greet("Hitesh") // Output: "Hello Hitesh"
-greet("Piyush") // Output: "Hello Piyush"
-
+// greet("Hitesh") // Output: "Hello Hitesh"
+// greet("Piyush") // Output: "Hello Piyush"
+ 
 //=========================================================
 
 let globalVar = "I am global"
@@ -24,21 +24,54 @@ console.log(globalVar); // Output: "I am modified"
 //=========================================================
 //IFFE function
 //when the first page loads for the firt time or DOM loads for the first time, this function is called
-//IFFE
+//IFFE (Immediately Invoked Function Expression)
 let config = function(){
     let settings = {
         theme: "dark",
         language: "en"
     }
     return settings
-}()
+}() // <-- called immediately
+// The function executes immediately.
+// Whatever it returns (settings) gets stored in config.
+// After this, config is NOT a function anymore, it’s just the returned object.
 //another way to write IFFE (()=>{})()
 //this is used to run the code immediately when the page loads
 //it is a use and throw function , it is used once and then discarded
 
 
-config()
+config() //TypeError: config is not a function
+console.log(config.theme);     // "dark"
+console.log(config.language);  // "en"
+// ❌ You do not call config() afterwards, because it's now an object, not a function.
 
+// why is it an object and not a function (IIFE)?
+// //step1 : We create a function 
+// function () { ... }
+//Step 2: You immediately call it by using () right after it:
+//function () { ... }()
+//Step 3 : Whatever the function returns becomes the value of config.
+// The function returns:
+// {
+//     theme: "dark",
+//     language: "en"
+// }
+// So config becomes that object.
+// //So effectively, the line becomes:
+// let config = {
+//     theme: "dark",
+//     language: "en"
+// };
+// Therefore, config stores the returned object, not the function itself.
+
+// | Code part              | Meaning                                              |
+// | ---------------------- | ---------------------------------------------------- |
+// | `function() { ... }`   | Defines a function                                   |
+// | `function() { ... }()` | Executes the function immediately                    |
+// | `let config = ...`     | Stores the **result of execution**, NOT the function |
+
+//In Short 
+// IIFE executes immediately and assigns the return value, not the function.
 //=========================================================
 
 let person1 = {
@@ -47,8 +80,12 @@ let person1 = {
         console.log(`Hello ${this.name}`)
     }
 }
-
-//this refers to the object itself
+// Here, this refers to the object that invokes the function.
+//person1.greet()  // -> "Hello ravi"
+//call() executes a function immediately and lets you manually set what this should refer to.
+//call() runs the function greet()
+//It sets this to refer to person
+//Output: Hello Hitesh
 
 let person2 = {
     name: "hitesh"
@@ -116,6 +153,8 @@ bindGreet() // Output: "Hello hitesh"
 // this.personName → means “the personName property of this object”.
 // Just personName → JS thinks it’s a variable, not an object property.
 
+//==========================================================================================
+
 let person3 = {
     personName: "ravi",
     greet: function(){
@@ -126,9 +165,24 @@ let person3 = {
 let person4 = {
     personName: "Hitesh",
 
-}
+}       
+// "Hey JavaScript, borrow the greet function from person3,
+// and run it as if it belongs to person4."
+// You can reuse methods from one object on another object without copying code.
 
-//what we are doing here is we are calling the greet function of person3 object with the context of person4 object
+// Even if two objects are shaped the same,
+// JavaScript does not automatically treat them as the same —
+// each object has its own identity.
+
+// Think of it like this:
+
+// Two people may both have a name,
+// but only one of them knows how to greet.
+
+// With .call(), you are telling the greeter:
+
+// "Greet on behalf of this other person."
+// //what we are doing here is we are calling the greet function of person3 object with the context of person4 object
 //we are trying to change the context of the greet function
 //to change the context we use call method
 //that's why you see here we don't call greet function directly but use call ahead
