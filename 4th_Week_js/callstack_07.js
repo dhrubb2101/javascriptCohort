@@ -35,19 +35,15 @@
 
 // Even though the function is written below the call, JavaScript already knows about it during the creation phase.
 
+//=========================================
+
+
 // console.log('Age is', age);
 
 // var age = 24;
 
 //output is age is undefined
 //=========================================
-
-// test(); 
-
-// function test(){
-//     console.log('I am inside the test function')
-// }
-
 // age = 3000 
 
 // console.log('Age is', age);
@@ -55,6 +51,44 @@
 // var age = 24;
 
 //output is age is 3000
+
+// 
+// Why? (Think like this story)
+// Step 1: JavaScript scans the file first (before running anything)
+
+// It sees:
+// var age;
+
+
+// Because of hoisting, JavaScript lifts (hoists) the declaration to the top.
+
+// So internally, your code becomes:
+// var age;     // JavaScript created the variable (hoisted)
+// age = 3000;  // You are assigning value to that variable
+// console.log("Age is", age);  // prints 3000
+// age = 24;    // later value changes to 24
+
+// 💡 Important Rule
+
+// var is hoisted, but its value is NOT hoisted.
+// JavaScript knows the variable age exists (because of hoisting)
+// But the assignment = 24 happens later in the code
+// That’s why the first assignment (age = 3000) works — the variable exists.
+// Think of it like this:
+// What JavaScript does	Your Code
+// Declares age at top (hoisting)	var age = 24
+// Does not assign value yet	age = 24 happens later
+// 🚗 Real-life analogy
+// Imagine you reserve a parking spot (declaration happens first)
+// But your car doesn't park there yet (value assigned later)
+
+// Final execution order
+// | Line                         | What happens                           |
+// | ---------------------------- | -------------------------------------- |
+// | `var age` (hoisted to top)   | age exists but has no value yet        |
+// | `age = 3000`                 | value becomes 3000                     |
+// | `console.log("Age is", age)` | prints 3000                            |
+// | `age = 24`                   | value updates but too late for console |
 
 //=========================================
 
