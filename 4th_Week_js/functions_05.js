@@ -99,7 +99,8 @@ const bindGreet = person1.greet.bind(person2)
 bindGreet() // Output: "Hello hitesh"
 //bind method is used to return a new function with a specific context
 
-//here bindGreet is a new function which has person2 as the context
+//here bindGreet is a new function which has person2 as the context permanently
+//and hence when we call bindGreet() it will always refer to person2 as the context
 
 //=========================================================
 
@@ -196,3 +197,45 @@ person3.greet.call({personName: "Mukul"})
 //try using bind method on your own
 
 //=========================================================
+
+// Sure — here’s a clear example using your same objects, showing how bind() works:
+
+// let person3 = {
+//     personName: "ravi",
+//     greet: function () {
+//         console.log(`Hello, ${this.personName}`);
+//     }
+// };
+
+// let person4 = {
+//     personName: "Hitesh"
+// };
+
+//=======================================================================================
+//Use of Bind method
+
+// Using bind()
+// const greetHitesh = person3.greet.bind(person4);
+
+// greetHitesh();  // Output: "Hello, Hitesh"
+
+// 🔍 Explanation
+
+// bind(person4) does NOT execute the function immediately.
+// Instead, it creates a new function where this is permanently set to person4.
+// So now:
+// greetHitesh(); // behaves as if greet belongs to person4
+
+// ✅ Showing the difference between call() and bind()
+// Method	Executes immediately?	Returns
+// call()	✅ Yes	Result of the function
+// bind()	❌ No	A new function with this locked
+// Another demonstration:
+// const greetLater = person3.greet.bind(person4);
+
+// setTimeout(greetLater, 2000);  
+// // After 2 seconds → "Hello, Hitesh"
+
+
+// Here bind() is useful because even if the function is executed later,
+// this still refers to person4.

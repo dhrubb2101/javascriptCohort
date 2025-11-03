@@ -6,6 +6,7 @@
 // }
 
 
+
 // console.log("Hello from JS");
 
 // const a = 1
@@ -37,7 +38,7 @@
 //when call stack executed the setTimeout code
 //what really happens is setTimeout sets a background timer in the browser 
 //until the timer expires, the call stack is free to execute other code
-//once the timer expires, the setTimeout code is added to the callback queue and not directly added to the calstack and 
+//once the timer expires, the setTimeout code is added to the callback queue and not directly added to the callstack and 
 //it is queue FIFO (First In First Out)
 //when the call stack is empty, the event loop checks the callback queue and moves the setTimeout code to the call stack for execution
 //event loop is the one that checks the call stack and the callback queue
@@ -100,7 +101,7 @@ console.log('Bye Bye');
 //and then the client can use the data once it is ready
 ///this is where the promise comes into play
 
-//promise is therefore used in cases where we din't have the data currently but it will come in the future there we use promises concept
+//promise is therefore used in cases where we didn't have the data currently but it will come in the future there we use promises concept
 //in future we will recieve the result and in the meantime we use promise
 //
 
@@ -109,7 +110,33 @@ console.log("Hello from JS");
 setTimeout(() => console.log("Hello after 2s"), 2* 1000)
 
 Promise.resolve().then(() => console.log("Promise Resolve Hogya"))
+
 console.log("Bye")
+
+// | Type                                | Goes to                    | Priority                      |
+// | ----------------------------------- | -------------------------- | ----------------------------- |
+// | **Normal code / console.log**       | Call Stack                 | ✅ Highest                     |
+// | **Promises (`.then`) / microtasks** | Microtask Queue            | 🟡 Runs next (before timeout) |
+// | **setTimeout / Macrotasks**         | Callback Queue (Macrotask) | 🔴 Runs last                  |
+
+
+// Step-by-step execution:
+// console.log("Hello from JS")
+// Normal synchronous code
+// Runs immediately
+// setTimeout(..., 2s)
+// Timer starts
+// Callback is moved to macrotask queue (NOT executed yet)
+// Promise.resolve().then(...)
+// Added to microtask queue
+// Will run right after synchronous code finishes
+// console.log("Bye")
+// Synchronous, runs immediately
+// Call Stack becomes empty
+// JS now checks the microtask queue → runs promise .then()
+// Output: Promise Resolve Hogya
+// After 2 seconds, event loop takes the setTimeout callback from macrotask queue
+// Output: Hello after 2s
 
 //output will be 
 //Hello from JS
@@ -133,6 +160,7 @@ console.log("Bye")
 //Hello from JS 
 //Promise Resolve Hogya
 //Bye
+//Hello after 2s
 //Hello after 2s
 
 
