@@ -20,6 +20,20 @@
 //     console.log('I am inside the test function')
 // }
 
+//output    : I am inside the test function
+
+// Because function declarations are hoisted in JavaScript.
+// Hoisting means:
+// JavaScript moves the function declaration to the top of the execution context before the code runs.
+// So behind the scenes, the JS engine treats your code like this:
+
+// function test(){
+//     console.log('I am inside the test function');
+// }
+
+// test();
+
+// Even though the function is written below the call, JavaScript already knows about it during the creation phase.
 
 // console.log('Age is', age);
 
