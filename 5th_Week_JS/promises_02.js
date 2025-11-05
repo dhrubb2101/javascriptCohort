@@ -6,7 +6,7 @@
 //console.log("Hello")
 //let a = 10;
 //let b = 20;
-// let temp = getWeatherInfo()
+//let temp = getWeatherInfo()
 //let sum = a + b + temp
 
 //here callstack doesn't wait for temp execution say it happens in 2 seconds 

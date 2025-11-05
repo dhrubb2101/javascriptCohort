@@ -183,6 +183,8 @@
 //but they are not initialized
 //so accessing them before declaration will result in a ReferenceError
 
+// In reality, let and const ARE hoisted
+// but they are NOT initialized with any value
 //in both let and const 
 //there is a concept known as "Temporal Dead Zone" (TDZ)
 //so anything above first you declare a variable and you try above where the variable is declared to access it. it
