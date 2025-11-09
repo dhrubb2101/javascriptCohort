@@ -1,4 +1,4 @@
-const { negative } = require("zod");
+// const { negative } = require("zod");
 
 // let arr = [1,2,3,4,5,6,7,8,9,10]
 
@@ -6,22 +6,24 @@ const { negative } = require("zod");
 
 //===========================
 
-// const user = {
-//     name: "hitesh",
-//     age: 40,
-//     password: "123"
-// }
+const user = {
+    name: "hitesh",
+    age: 40,
+    password: "123"
+}
 
-// const proxyUser = new Proxy(user, {
-//     get(target, prop){
-
-//         console.log(prop)
+const proxyUser = new Proxy(user, {
+    get(target, prop){  //get trap - whenever we try to access any property of proxyUser object this get trap will be called
+        console.log(target)
+        return target[prop];
 //         // if(prop === "password"){
 //         //     throw new Error("Access Denied")   
-//         // }
+        },
+    });
 
+console.log(proxyUser.age);
 
-//         return target[prop] //target is user object
+//         return target[prop] //target is user object & by . or [] we can access the properties of user named object
 //     }
     // set((target, prop, value) => {
     //     if(prop === "age"){
@@ -93,38 +95,38 @@ const { negative } = require("zod");
 // Proxy is just another object created with new Proxy(...). So when you do:
 
 //negativeIndexing via Proxy Array
-function negativeIndex(arr){
-     return new Proxy(arr, {
-        get(target, prop){
-            const index = Number(prop)
-            if(index < 0){
-                return target[target.length + index] //say you give index -2 
-                //the logic behind this consider an array [1,2,3,4,5] and target[target.length + index] target.length is 5 and say index is -2 so 5 + (-2) = 3 so target[3] = 4
-            }
-            return target[index]
-        },
-        set(target, prop, value){
-            const index = Number(prop)
-            if(index < 0){
-                target[target.length + index] = value
+// function negativeIndex(arr){
+//      return new Proxy(arr, {
+//         get(target, prop){
+//             const index = Number(prop)
+//             if(index < 0){
+//                 return target[target.length + index] //say you give index -2 
+//                 //the logic behind this consider an array [1,2,3,4,5] and target[target.length + index] target.length is 5 and say index is -2 so 5 + (-2) = 3 so target[3] = 4
+//             }
+//             return target[index]
+//         },
+//         set(target, prop, value){
+//             const index = Number(prop)
+//             if(index < 0){
+//                 target[target.length + index] = value
 
-            }else{
-                target[index] = value
-            }
-            return true; //indicates that the assignment was successful
-     }
-    })
-};
+//             }else{
+//                 target[index] = value
+//             }
+//             return true; //indicates that the assignment was successful
+//      }
+//     })
+// };
 
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-let newArr = negativeIndex(arr)
+// let newArr = negativeIndex(arr)
 
-console.log(arr[-1])
-console.log(newArr[-1])
-newArr[-1] = 22
-console.log(arr)
-console.log(newArr)
+// console.log(arr[-1])
+// console.log(newArr[-1])
+// newArr[-1] = 22
+// console.log(arr)
+// console.log(newArr)
 
 // The reason arr[-1] is not working but newArr[-1] is working lies in how JavaScript arrays and objects handle property access:
 
