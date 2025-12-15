@@ -15,10 +15,12 @@ const ptaNahi = (fn, delay) => {
 
     }
 }
-Sa
-ptaNahi()
-ptaNahi()
-ptaNahi()
+
+const throttled = ptaNahi(() => console.log("Hi"), 3000);
+
+throttled();
+throttled();
+throttled();
 
 ////throttling bhai aise samjho ki myId ko null value di and fir ek function return kiya jismei humne check kiya ki agar myId null hai to hi function ko call karna hai
 //fir line 11 se main throttling ki kahani shru hoti hai ki jb voh settimeout functiion run hua and uska jb tk delay pura ni ho jaata hai tb tk voh kisi aur request ko ni dekhega and jb voh delay pura hoga `
@@ -66,7 +68,7 @@ ptaNahi()
 
 // Example usage
 
-//vahi same mother and daughter ki story but throa difference hai 
+//vahi same mother and daughter ki story but thora difference hai 
 //The mother prmised the daughter that she will get a box of chocolate if she keep quiet till 3PM
 //and it's 12PM now, so the daughter started asking for it at 12:30PM
 //it doesn't matter she will get the chocolate at 3PM only.

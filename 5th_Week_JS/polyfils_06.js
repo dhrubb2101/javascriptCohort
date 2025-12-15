@@ -15,7 +15,7 @@
 
 //===========================================================================================================================================
 
-//how will we know a paerticular feature exist or not already before building a polyfil 
+//how will we know a particular feature exist or not already before building a polyfil 
 //first we identify that 
 //that's why we check in array.prototype if map function exist or not
 //if it does not exist then we can create our own implementation of map function and add it to array prototype so that we can use it like a built-in function
@@ -52,7 +52,6 @@ if(!Array.prototype.hululu) {
         // Custom implementation of hululu
     }
 }
-
 //this is basic a polyfill of hululu function
 // we first check if hululu function is already present in array.prototype or not
 //if it is not present then we add our own implementation of hululu function to array.prototype

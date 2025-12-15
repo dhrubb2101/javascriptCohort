@@ -209,7 +209,7 @@ With .then (or await inside async function), you get the actual response later. 
 //JSON - JavaScript Object Notation
 //it's a format to send data from server to client  
 //it's a string in key value pair format
-//like - {"name":"Dhrub","age":24}
+//like - {"name":"Dhrubb","age":24}
 //JSON is always in double quotes
 //and we convert JSON to object using JSON.parse() function
 //and we convert object to JSON using JSON.stringify() function0
@@ -236,8 +236,7 @@ With .then (or await inside async function), you get the actual response later. 
         })
         .finally(() => {});
 
-      
-
+        
 //here we know from fetch we know we get the data in json format beforehand -->
 //here in response.json() - .json() is a function which parses the json string to json object and then json string we get is from response mentioned here in response.json()
 //and in return as a whole it returns a promise

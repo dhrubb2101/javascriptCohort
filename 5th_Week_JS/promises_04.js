@@ -222,7 +222,6 @@
 
 // console.log('This prints immediately!');
 
-
 // What happens behind the scenes:
 
 // You call load(...).
