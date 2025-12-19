@@ -8,7 +8,7 @@
 //A library does not have anay rules, it is just a collection of code that you can use to optimize tasks.
 //A framework has rules, it provides a structure for building applications, and it often comes with its own set of libraries and tools.
 //A library is unopinated, you can use it in any way you want, while a framework is opinionated, it has its own way of doing things.
-
+ 
 //react is more of a thought process than a library
 //Two options that one there is js block of code in server and sent it to browser and then browser will get only a div with root id in it and then browser will run the js code and then it will render the UI
 //and then js will take care of the UI updates and add accordions, buttons etc
@@ -58,7 +58,6 @@
 //   props,       // object with props (e.g., { className: "box" }) or null
 //   children     // optional, can be a string, React element, or array of elements
 // )
-
 
 //we are basically loading js and handling it in app.js
 
@@ -380,11 +379,11 @@
 //and we can write plenty of useEffects in a single component
 
 
-//useEffect(() => {}
+//useEffect(() => {} //this whole is componentDidMount
 
 //  return() //this is componentDidUnMount
 
-//,[]) //this whole is componentDidMount
+//,[]) 
 
 //[] = this is updation
 
@@ -416,7 +415,7 @@
 //     return (
 //         <div>
 //             <h2>Chai Counter</h2>
-//             <p> You have served {count} cups of Chai</p>
+//             <p> You have served {count} {count === 1 ? "cup" : "cups" } of Chai</p>
 //             <button onClick={serveChai}>Serve Chai</button>
 //         </div>
 //     )
@@ -501,7 +500,7 @@ This lets React efficiently update only the changed <li> when needed. */}
 
 //======================================================================
 
-//Learn this you will useEffect majorly to fetching of data
+//Learn this you will useEffect majorly for fetching of data
 
 //======================================================================
 

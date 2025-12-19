@@ -1,5 +1,5 @@
 // I should  have a function increment()
-//on call of the function it sould increnent the number
+//on call of the function it should increnent the number
 //and return the current count 
 
 // console.log(increment() ) //1
