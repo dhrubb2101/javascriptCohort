@@ -82,6 +82,9 @@ so we create a server using express framework
 
 next step is to install express framework using
 npm install express
+this makes the life easier 
+when we run this we get node_modules project folder after this command
+
 
 //===================================================================
 
