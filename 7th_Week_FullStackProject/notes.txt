@@ -7,12 +7,17 @@ You run the js code using commands
 node filename.js
 bun filename.js
 
-Though we'll beusing just node for now
+-first standardize the project in standard folder from
+
+Though we'll be using just node for now 
 
 we tested a js filename.js file using node command in terminal
 
 Then install the npm package manager using
 npm init -y
+
+-by using npm init - i am just initializing a full stack project in node environment
+
 y here indicates yes to all the default questions
 
 We are not looking at the structure of the project first 
@@ -34,7 +39,8 @@ here in this case it is index.js
 
 //===================================================================
 
--we use third party libraries in our code to get some code functionality
+-we use third party libraries in our code to get some code functionality,
+-with third party libraries the code we get and it to bring it to our file we use two commands require or import 
 -so they are two instances one is
 -require
 -import
