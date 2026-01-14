@@ -1,5 +1,8 @@
 Check the node version first when creating a full stack project
 
+create a test.js 
+and write console.log("chai")
+
 You run the js code using commands
 node filename.js
 bun filename.js
