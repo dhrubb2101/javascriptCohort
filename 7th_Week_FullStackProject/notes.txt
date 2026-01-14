@@ -50,11 +50,11 @@ here in this case it is index.js
 -we'll use module here
 
 //===================================================================
-
+//to know the kundli of any project go to the .env file or .env.sample file of the project and you'll know everything about the project
 -you can see the critical structure of the project
 -you can see it in env file or env.sample file
 -like what is happening in the project , what services are being used in the project and what database is being used in the project
-
+-all sensitive data comes under env file.
 //===================================================================
 
 there is a platform called render
